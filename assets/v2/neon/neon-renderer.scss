@@ -1,5 +1,23 @@
 @import 'reset.css';
+@import 'css-vars';
+$css-vars-use-native: true;
+
+
+
+// MARK: - Marshall Sass variables to CSS custom properties
+
+@include css-vars((
+    --theme-primary-color: $theme-primary-color
+));
+
+
+
+@import 'neon-structure';
+
+
+
+// MARK: - Basics
 
 :link {
-	color: $theme-primary-color;
+	color: var(--theme-primary-color);
 }
