@@ -9,6 +9,7 @@ sass:
         - assets
         - assets/v2/basics
         - assets/v2/neon
+        - assets/v2/3p/css-vars
     sass_dir: assets
 twitter_username: BenLeggiero
 github_username:  BenLeggiero

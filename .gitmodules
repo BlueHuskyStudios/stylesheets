@@ -1,0 +1,3 @@
+[submodule "assets/v2/3p/css-vars"]
+	path = assets/v2/3p/css-vars
+	url = https://github.com/malyw/css-vars.git
