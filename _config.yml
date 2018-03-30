@@ -1,4 +1,14 @@
+title: Blue Husky Stylesheets
+email: BenLeggiero@Gmail.com
+description: >- # this means to ignore newlines until the next property
+  A bunch of stylesheets that power Blue Husky products
 theme: jekyll-theme-minimal
 sass:
-    sass_dir: assets
     style: compressed
+    load_paths:
+        - assets
+        - assets/v2/basics
+        - assets/v2/neon
+    sass_dir: assets
+twitter_username: BenLeggiero
+github_username:  BenLeggiero
