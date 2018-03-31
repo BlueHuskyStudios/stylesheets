@@ -1,0 +1,101 @@
+
+// MARK: - Breakpoints
+
+// Based on https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints
+
+$layout-4-column-min-width:  0px !default;
+$layout-4-column-max-width:  480px !default;
+$layout-8-column-min-width:  480px !default;
+$layout-8-column-max-width:  840px !default;
+$layout-12-column-min-width: $layout-8-column-max-width !default;
+$layout-12-column-max-width: null !default;
+
+$desktop-xsmall-min-width: 0px !default;
+$desktop-xsmall-max-width: 600px !default;
+$desktop-small-min-width:  $desktop-xsmall-max-width !default;
+$desktop-small-max-width:  960px !default;
+$desktop-medium-min-width: $desktop-small-max-width !default;
+$desktop-medium-max-width: 1280px !default; // TODO: - 16px?
+$desktop-large-min-width:  $desktop-medium-max-width !default;
+$desktop-large-max-width:  1920px !default;
+$desktop-xlarge-min-width: $desktop-large-max-width !default;
+$desktop-xlarge-max-width: null !default;
+
+
+$phone-portrait-small-min-width: 0px !default;
+$phone-portrait-small-max-width: 360px !default;
+$phone-portrait-medium-min-width: $phone-portrait-small-max-width !default;
+$phone-portrait-medium-max-width: 400px !default;
+$phone-portrait-large-min-width: $phone-portrait-medium-max-width !default;
+$phone-portrait-large-max-width: 600px !default;
+
+$phone-portrait-min-width: $phone-portrait-small-min-width !default;
+$phone-portrait-max-width: $phone-portrait-large-max-width !default;
+
+
+$phone-landscape-small-min-width: 480px !default;
+$phone-landscape-small-max-width: 600px !default;
+$phone-landscape-medium-min-width: $phone-landscape-small-max-width !default;
+$phone-landscape-medium-max-width: 720px !default;
+$phone-landscape-large-min-width: $phone-landscape-medium-max-width !default;
+$phone-landscape-large-max-width: 960px !default;
+
+$phone-landscape-min-width: $phone-landscape-small-min-width !default;
+$phone-landscape-max-width: $phone-landscape-large-max-width !default;
+
+
+$tablet-portrait-small-min-width: 600px !default;
+$tablet-portrait-small-max-width: 720px !default;
+$tablet-portrait-medium-min-width: $tablet-portrait-small-max-width !default;
+$tablet-portrait-medium-max-width: $tablet-portrait-medium-min-width !default;
+$tablet-portrait-large-min-width: $tablet-portrait-medium-max-width !default;
+$tablet-portrait-large-max-width: 840px !default;
+
+$tablet-portrait-min-width: $tablet-portrait-small-min-width !default;
+$tablet-portrait-max-width: $tablet-portrait-large-max-width !default;
+
+
+$tablet-landscape-small-min-width: 960px !default;
+$tablet-landscape-small-max-width: 1024px !default;
+$tablet-landscape-medium-min-width: $tablet-landscape-small-max-width !default;
+$tablet-landscape-medium-max-width: $tablet-landscape-medium-min-width !default;
+$tablet-landscape-large-min-width: $tablet-landscape-medium-max-width !default;
+$tablet-landscape-large-max-width: 1280px !default;
+
+$tablet-landscape-min-width: $tablet-landscape-small-min-width !default;
+$tablet-landscape-max-width: $tablet-landscape-large-max-width !default;
+
+
+$min-width-for-both-summary-and-detail-content: 600px !default;
+$max-width-for-normal-content: 1600px !default;
+
+
+$size-class-phone-tablet-breakpoint: $phone-portrait-max-width;
+$size-class-tablet-desktop-breakpoint: $tablet-landscape-max-width;
+
+
+// MARK: - Structure vars
+
+$app-bar-height-phone-portrait:     48pt !default;
+$app-bar-height-phone-landscape:    56pt !default;
+$app-bar-height-tablet-and-desktop: 64pt !default;
+$prominent-app-bar-total-height:   128pt !default;
+$app-bar-prominence-height-phone-portrait:           $prominent-app-bar-total-height - $app-bar-height-phone-portrait !default;
+$app-bar-prominence-height-phone-landscape:          $prominent-app-bar-total-height - $app-bar-height-phone-landscape !default;
+$app-bar-prominence-height-phone-tablet-and-desktop: $prominent-app-bar-total-height - $app-bar-height-tablet-and-desktop !default;
+
+
+
+// MARK: - Marshall Sass variables to CSS custom properties
+
+@import 'css-vars';
+
+@include css-vars((
+    --app-bar-height-phone-portrait:     $app-bar-height-phone-portrait,
+    --app-bar-height-phone-landscape:    $app-bar-height-phone-landscape,
+    --app-bar-height-tablet-and-desktop: $app-bar-height-tablet-and-desktop,
+    --prominent-app-bar-total-height:    $prominent-app-bar-total-height,
+    --app-bar-prominence-height-phone-portrait:           $app-bar-prominence-height-phone-portrait,
+    --app-bar-prominence-height-phone-landscape:          $app-bar-prominence-height-phone-landscape,
+    --app-bar-prominence-height-phone-tablet-and-desktop: $app-bar-prominence-height-phone-tablet-and-desktop,
+));

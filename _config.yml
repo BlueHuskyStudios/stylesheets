@@ -4,10 +4,12 @@ description: >- # this means to ignore newlines until the next property
   A bunch of stylesheets that power Blue Husky products
 theme: jekyll-theme-minimal
 sass:
-    style: compressed
+    style: expanded  # nested|expanded|compact|compressed
+    deploy_style: compressed  # nested|expanded|compact|compressed
     load_paths:
         - assets
         - assets/v2/basics
+        - assets/v2/structure
         - assets/v2/neon
         - assets/v2/3p/css-vars
     sass_dir: assets

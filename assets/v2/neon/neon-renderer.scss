@@ -1,4 +1,4 @@
-@import 'reset.css';
+@import '../basics/reset.css';
 @import 'css-vars';
 $css-vars-use-native: true;
 
@@ -17,6 +17,11 @@ $css-vars-use-native: true;
 
 
 // MARK: - Basics
+
+html {
+    background: var(--background-color-default);
+    color: var(--foreground-color-default);
+}
 
 :link {
 	color: var(--theme-primary-color);
