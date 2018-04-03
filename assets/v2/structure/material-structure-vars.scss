@@ -1,4 +1,10 @@
 
+// material-structure-vars
+//
+// Variables defining the structure of a page that uses Material design
+
+
+
 // MARK: - Breakpoints
 
 // Based on https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints
@@ -83,19 +89,3 @@ $prominent-app-bar-total-height:   128pt !default;
 $app-bar-prominence-height-phone-portrait:           $prominent-app-bar-total-height - $app-bar-height-phone-portrait !default;
 $app-bar-prominence-height-phone-landscape:          $prominent-app-bar-total-height - $app-bar-height-phone-landscape !default;
 $app-bar-prominence-height-phone-tablet-and-desktop: $prominent-app-bar-total-height - $app-bar-height-tablet-and-desktop !default;
-
-
-
-// MARK: - Marshall Sass variables to CSS custom properties
-
-@import 'css-vars';
-
-@include css-vars((
-    --app-bar-height-phone-portrait:     $app-bar-height-phone-portrait,
-    --app-bar-height-phone-landscape:    $app-bar-height-phone-landscape,
-    --app-bar-height-tablet-and-desktop: $app-bar-height-tablet-and-desktop,
-    --prominent-app-bar-total-height:    $prominent-app-bar-total-height,
-    --app-bar-prominence-height-phone-portrait:           $app-bar-prominence-height-phone-portrait,
-    --app-bar-prominence-height-phone-landscape:          $app-bar-prominence-height-phone-landscape,
-    --app-bar-prominence-height-phone-tablet-and-desktop: $app-bar-prominence-height-phone-tablet-and-desktop,
-));

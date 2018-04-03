@@ -1,0 +1,24 @@
+
+// neon-animation-renderer
+//
+// Renders out Neon CSS animations
+
+@import 'css-vars';
+$css-vars-use-native: true;
+
+
+// MARK: - Marshall SCSS vars to CSS vars
+
+@include css-vars((
+    --animation-duration-default: $animation-duration-default,
+));
+
+* {
+    transition-duration: var(--animation-duration-default);
+    transition-timing-function: ease-in-out;
+}
+
+
+html {
+    transition-property: background, color;
+}

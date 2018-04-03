@@ -1,26 +1,14 @@
 
-$background-color-light: #FFF !default;
-$background-color-dark: #111618 !default;
-$background-color-black: #000 !default;
-$background-color-default: $background-color-light !default;
+// neon-shared-vars
+//
+// Variables that all Neon subthemes use
 
-$foreground-color-when-bg-light: #212121 !default;
-$foreground-color-when-bg-dark: #eee !default;
-$foreground-color-when-bg-black: #eee !default;
-$foreground-color-default: $foreground-color-when-bg-light !default;
+$light-theme-background-color: #FFF !default;
+$dark-theme-background-color: #111618 !default;
+$black-theme-background-color: #000 !default;
+$default-theme-background-color: $light-theme-background-color !default;
 
-
-
-@import 'css-vars';
-
-@include css-vars((
-    --background-color-light:   $background-color-light,
-    --background-color-dark:    $background-color-dark,
-    --background-color-black:   $background-color-black,
-    --background-color-default: $background-color-default,
-
-    --foreground-color-when-bg-light: $foreground-color-when-bg-light,
-    --foreground-color-when-bg-dark:  $foreground-color-when-bg-dark,
-    --foreground-color-when-bg-black: $foreground-color-when-bg-black,
-    --foreground-color-default:       $foreground-color-default,
-));
+$light-theme-foreground-color: #212121 !default;
+$dark-theme-foreground-color: #eee !default;
+$black-theme-foreground-color: #eee !default;
+$default-theme-foreground-color: $light-theme-foreground-color !default;

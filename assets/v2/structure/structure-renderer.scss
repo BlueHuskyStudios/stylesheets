@@ -1,16 +1,7 @@
 
 // NOTE: This file does NOT set the actual values. For that, you must first import a stylesheet that does, like 'material-structure-vars'
 
+@import 'css-vars';
+$css-vars-use-native: true;
 
-.app-bar,
-.app-bar.short {
-
-    height: var(--app-bar-height-short);
-
-    @media (min-width: $size-class-phone-tablet-breakpoint) {
-        height: var(--app-bar-height-medium);
-    }
-    @media (min-width: $size-class-tablet-desktop-breakpoint) {
-        height: var(--app-bar-height-tall);
-    }
-}
+@import 'material-components-renderer';

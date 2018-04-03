@@ -1,0 +1,47 @@
+
+// NOTE: This file does NOT set the actual values. For that, you must first import a stylesheet that does, like 'material-structure-vars'
+
+@import 'css-vars';
+$css-vars-use-native: true;
+
+@include css-vars((
+    --app-bar-height-phone-portrait:     $app-bar-height-phone-portrait,
+    --app-bar-height-phone-landscape:    $app-bar-height-phone-landscape,
+    --app-bar-height-tablet-and-desktop: $app-bar-height-tablet-and-desktop,
+    --prominent-app-bar-total-height:    $prominent-app-bar-total-height,
+    --app-bar-prominence-height-phone-portrait:           $app-bar-prominence-height-phone-portrait,
+    --app-bar-prominence-height-phone-landscape:          $app-bar-prominence-height-phone-landscape,
+    --app-bar-prominence-height-phone-tablet-and-desktop: $app-bar-prominence-height-phone-tablet-and-desktop,
+));
+
+.app-bar,
+.app-bar.short {
+    height: var(--app-bar-height-short);
+
+    @media (min-width: $size-class-phone-tablet-breakpoint) {
+        height: var(--app-bar-height-medium);
+    }
+    @media (min-width: $size-class-tablet-desktop-breakpoint) {
+        height: var(--app-bar-height-tall);
+    }
+}
+
+
+
+.button,
+button {
+    background-color: $theme-primary-color;
+
+    border: none;
+
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font: $font-button;
+    text-transform: $text-transform-button;
+
+    .app-bar & {
+        background: none;
+    }
+}

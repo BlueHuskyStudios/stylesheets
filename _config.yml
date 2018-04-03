@@ -6,10 +6,12 @@ theme: jekyll-theme-minimal
 sass:
     style: expanded  # nested|expanded|compact|compressed
     deploy_style: compressed  # nested|expanded|compact|compressed
+    compile_in_place: true
     load_paths:
         - assets
         - assets/v2/basics
         - assets/v2/structure
+        - assets/v2/material
         - assets/v2/neon
         - assets/v2/3p/css-vars
     sass_dir: assets

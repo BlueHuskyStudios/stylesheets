@@ -1,0 +1,34 @@
+
+// neon-typography-renderer
+//
+// Renders out Neon CSS typography
+
+
+
+// MARK: - Marshall
+
+@import 'css-vars';
+$css-vars-use-native: true;
+
+@include css-vars((
+    --font-family-primary: $font-family-primary,
+));
+
+
+
+// MARK: - Use
+
+:root {
+    font-family: var(--font-family-primary);
+}
+
+h1 { font: $font-h1; }
+h2 { font: $font-h2; }
+h3 { font: $font-h3; }
+h4 { font: $font-h4; }
+h5 { font: $font-h5; }
+h6 { font: $font-h6; }
+
+.app-bar h1 {
+    font-size: $font-size-title;
+}
