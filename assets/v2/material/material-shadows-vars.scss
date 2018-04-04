@@ -1,6 +1,65 @@
 
 // material-shadows-vars
 //
-// Variables for Material CSS animations
+// Variables for Material CSS shadoes
+//
+// Based on https://material.io/guidelines/resources/shadows.html
 
-$shadow-z1: 0.3s !default;
+@mixin make-material-shadow($umbra-y-pos, $umbra-blur, $umbra-spread,
+                            $penumbra-y-pos, $penumbra-blur, $penumbra-spread,
+                            $ambient-y-pos, $ambient-blur) {
+    box-shadow: 0 $umbra-y-pos $umbra-blur $umbra-spread rgba(0,0,0, .14),
+                0 $penumbra-y-pos $penumbra-blur $penumbra-spread rgba(0,0,0, .12),
+                0 $ambient-y-pos $ambient-blur 0 rgba(0,0,0, .20);
+}
+
+
+@mixin shadow-z1() {
+    @include make-material-shadow(
+        0,   2px, 0,
+        2px, 2px, 0,
+        1px, 3px
+    );
+}
+
+@mixin shadow-z2() {
+    @include make-material-shadow(
+        0,   4px, 0,
+        3px, 4px, 0,
+        1px, 5px
+    );
+}
+
+@mixin shadow-z3() {
+    @include make-material-shadow(
+        3px, 3px, 0,
+        3px, 4px, 0,
+        1px, 8px
+    );
+}
+
+@mixin shadow-z4() {
+    @include make-material-shadow(
+        2px, 4px, 0,
+        4px, 5px, 0,
+        1px, 10px
+    );
+}
+
+@mixin shadow-z6() {
+    @include make-material-shadow(
+        6px, 10px, 0,
+        1px, 18px, 0,
+        3px, 5px
+    );
+}
+
+@mixin shadow-z8() {
+    @include make-material-shadow(
+        8px, 10px, 1px,
+        3px, 14px, 3px,
+        4px, 15px
+    );
+}
+
+// TODO: z9 through z24

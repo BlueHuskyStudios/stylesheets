@@ -1,8 +1,12 @@
 
 // NOTE: This file does NOT set the actual values. For that, you must first import a stylesheet that does, like 'material-structure-vars'
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import 'material-shadows-vars';
 @import 'css-vars';
 $css-vars-use-native: true;
+
+
 
 @include css-vars((
     --app-bar-height-phone-portrait:     $app-bar-height-phone-portrait,
@@ -13,6 +17,8 @@ $css-vars-use-native: true;
     --app-bar-prominence-height-phone-landscape:          $app-bar-prominence-height-phone-landscape,
     --app-bar-prominence-height-phone-tablet-and-desktop: $app-bar-prominence-height-phone-tablet-and-desktop,
 ));
+
+
 
 .app-bar,
 .app-bar.short {
@@ -33,15 +39,46 @@ button {
     background-color: $theme-primary-color;
 
     border: none;
-
+    border-radius: 2px;
 
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+
     font: $font-button;
     text-transform: $text-transform-button;
 
-    .app-bar & {
+    padding: 11px 16px;
+    margin: 8px;
+
+    height: 36px;
+    min-width: 64px;
+
+    &.flat,
+    .app-bar &:not(.raised) {
         background: none;
+        color: $theme-primary-color;
+
+        padding: 11px 8px;
+        margin: 8px;
+
+        min-width: 88px;
+    }
+
+    &.dense {
+        font-size: $font-size-dense-button;
+
+        padding: 9.5px 8px;
+
+        height: 32px;
     }
 }
+
+
+
+.shadow-z1 { @include shadow-z1(); }
+.shadow-z2 { @include shadow-z2(); }
+.shadow-z3 { @include shadow-z3(); }
+.shadow-z4 { @include shadow-z4(); }
+.shadow-z6 { @include shadow-z6(); }
+.shadow-z8 { @include shadow-z8(); }
