@@ -76,11 +76,13 @@ $min-width-for-both-summary-and-detail-content: 600px !default;
 $max-width-for-normal-content: 1600px !default;
 
 
-$size-class-phone-tablet-breakpoint: $phone-portrait-max-width;
-$size-class-tablet-desktop-breakpoint: $tablet-landscape-max-width;
+$size-class-phone-tablet-breakpoint: $phone-portrait-max-width !default;
+$size-class-tablet-desktop-breakpoint: $tablet-landscape-max-width !default;
 
 
 // MARK: - Structure vars
+
+// MARK: App Bar
 
 $app-bar-height-phone-portrait:     48pt !default;
 $app-bar-height-phone-landscape:    56pt !default;
@@ -89,3 +91,8 @@ $prominent-app-bar-total-height:   128pt !default;
 $app-bar-prominence-height-phone-portrait:           $prominent-app-bar-total-height - $app-bar-height-phone-portrait !default;
 $app-bar-prominence-height-phone-landscape:          $prominent-app-bar-total-height - $app-bar-height-phone-landscape !default;
 $app-bar-prominence-height-phone-tablet-and-desktop: $prominent-app-bar-total-height - $app-bar-height-tablet-and-desktop !default;
+
+
+// MARK: Buttons
+
+$button-cursor: pointer !default;

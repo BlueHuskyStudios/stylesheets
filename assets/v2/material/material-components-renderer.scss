@@ -3,8 +3,8 @@
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import 'material-shadows-vars';
+@import 'material-structure-vars';
 @import 'css-vars';
-$css-vars-use-native: true;
 
 
 
@@ -16,6 +16,8 @@ $css-vars-use-native: true;
     --app-bar-prominence-height-phone-portrait:           $app-bar-prominence-height-phone-portrait,
     --app-bar-prominence-height-phone-landscape:          $app-bar-prominence-height-phone-landscape,
     --app-bar-prominence-height-phone-tablet-and-desktop: $app-bar-prominence-height-phone-tablet-and-desktop,
+
+    --button-cursor: $button-cursor,
 ));
 
 
@@ -40,6 +42,8 @@ button {
 
     border: none;
     border-radius: 2px;
+
+    cursor: var(--button-cursor);
 
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -82,3 +86,7 @@ button {
 .shadow-z4 { @include shadow-z4(); }
 .shadow-z6 { @include shadow-z6(); }
 .shadow-z8 { @include shadow-z8(); }
+.shadow-z9 { @include shadow-z9(); }
+.shadow-z12 { @include shadow-z12(); }
+.shadow-z16 { @include shadow-z16(); }
+.shadow-z24 { @include shadow-z24(); }

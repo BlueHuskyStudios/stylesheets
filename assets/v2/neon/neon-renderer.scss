@@ -9,30 +9,7 @@
 @import 'neon-animation-renderer';
 @import 'neon-typography-vars';
 @import 'neon-typography-renderer';
-
 @import 'css-vars';
-$css-vars-use-native: true;
-
-
-
-// MARK: - Marshall Sass variables to CSS custom properties
-
-@include css-vars((
-    --theme-primary-color: $theme-primary-color,
-
-    --light-theme-background-color:   $light-theme-background-color,
-    --dark-theme-background-color:    $dark-theme-background-color,
-    --black-theme-background-color:   $black-theme-background-color,
-    --default-theme-background-color: $default-theme-background-color,
-
-    --light-theme-foreground-color: $light-theme-foreground-color,
-    --dark-theme-foreground-color:  $dark-theme-foreground-color,
-    --black-theme-foreground-color: $black-theme-foreground-color,
-    --default-theme-foreground-color:       $default-theme-foreground-color,
-));
-
-
-
 @import 'neon-structure';
 
 
@@ -40,23 +17,30 @@ $css-vars-use-native: true;
 // MARK: - Basics
 
 html {
-    background: var(--default-theme-background-color, $default-theme-background-color);
-    color: var(--default-theme-foreground-color, $default-theme-foreground-color);
+    background: var(--default-theme-background-color);
+    color: var(--default-theme-foreground-color);
 
     &.brightness-light {
-        background: var(--light-theme-background-color, $light-theme-background-color);
-        color: var(--light-theme-foreground-color, $light-theme-foreground-color);
+        background: var(--light-theme-background-color);
+        color: var(--light-theme-foreground-color);
     }
     &.brightness-dark {
-        background: var(--dark-theme-background-color, $dark-theme-background-color);
-        color: var(--dark-theme-foreground-color, $dark-theme-foreground-color);
+        background: var(--dark-theme-background-color);
+        color: var(--dark-theme-foreground-color);
     }
     &.brightness-black {
-        background: var(--black-theme-background-color, $black-theme-background-color);
-        color: var(--black-theme-foreground-color, $black-theme-foreground-color);
+        background: var(--black-theme-background-color);
+        color: var(--black-theme-foreground-color);
     }
 }
 
 :link {
 	color: var(--theme-primary-color);
+}
+
+
+.app-bar,
+.app-bar * {
+    background-color: var(--theme-primary-color);
+    color: var(--theme-foreground-color-for-colored-bg) !important;
 }

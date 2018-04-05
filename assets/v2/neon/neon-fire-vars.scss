@@ -4,5 +4,10 @@
 // Variables that the Neon Fire subtheme uses
 
 @import 'neon-shared-vars';
+@import 'css-vars';
 
 $theme-primary-color: #FF6E40;
+
+@include css-vars((
+    --theme-primary-color: $theme-primary-color,
+));

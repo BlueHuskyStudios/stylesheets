@@ -5,17 +5,6 @@
 
 
 
-// MARK: - Marshall
-
-@import 'css-vars';
-$css-vars-use-native: true;
-
-@include css-vars((
-    --font-family-primary: $font-family-primary,
-));
-
-
-
 // MARK: - Use
 
 :root {
