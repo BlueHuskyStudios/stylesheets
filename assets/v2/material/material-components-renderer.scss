@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import 'material-shadows-vars';
 @import 'material-structure-vars';
+@import 'flex';
 @import 'css-vars';
 
 
@@ -24,58 +25,107 @@
 
 .app-bar,
 .app-bar.short {
-    height: var(--app-bar-height-short);
+
+    transition-property: height;
+
+    height: var(--app-bar-height-phone-portrait);
+
+    @include flex-row();
+    @include flex-justify-space-between();
+    @include flex-align-center();
+    @include shadow-z4();
+
+    * {
+        flex-shrink: 1;
+    }
+    h1 {
+        flex-grow: 2;
+    }
 
     @media (min-width: $size-class-phone-tablet-breakpoint) {
-        height: var(--app-bar-height-medium);
+        height: var(--app-bar-height-phone-landscape);
+        h1 {
+            line-height: $app-bar-height-phone-landscape - $app-bar-vertical-padding;
+            line-height: calc(var(--app-bar-height-phone-landscape) - var(--app-bar-vertical-padding));
+        }
     }
     @media (min-width: $size-class-tablet-desktop-breakpoint) {
-        height: var(--app-bar-height-tall);
+        height: var(--app-bar-height-tablet-and-desktop);
     }
 }
 
 
 
-.button,
-button {
+@mixin _button-base() {
     background-color: $theme-primary-color;
 
     border: none;
-    border-radius: 2px;
+    border-radius: var(--button-border-radius);
 
     cursor: var(--button-cursor);
+
+    display: inline-block;
 
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 
-    font: $font-button;
     text-transform: $text-transform-button;
+    text-decoration: $text-decoration-button;
+}
 
-    padding: 11px 16px;
-    margin: 8px;
 
-    height: 36px;
-    min-width: 64px;
+
+.button,
+button,
+input[type=submit],
+input[type=reset] {
+
+    @include _button-base();
+
+    color: var(--theme-text-on-primary-color-color);
+
+    padding: var(--button-padding);
+    margin: var(--button-margin);
+
+    // height: 36px;
+
+    min-width: var(--button-min-width);
 
     &.flat,
     .app-bar &:not(.raised) {
         background: none;
-        color: $theme-primary-color;
+        color: var(--theme-primary-color);
 
-        padding: 11px 8px;
-        margin: 8px;
+        padding: var(--button-flat-padding);
+        margin: var(--button-flat-margin);
 
-        min-width: 88px;
+        // height: 36px;
+
+        min-width: var(--button-flat-min-width);
     }
 
     &.dense {
-        font-size: $font-size-dense-button;
+        font-size: var(--font-size-dense-button);
 
-        padding: 9.5px 8px;
+        padding: var(--button-dense-padding);
 
-        height: 32px;
+        // height: 32px;
     }
+}
+
+.image-button,
+button.image-button,
+.app-bar .image-button,
+.app-bar button.image-button {
+    @include _button-base();
+    padding: 0;
+    margin: var(--button-margin);
+    min-width: 36px;
+
+    @include flex-row();
+    @include flex-align-stretch();
+    @include flex-justify-stretch();
 }
 
 

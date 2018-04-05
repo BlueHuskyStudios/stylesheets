@@ -84,15 +84,44 @@ $size-class-tablet-desktop-breakpoint: $tablet-landscape-max-width !default;
 
 // MARK: App Bar
 
-$app-bar-height-phone-portrait:     48pt !default;
-$app-bar-height-phone-landscape:    56pt !default;
-$app-bar-height-tablet-and-desktop: 64pt !default;
-$prominent-app-bar-total-height:   128pt !default;
+$app-bar-height-phone-portrait:     48px !default;
+$app-bar-height-phone-landscape:    56px !default;
+$app-bar-height-tablet-and-desktop: 64px !default;
+$prominent-app-bar-total-height:   128px !default;
 $app-bar-prominence-height-phone-portrait:           $prominent-app-bar-total-height - $app-bar-height-phone-portrait !default;
 $app-bar-prominence-height-phone-landscape:          $prominent-app-bar-total-height - $app-bar-height-phone-landscape !default;
 $app-bar-prominence-height-phone-tablet-and-desktop: $prominent-app-bar-total-height - $app-bar-height-tablet-and-desktop !default;
+
+$app-bar-padding-top: 0 !default;
+$app-bar-padding-right: 0 !default;
+$app-bar-padding-bottom: 0 !default;
+$app-bar-padding-left: 0 !default;
+
+$app-bar-vertical-padding: $app-bar-padding-top + $app-bar-padding-bottom !default;
+$app-bar-horizontal-padding: $app-bar-padding-left + $app-bar-padding-right !default;
+$app-bar-padding: $app-bar-padding-top $app-bar-padding-right $app-bar-padding-bottom $app-bar-padding-left !default;
 
 
 // MARK: Buttons
 
 $button-cursor: pointer !default;
+$button-border-radius: 2px !default;
+$button-padding: 11px 16px !default;
+$button-flat-padding: 11px 8px !default;
+$button-dense-padding: 9.5px 8px !default;
+$button-margin: 8px !default;
+$button-flat-margin: 8px !default;
+$button-min-width: 64px !default;
+$button-flat-min-width: 88px !default;
+
+
+@include css-vars((
+    --button-cursor: $button-cursor,
+    --button-border-radius: $button-border-radius,
+    --button-padding: $button-padding,
+    --button-flat-padding: $button-flat-padding,
+    --button-dense-padding: $button-dense-padding,
+    --button-margin: $button-margin,
+    --button-flat-margin: $button-flat-margin,
+    --button-flat-min-width: $button-flat-min-width,
+))

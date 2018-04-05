@@ -11,6 +11,7 @@ sass:
         - assets
         - assets/v2/basics
         - assets/v2/structure
+        - assets/v2/structure/husk-2
         - assets/v2/material
         - assets/v2/neon
         - assets/v2/3p/css-vars

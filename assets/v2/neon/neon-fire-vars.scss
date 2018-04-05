@@ -7,7 +7,13 @@
 @import 'css-vars';
 
 $theme-primary-color: #FF6E40;
+$theme-accent-color: #00E5FF;
+$theme-text-on-primary-color-color: #FFF;
+$theme-text-on-accent-color-color: #FFF;
 
 @include css-vars((
     --theme-primary-color: $theme-primary-color,
+    --theme-accent-color: $theme-accent-color,
+    --theme-text-on-primary-color-color: $theme-text-on-primary-color-color,
+    --theme-text-on-accent-color-color: $theme-text-on-accent-color-color,
 ));

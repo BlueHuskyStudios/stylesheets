@@ -23,6 +23,7 @@ $font-family-h5: $font-family-sub-subheading !default;
 $font-family-h6: $font-family-sub-subheading !default;
 
 
+
 $font-size-title: 20px !default;
 $font-size-subheading: 16px !default;
 
@@ -38,6 +39,7 @@ $font-size-button: 14px !default;
 $font-size-dense-button: 13px !default;
 
 
+
 $font-weight-h1: 100 !default;
 $font-weight-h2: 200 !default;
 $font-weight-h3: 200 !default;
@@ -46,24 +48,91 @@ $font-weight-h5: 400 !default;
 $font-weight-h6: 400 !default;
 
 $font-weight-button: 500 !default;
+$font-weight-title: 500 !default;
 
 
-$font-h1: $font-weight-h1 $font-size-h1 $font-family-h1 !default;
-$font-h2: $font-weight-h2 $font-size-h2 $font-family-h2 !default;
-$font-h3: $font-weight-h3 $font-size-h3 $font-family-h3 !default;
-$font-h4: $font-weight-h4 $font-size-h4 $font-family-h4 !default;
-$font-h5: $font-weight-h5 $font-size-h5 $font-family-h5 !default;
-$font-h6: $font-weight-h6 $font-size-h6 $font-family-h6 !default;
-
-$font-button: $font-weight-button $font-size-button $font-family-primary !default;
-
-
-$text-transform-button: UPPERCASE !default;
-
-
-
-// MARK: Marshall
 
 @include css-vars((
     --font-family-primary: $font-family-primary,
+    --font-family-title: $font-family-title,
+    --font-family-subheading: $font-family-subheading,
+    --font-family-sub-subheading: $font-family-sub-subheading,
+
+    --font-family-h1: $font-family-h1,
+    --font-family-h2: $font-family-h2,
+    --font-family-h3: $font-family-h3,
+    --font-family-h4: $font-family-h4,
+    --font-family-h5: $font-family-h5,
+    --font-family-h6: $font-family-h6,
+
+
+    --font-size-title: $font-size-title,
+    --font-size-subheading: $font-size-subheading,
+
+    --font-size-h1: $font-size-h1,
+    --font-size-h2: $font-size-h2,
+    --font-size-h3: $font-size-h3,
+    --font-size-h4: $font-size-h4,
+    --font-size-h5: $font-size-h5,
+    --font-size-h6: $font-size-h6,
+
+    --font-size-body: $font-size-body,
+    --font-size-button: $font-size-button,
+    --font-size-dense-button: $font-size-dense-button,
+
+
+    --font-weight-h1: $font-weight-h1,
+    --font-weight-h2: $font-weight-h2,
+    --font-weight-h3: $font-weight-h3,
+    --font-weight-h4: $font-weight-h4,
+    --font-weight-h5: $font-weight-h5,
+    --font-weight-h6: $font-weight-h6,
+
+    --font-weight-button: $font-weight-button,
+    --font-weight-title: $font-weight-title,
+));
+
+
+// MARK: - Aggregates
+
+$font-h1: var(--font-weight-h1) var(--font-size-h1) var(--font-family-h1) !default;
+$font-h2: var(--font-weight-h2) var(--font-size-h2) var(--font-family-h2) !default;
+$font-h3: var(--font-weight-h3) var(--font-size-h3) var(--font-family-h3) !default;
+$font-h4: var(--font-weight-h4) var(--font-size-h4) var(--font-family-h4) !default;
+$font-h5: var(--font-weight-h5) var(--font-size-h5) var(--font-family-h5) !default;
+$font-h6: var(--font-weight-h6) var(--font-size-h6) var(--font-family-h6) !default;
+
+$font-button: var(--font-weight-button) var(--font-size-button) var(--font-family-primary) !default;
+$font-title: var(--font-weight-title) var(--font-family-title) var(--font-size-title) !default;
+
+
+
+$text-align-title: start !default;
+
+
+
+$text-transform-button: UPPERCASE !default;
+$text-decoration-button: none !default;
+
+
+
+@include css-vars((
+
+    --font-h1: $font-h1,
+    --font-h2: $font-h2,
+    --font-h3: $font-h3,
+    --font-h4: $font-h4,
+    --font-h5: $font-h5,
+    --font-h6: $font-h6,
+
+    --font-button: $font-button,
+    --font-title: $font-title,
+
+
+
+    --text-align-title: $text-align-title,
+
+
+
+    --text-transform-button: $text-transform-button,
 ));

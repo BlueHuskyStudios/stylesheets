@@ -25,6 +25,18 @@
     padding: 0;
 }
 
+
+/**
+ * Makes all browsers calculate the size of a box the same way
+ *
+ * @author Ben Leggiero
+ * @version 1.0.0
+ *         . 1.0.0 (2018-04-09) - Ben added this rule to make everything size the same across browsers
+ */
+* {
+    box-sizing: border-box;
+}
+
 /**
  * This pushes common actions like scrolling to the GPU, so it shouldn't ever be laggy.
  *
