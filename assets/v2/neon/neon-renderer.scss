@@ -1,11 +1,15 @@
+---
+---
 
-// neon-renderer
-// Renders a Neon theme
-//
-// Requires varibles to be set with other spreadsheets prior to calling
+/**
+ * Neon Renderer
+ * Renders a Neon theme
+ *
+ * Requires varibles to be set with other stylesheets prior to calling
+ */
 
-@import '../basics/reset.css';
 @import 'neon-animation-vars';
+@import '../basics/reset.css';
 @import 'neon-animation-renderer';
 @import 'neon-typography-vars';
 @import 'neon-typography-renderer';
@@ -19,6 +23,8 @@
 html {
     background: var(--default-theme-background-color);
     color: var(--default-theme-foreground-color);
+
+    cursor: default;
 
     &.brightness-light {
         background: var(--light-theme-background-color);
@@ -39,8 +45,46 @@ html {
 }
 
 
+body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    margin-bottom: 50vh;
+}
+
+
+main {
+    margin: auto;
+    max-width: 95%;
+    max-width: 95vw;
+    max-width: calc(100vw - 4rem);
+    padding-top: 2rem;
+}
+
+
 .app-bar,
 .app-bar * {
+    @include position(sticky);
+    top: 0;
+
     background-color: var(--theme-primary-color);
-    color: var(--theme-foreground-color-for-colored-bg) !important;
+    color: var(--theme-text-on-primary-color-color) !important;
+
+    padding-top: calc(var(--app-bar-padding-top) + env(safe-area-inset-top));
+    padding-left: calc(var(--app-bar-padding-left) + env(safe-area-inset-left));
+    padding-right: calc(var(--app-bar-padding-right) + env(safe-area-inset-right));
+
+    margin-left: calc(0px - env(safe-area-inset-left));
+    margin-right: calc(0px - env(safe-area-inset-right));
+}
+
+
+
+#{$button-selector},
+.fab,
+.fab-mini {
+    &.accent {
+        background-color: var(--theme-accent-color);
+        color: var(--theme-text-on-accent-color-color);
+    }
 }

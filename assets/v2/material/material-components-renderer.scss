@@ -9,20 +9,6 @@
 
 
 
-@include css-vars((
-    --app-bar-height-phone-portrait:     $app-bar-height-phone-portrait,
-    --app-bar-height-phone-landscape:    $app-bar-height-phone-landscape,
-    --app-bar-height-tablet-and-desktop: $app-bar-height-tablet-and-desktop,
-    --prominent-app-bar-total-height:    $prominent-app-bar-total-height,
-    --app-bar-prominence-height-phone-portrait:           $app-bar-prominence-height-phone-portrait,
-    --app-bar-prominence-height-phone-landscape:          $app-bar-prominence-height-phone-landscape,
-    --app-bar-prominence-height-phone-tablet-and-desktop: $app-bar-prominence-height-phone-tablet-and-desktop,
-
-    --button-cursor: $button-cursor,
-));
-
-
-
 .app-bar,
 .app-bar.short {
 
@@ -30,16 +16,22 @@
 
     height: var(--app-bar-height-phone-portrait);
 
+    z-index: var(--app-bar-z-index);
+
     @include flex-row();
     @include flex-justify-space-between();
-    @include flex-align-center();
-    @include shadow-z4();
+    @include flex-align-stretch();
+    box-shadow: shadow(4);
 
     * {
         flex-shrink: 1;
     }
     h1 {
         flex-grow: 2;
+        line-height: $app-bar-height-phone-portrait - $app-bar-vertical-padding;
+        line-height: calc(var(--app-bar-height-phone-portrait) - var(--app-bar-vertical-padding));
+
+        transition-property: line-height;
     }
 
     @media (min-width: $size-class-phone-tablet-breakpoint) {
@@ -51,16 +43,23 @@
     }
     @media (min-width: $size-class-tablet-desktop-breakpoint) {
         height: var(--app-bar-height-tablet-and-desktop);
+        h1 {
+            line-height: $app-bar-height-tablet-and-desktop - $app-bar-vertical-padding;
+            line-height: calc(var(--app-bar-height-tablet-and-desktop) - var(--app-bar-vertical-padding));
+        }
     }
 }
 
 
 
 @mixin _button-base() {
-    background-color: $theme-primary-color;
+    foo: bar;
+    background-color: var(--theme-primary-color);
 
     border: none;
     border-radius: var(--button-border-radius);
+
+    box-shadow: var(--button-resting-shadow);
 
     cursor: var(--button-cursor);
 
@@ -72,37 +71,67 @@
 
     text-transform: $text-transform-button;
     text-decoration: $text-decoration-button;
+
+    &:focus,
+    &:hover {
+        outline: none;
+        box-shadow: var(--button-hover-shadow);
+
+        transition-duration: 100ms;
+
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        box-shadow: var(--button-pressed-shadow);
+
+        transform: translateY(0px);
+    }
 }
 
 
 
-.button,
-button,
-input[type=submit],
-input[type=reset] {
+#{$button-selector} {
+    @at-root
+    &,
+    .app-bar & {
+        @include _button-base();
+    }
+}
 
-    @include _button-base();
+#{$button-selector} {
 
     color: var(--theme-text-on-primary-color-color);
 
     padding: var(--button-padding);
     margin: var(--button-margin);
 
-    // height: 36px;
+
 
     min-width: var(--button-min-width);
 
-    &.flat,
-    .app-bar &:not(.raised) {
+    &.flat {
         background: none;
         color: var(--theme-primary-color);
 
         padding: var(--button-flat-padding);
         margin: var(--button-flat-margin);
 
-        // height: 36px;
-
         min-width: var(--button-flat-min-width);
+    }
+
+    .app-bar &:not(.raised) {
+        background: none;
+        color: var(--theme-primary-color);
+
+        box-shadow: none !important;
+
+        padding: var(--button-app-bar-padding);
+        margin: var(--button-app-bar-margin);
+
+        min-width: var(--button-app-bar-min-width);
+
+        transform: none !important;
     }
 
     &.dense {
@@ -114,29 +143,86 @@ input[type=reset] {
     }
 }
 
-.image-button,
-button.image-button,
-.app-bar .image-button,
-.app-bar button.image-button {
-    @include _button-base();
-    padding: 0;
-    margin: var(--button-margin);
-    min-width: 36px;
+#{$button-selector} {
 
-    @include flex-row();
-    @include flex-align-stretch();
-    @include flex-justify-stretch();
+    @at-root
+    .image-button,
+    &.image-button {
+
+        & {
+            padding: var(--button-image-padding);
+            margin: var(--button-image-margin);
+            min-width: var(--button-image-min-width);
+        }
+
+        .app-bar & {
+            padding: var(--button-app-bar-image-padding);
+            margin: var(--button-app-bar-image-margin);
+            min-width: var(--app-bar-height-phone-portrait);
+
+            transition-property: min-width;
+
+            @media (min-width: $size-class-phone-tablet-breakpoint) {
+                min-width: var(--app-bar-height-phone-landscape);
+            }
+
+            @media (min-width: $size-class-tablet-desktop-breakpoint) {
+                min-width: var(--app-bar-height-tablet-and-desktop);
+            }
+        }
+
+        // @include flex-row();
+        // @include flex-align-stretch();
+        // @include flex-justify-stretch();
+    }
+}
+
+.fab,
+.fab-mini {
+
+    position: absolute;
+
+    body &,
+    main &,
+    &-global {
+        position: fixed;
+    }
+
+    right: 1em;
+    bottom: 1em;
+    border-radius: 99in;
+    width: var(--fab-diameter);
+    height: var(--fab-diameter);
+    text-align: center;
+    padding: 0;
+
+    box-shadow: shadow(6);
+
+    &:focus,
+    &:hover {
+        box-shadow: shadow(12);
+    }
+
+    &:active {
+        box-shadow: var(--button-resting-shadow);
+    }
+
+    @at-root
+    .fab-mini {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 
 
-.shadow-z1 { @include shadow-z1(); }
-.shadow-z2 { @include shadow-z2(); }
-.shadow-z3 { @include shadow-z3(); }
-.shadow-z4 { @include shadow-z4(); }
-.shadow-z6 { @include shadow-z6(); }
-.shadow-z8 { @include shadow-z8(); }
-.shadow-z9 { @include shadow-z9(); }
-.shadow-z12 { @include shadow-z12(); }
-.shadow-z16 { @include shadow-z16(); }
-.shadow-z24 { @include shadow-z24(); }
+.shadow-z1 { box-shadow: shadow(1); }
+.shadow-z2 { box-shadow: shadow(2); }
+.shadow-z3 { box-shadow: shadow(3); }
+.shadow-z4 { box-shadow: shadow(4); }
+.shadow-z6 { box-shadow: shadow(6); }
+.shadow-z8 { box-shadow: shadow(8); }
+.shadow-z9 { box-shadow: shadow(9); }
+.shadow-z12 { box-shadow: shadow(12); }
+.shadow-z16 { box-shadow: shadow(16); }
+.shadow-z24 { box-shadow: shadow(24); }

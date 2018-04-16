@@ -1,0 +1,29 @@
+
+
+@mixin rule-with-prefixes($rule, $suffix, $prefixes, $end-with-non-prefixed-suffix: true) {
+
+    @if type_of($prefixes) == array {
+        @each $prefix in $prefixes {
+            #{$rule}: unquote('-' + $prefix + '-' + $suffix);
+        }
+    }
+    @else {
+        #{$rule}: unquote('-' + $prefixes + '-' + $suffix);
+    }
+
+    @if $end-with-non-prefixed-suffix {
+        #{$rule}: $suffix;
+    }
+}
+
+
+
+@mixin position($position-type) {
+
+    @if $position-type == sticky {
+        @include rule-with-prefixes(position, sticky, (webkit));
+    }
+    @else {
+        position: $position-type;
+    }
+}

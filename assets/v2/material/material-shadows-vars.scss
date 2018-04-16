@@ -7,91 +7,130 @@
 
 // TODO: Eventually use @apply like in https://github.com/PolymerElements/paper-styles/blob/master/shadow.html
 
-@mixin make-material-shadow($umbra-y-pos, $umbra-blur, $umbra-spread,
-                            $penumbra-y-pos, $penumbra-blur, $penumbra-spread,
-                            $ambient-y-pos, $ambient-blur) {
-    box-shadow: 0 $umbra-y-pos $umbra-blur $umbra-spread rgba(0,0,0, .14),
-                0 $penumbra-y-pos $penumbra-blur $penumbra-spread rgba(0,0,0, .12),
-                0 $ambient-y-pos $ambient-blur 0 rgba(0,0,0, .20);
+@function material-shadow($umbra-y-pos, $umbra-blur, $umbra-spread,
+                          $penumbra-y-pos, $penumbra-blur, $penumbra-spread,
+                          $ambient-y-pos, $ambient-blur) {
+    @return unquote('0 ' + $umbra-y-pos + ' ' + $umbra-blur + ' ' + $umbra-spread + ' rgba(0,0,0, .14),' +
+                    '0 ' + $penumbra-y-pos + ' ' + $penumbra-blur + ' ' + $penumbra-spread + ' rgba(0,0,0, .12),' +
+                    '0 ' + $ambient-y-pos + ' ' + $ambient-blur + ' 0 rgba(0,0,0, .20)');
 }
 
 
-@mixin shadow-z1() {
-    @include make-material-shadow(
+@function shadow-z1() {
+    @return material-shadow(
         0,   2px, 0,
         2px, 2px, 0,
         1px, 3px
     );
 }
 
-@mixin shadow-z2() {
-    @include make-material-shadow(
+@function shadow-z2() {
+    @return material-shadow(
         0,   4px, 0,
         3px, 4px, 0,
         1px, 5px
     );
 }
 
-@mixin shadow-z3() {
-    @include make-material-shadow(
+@function shadow-z3() {
+    @return material-shadow(
         3px, 3px, 0,
         3px, 4px, 0,
         1px, 8px
     );
 }
 
-@mixin shadow-z4() {
-    @include make-material-shadow(
+@function shadow-z4() {
+    @return material-shadow(
         2px, 4px, 0,
         4px, 5px, 0,
         1px, 10px
     );
 }
 
-@mixin shadow-z6() {
-    @include make-material-shadow(
+@function shadow-z6() {
+    @return material-shadow(
         6px, 10px, 0,
         1px, 18px, 0,
         3px, 5px
     );
 }
 
-@mixin shadow-z8() {
-    @include make-material-shadow(
+@function shadow-z8() {
+    @return material-shadow(
         8px, 10px, 1px,
         3px, 14px, 3px,
         4px, 15px
     );
 }
 
-@mixin shadow-z9() {
-    @include make-material-shadow(
+@function shadow-z9() {
+    @return material-shadow(
         9px, 12px, 1px,
         3px, 16px, 2px,
         5px, 6px
     );
 }
 
-@mixin shadow-z12() {
-    @include make-material-shadow(
+@function shadow-z12() {
+    @return material-shadow(
         12px, 17px, 2px,
         5px,  22px, 4px,
         7px,  8px
     );
 }
 
-@mixin shadow-z16() {
-    @include make-material-shadow(
+@function shadow-z16() {
+    @return material-shadow(
         16px, 24px, 2px,
         6px,  30px, 5px,
         8px, 10px
     );
 }
 
-@mixin shadow-z24() {
-    @include make-material-shadow(
+@function shadow-z24() {
+    @return material-shadow(
         24px, 38px, 3px,
         9px,  46px, 8px,
         11px, 15px
     );
+}
+
+@function shadow($z-height) {
+    @if $z-height >= 24 {
+        @return shadow-z24();
+    }
+    @elseif $z-height >= 16 {
+        @return shadow-z16();
+    }
+    @elseif $z-height >= 12 {
+        @return shadow-z12();
+    }
+    @elseif $z-height >= 9 {
+        @return shadow-z9();
+    }
+    @elseif $z-height >= 8 {
+        @return shadow-z8();
+    }
+    @elseif $z-height >= 6 {
+        @return shadow-z6();
+    }
+    @elseif $z-height >= 4 {
+        @return shadow-z4();
+    }
+    @elseif $z-height >= 3 {
+        @return shadow-z3();
+    }
+    @elseif $z-height >= 2 {
+        @return shadow-z2();
+    }
+    @elseif $z-height >= 1 {
+        @return shadow-z1();
+    }
+    @elseif $z-height <= 0 {
+        @return 'none';
+    }
+    @else {
+        @return shadow-z1();
+    }
 }

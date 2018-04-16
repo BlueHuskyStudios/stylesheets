@@ -4,6 +4,8 @@
 // Variables defining the structure of a page that uses Material design
 
 
+@import 'material-shadows-vars';
+
 
 // MARK: - Breakpoints
 
@@ -92,14 +94,37 @@ $app-bar-prominence-height-phone-portrait:           $prominent-app-bar-total-he
 $app-bar-prominence-height-phone-landscape:          $prominent-app-bar-total-height - $app-bar-height-phone-landscape !default;
 $app-bar-prominence-height-phone-tablet-and-desktop: $prominent-app-bar-total-height - $app-bar-height-tablet-and-desktop !default;
 
-$app-bar-padding-top: 0 !default;
-$app-bar-padding-right: 0 !default;
-$app-bar-padding-bottom: 0 !default;
-$app-bar-padding-left: 0 !default;
-
+$app-bar-padding-top: 0px !default;
+$app-bar-padding-right: 0px !default;
+$app-bar-padding-bottom: 0px !default;
+$app-bar-padding-left: 0px !default;
 $app-bar-vertical-padding: $app-bar-padding-top + $app-bar-padding-bottom !default;
 $app-bar-horizontal-padding: $app-bar-padding-left + $app-bar-padding-right !default;
 $app-bar-padding: $app-bar-padding-top $app-bar-padding-right $app-bar-padding-bottom $app-bar-padding-left !default;
+
+$app-bar-z-index: 4 !default;
+
+
+
+@include css-vars((
+    --app-bar-height-phone-portrait:     $app-bar-height-phone-portrait,
+    --app-bar-height-phone-landscape:    $app-bar-height-phone-landscape,
+    --app-bar-height-tablet-and-desktop: $app-bar-height-tablet-and-desktop,
+    --prominent-app-bar-total-height:    $prominent-app-bar-total-height,
+    --app-bar-prominence-height-phone-portrait:           $app-bar-prominence-height-phone-portrait,
+    --app-bar-prominence-height-phone-landscape:          $app-bar-prominence-height-phone-landscape,
+    --app-bar-prominence-height-phone-tablet-and-desktop: $app-bar-prominence-height-phone-tablet-and-desktop,
+
+    --app-bar-padding-top:        $app-bar-padding-top,
+    --app-bar-padding-right:      $app-bar-padding-right,
+    --app-bar-padding-bottom:     $app-bar-padding-bottom,
+    --app-bar-padding-left:       $app-bar-padding-left,
+    --app-bar-vertical-padding:   $app-bar-vertical-padding,
+    --app-bar-horizontal-padding: $app-bar-horizontal-padding,
+    --app-bar-padding:            $app-bar-padding,
+
+    --app-bar-z-index: $app-bar-z-index,
+));
 
 
 // MARK: Buttons
@@ -107,21 +132,66 @@ $app-bar-padding: $app-bar-padding-top $app-bar-padding-right $app-bar-padding-b
 $button-cursor: pointer !default;
 $button-border-radius: 2px !default;
 $button-padding: 11px 16px !default;
-$button-flat-padding: 11px 8px !default;
 $button-dense-padding: 9.5px 8px !default;
 $button-margin: 8px !default;
-$button-flat-margin: 8px !default;
 $button-min-width: 64px !default;
+
+$button-flat-padding: 11px 8px !default;
+$button-flat-margin: 8px !default;
 $button-flat-min-width: 88px !default;
+
+$button-app-bar-padding: $button-flat-padding !default;
+$button-app-bar-margin: 0 !default;
+$button-app-bar-min-width: $button-flat-min-width !default;
+
+$button-image-padding: 0 !default;
+$button-image-margin: $button-margin !default;
+$button-image-min-width: 36px !default;
+
+$button-app-bar-image-padding: $button-app-bar-padding !default;
+$button-app-bar-image-margin: $button-app-bar-margin !default;
+$button-app-bar-image-min-width: $button-image-min-width !default;
+
+$button-resting-shadow: shadow(2) !default;
+$button-hover-shadow: shadow(8) !default;
+$button-pressed-shadow: shadow(0) !default;
+
+
+$fab-diameter: 56px !default;
+
+
+$common-button-selector: 'button, .button, input[type=submit], input[type=reset]';
+$uncommon-button-selector: '.image-button, .fab, .fab-mini';
+$button-selector: $common-button-selector + ', ' + $uncommon-button-selector;
 
 
 @include css-vars((
     --button-cursor: $button-cursor,
     --button-border-radius: $button-border-radius,
     --button-padding: $button-padding,
-    --button-flat-padding: $button-flat-padding,
     --button-dense-padding: $button-dense-padding,
     --button-margin: $button-margin,
+
+    --button-flat-padding: $button-flat-padding,
     --button-flat-margin: $button-flat-margin,
     --button-flat-min-width: $button-flat-min-width,
+
+    --button-app-bar-padding: $button-app-bar-padding,
+    --button-app-bar-margin: $button-app-bar-margin,
+    --button-app-bar-min-width: $button-app-bar-min-width,
+
+    --button-image-padding: $button-image-padding,
+    --button-image-margin: $button-image-margin,
+    --button-image-min-width: $button-image-min-width,
+
+    --button-app-bar-image-padding: $button-app-bar-image-padding,
+    --button-app-bar-image-margin: $button-app-bar-image-margin,
+    --button-app-bar-image-min-width: $button-app-bar-image-min-width,
+
+    --button-resting-shadow: $button-resting-shadow,
+    --button-hover-shadow: $button-hover-shadow,
+    --button-pressed-shadow: $button-pressed-shadow,
+
+
+    --fab-diameter: $fab-diameter,
 ))

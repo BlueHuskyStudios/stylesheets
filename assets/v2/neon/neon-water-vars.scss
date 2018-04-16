@@ -5,4 +5,14 @@
 
 @import 'neon-shared-vars';
 
-$theme-primary-color: #2962FF;
+$theme-primary-color: #00b0ff;
+$theme-accent-color: #FFEA00;
+$theme-text-on-primary-color-color: #FFF;
+$theme-text-on-accent-color-color: #000;
+
+@include css-vars((
+    --theme-primary-color: $theme-primary-color,
+    --theme-accent-color: $theme-accent-color,
+    --theme-text-on-primary-color-color: $theme-text-on-primary-color-color,
+    --theme-text-on-accent-color-color: $theme-text-on-accent-color-color,
+));

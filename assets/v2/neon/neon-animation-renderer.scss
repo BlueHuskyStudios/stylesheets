@@ -4,6 +4,7 @@
 // Renders out Neon CSS animations
 
 @import 'css-vars';
+@import 'material-structure-vars';
 
 
 // MARK: - Marshall SCSS vars to CSS vars
@@ -21,4 +22,12 @@
 
 html {
     transition-property: background, color;
+    will-change: background, color;
+}
+
+
+
+#{$button-selector} {
+    transition-property: background, color, transform, box-shadow;
+    will-change: background, color, transform, box-shadow;
 }
