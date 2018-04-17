@@ -64,13 +64,15 @@ main {
 }
 
 
-.app-bar,
-.app-bar * {
+.app-bar {
     @include position(sticky);
     top: 0;
 
     background-color: var(--theme-primary-color);
-    color: var(--theme-text-on-primary-color-color) !important;
+
+    &, * {
+        color: var(--theme-text-on-primary-color-color) !important;
+    }
 
     padding-top: calc(var(--app-bar-padding-top) + env(safe-area-inset-top));
     padding-left: calc(var(--app-bar-padding-left) + env(safe-area-inset-left));

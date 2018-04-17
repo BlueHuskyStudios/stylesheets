@@ -27,6 +27,20 @@ html {
 
 
 
+.app-bar {
+    transition-property: background-color, color, height, padding, margin;
+
+    * {
+        transition-property: background-color, color, height, padding, margin;
+    }
+
+    h1 {
+        transition-property: color, line-height;
+    }
+}
+
+
+
 #{$button-selector} {
     transition-property: background, color, transform, box-shadow;
     will-change: background, color, transform, box-shadow;

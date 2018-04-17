@@ -12,7 +12,6 @@
 .app-bar,
 .app-bar.short {
 
-    transition-property: height;
 
     height: var(--app-bar-height-phone-portrait);
 
@@ -31,7 +30,6 @@
         line-height: $app-bar-height-phone-portrait - $app-bar-vertical-padding;
         line-height: calc(var(--app-bar-height-phone-portrait) - var(--app-bar-vertical-padding));
 
-        transition-property: line-height;
     }
 
     @media (min-width: $size-class-phone-tablet-breakpoint) {
