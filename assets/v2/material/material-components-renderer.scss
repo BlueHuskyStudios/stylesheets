@@ -52,8 +52,10 @@
 
 
 
+// MARK: - Buttons
+
 @mixin _button-base() {
-    foo: bar;
+
     background-color: var(--theme-primary-color);
 
     border: none;
@@ -63,7 +65,7 @@
 
     cursor: var(--button-cursor);
 
-    display: inline-block;
+    display: inline-grid;
 
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -71,6 +73,9 @@
 
     text-transform: $text-transform-button;
     text-decoration: $text-decoration-button;
+
+    position: relative;
+    overflow: hidden;
 
     &:focus,
     &:hover {
@@ -211,6 +216,64 @@
     .fab-mini {
         width: 40px;
         height: 40px;
+    }
+}
+
+
+// MARK: Ripples
+
+#{$button-selector} {
+    &::before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        background-color: currentColor;
+        display: block;
+        position: absolute;
+        border-radius: 99in;
+        left: 50%;
+        top: 50%;
+        opacity: 0.5;
+
+        transition-duration: 0ms;
+        transition-timing-function: ease-out;
+        transition-property: width, height, top, left, opacity;
+    }
+
+
+    &:active::before {
+        width: var(--ripple-end-diameter);
+        height: var(--ripple-end-diameter);
+        opacity: var(--ripple-midpoint-opacity);
+        left: calc(50% - var(--ripple-end-radius));
+        top: calc(50% - var(--ripple-end-radius));
+        transition-duration: var(--ripple-grow-duration);
+    }
+
+    &:focus:not(:active)::before {
+        width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
+        height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
+        opacity: calc(var(--ripple-midpoint-opacity) / 2);
+        left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+        top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+        transition-duration: var(--ripple-fade-duration);
+    }
+
+
+    &.big:active::before,
+    &.big-ripple:active::before {
+        width: calc(var(--ripple-end-diameter) * 2);
+        height: calc(var(--ripple-end-diameter) * 2);
+        left: calc(50% - (var(--ripple-end-radius) * 2));
+        top: calc(50% - (var(--ripple-end-radius) * 2));
+    }
+
+    &.big:focus:not(:active)::before,
+    &.big-ripple:focus:not(:active)::before {
+        width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
+        height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
+        left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
+        top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
     }
 }
 

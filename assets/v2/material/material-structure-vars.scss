@@ -160,6 +160,14 @@ $button-pressed-shadow: shadow(0) !default;
 $fab-diameter: 56px !default;
 
 
+$ripple-end-diameter: 96px !default;
+$ripple-end-radius: $ripple-end-diameter / 2;
+$ripple-grow-duration: 200ms !default;
+$ripple-fade-duration: 700ms !default;
+$ripple-fade-size-multiplier: 1.5 !default;
+$ripple-midpoint-opacity: 0.3 !default;
+
+
 $common-button-selector: 'button, .button, input[type=submit], input[type=reset]';
 $uncommon-button-selector: '.image-button, .fab, .fab-mini';
 $button-selector: $common-button-selector + ', ' + $uncommon-button-selector;
@@ -194,4 +202,12 @@ $button-selector: $common-button-selector + ', ' + $uncommon-button-selector;
 
 
     --fab-diameter: $fab-diameter,
+
+
+    --ripple-end-diameter: $ripple-end-diameter,
+    --ripple-end-radius: $ripple-end-radius,
+    --ripple-grow-duration: $ripple-grow-duration,
+    --ripple-fade-duration: $ripple-fade-duration,
+    --ripple-fade-size-multiplier: $ripple-fade-size-multiplier,
+    --ripple-midpoint-opacity: $ripple-midpoint-opacity,
 ))
