@@ -1,12 +1,24 @@
 
-@mixin display-flex($require-old-syntaxes: true) {
-    @if ($require-old-syntaxes) {
-        display: -webkit-box !important;
-        display: -moz-box !important;
-        display: -ms-flexbox !important;
-        display: -webkit-flex !important;
+@mixin display-flex($inline: false, $require-old-syntaxes: true) {
+
+    @if ($inline) {
+        @if ($require-old-syntaxes) {
+            display: -webkit-inline-box !important;
+            display: -moz-inline-box !important;
+            display: -ms-inline-flexbox !important;
+            display: -webkit-inline-flex !important;
+        }
+        display: inline-flex !important;
     }
-    display: flex !important;
+    @else {
+        @if ($require-old-syntaxes) {
+            display: -webkit-box !important;
+            display: -moz-box !important;
+            display: -ms-flexbox !important;
+            display: -webkit-flex !important;
+        }
+        display: flex !important;
+    }
 }
 
 
@@ -19,8 +31,8 @@
 }
 
 
-@mixin flex-row($require-old-syntaxes: true, $init-children: true) {
-    @include display-flex($require-old-syntaxes: $require-old-syntaxes);
+@mixin flex-row($inline: false, $require-old-syntaxes: true, $init-children: true) {
+    @include display-flex($inline: $inline, $require-old-syntaxes: $require-old-syntaxes);
 
     @if ($require-old-syntaxes) {
         -webkit-box-orient: horizontal;
@@ -36,8 +48,8 @@
 }
 
 
-@mixin flex-column($require-old-syntaxes: true, $init-children: true) {
-    @include display-flex($require-old-syntaxes: $require-old-syntaxes);
+@mixin flex-column($inline: false, $require-old-syntaxes: true, $init-children: true) {
+    @include display-flex($inline: $inline, $require-old-syntaxes: $require-old-syntaxes);
 
     @if ($require-old-syntaxes) {
         -webkit-box-orient: vertical;
@@ -53,8 +65,8 @@
 }
 
 
-@mixin flex-reverse-row($require-old-syntaxes: true, $init-children: true) {
-    @include display-flex($require-old-syntaxes: $require-old-syntaxes);
+@mixin flex-reverse-row($inline: false, $require-old-syntaxes: true, $init-children: true) {
+    @include display-flex($inline: $inline, $require-old-syntaxes: $require-old-syntaxes);
 
     @if ($require-old-syntaxes) {
         -webkit-box-direction: reverse;
@@ -70,8 +82,8 @@
 }
 
 
-@mixin flex-reverse-column($require-old-syntaxes: true, $init-children: true) {
-    @include display-flex($require-old-syntaxes: $require-old-syntaxes);
+@mixin flex-reverse-column($inline: false, $require-old-syntaxes: true, $init-children: true) {
+    @include display-flex($inline: $inline, $require-old-syntaxes: $require-old-syntaxes);
 
     @if ($require-old-syntaxes) {
         -webkit-box-direction: reverse;

@@ -169,7 +169,9 @@ $ripple-midpoint-opacity: 0.3 !default;
 
 
 $common-button-selector: 'button, .button, input[type=submit], input[type=reset]';
-$uncommon-button-selector: '.image-button, .fab, .fab-mini';
+$image-button-selector: '.image-button';
+$floating-action-button-selector: '.floating-action-button, .mini-floating-action-button';
+$uncommon-button-selector: $image-button-selector + ', ' + $floating-action-button-selector;
 $button-selector: $common-button-selector + ', ' + $uncommon-button-selector;
 
 

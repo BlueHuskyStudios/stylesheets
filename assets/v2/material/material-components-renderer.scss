@@ -63,7 +63,9 @@
 
     cursor: var(--button-cursor);
 
-    display: inline-grid;
+    @include flex-row($inline: true, $init-children: false);
+    @include flex-justify-center();
+    @include flex-align-center();
 
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -94,7 +96,8 @@
 
 
 
-#{$button-selector} {
+#{$common-button-selector},
+#{$image-button-selector} {
     @at-root
     &,
     .app-bar & {
@@ -180,8 +183,7 @@
     }
 }
 
-.fab,
-.fab-mini {
+#{$floating-action-button-selector} {
 
     position: absolute;
 
@@ -211,7 +213,7 @@
     }
 
     @at-root
-    .fab-mini {
+    .mini-floating-action-button {
         width: 40px;
         height: 40px;
     }

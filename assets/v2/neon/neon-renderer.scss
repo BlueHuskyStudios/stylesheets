@@ -10,6 +10,7 @@
 
 $css-vars-use-native: true !default;
 
+@import url('https://use.fontawesome.com/releases/v5.0.10/css/all.css');
 @import 'neon-animation-vars';
 @import '../basics/reset.css';
 @import 'neon-animation-renderer';
@@ -17,6 +18,7 @@ $css-vars-use-native: true !default;
 @import 'neon-typography-renderer';
 @import 'css-vars';
 @import 'neon-structure';
+@import 'neon-effects';
 
 
 
@@ -47,26 +49,7 @@ html {
 }
 
 
-body {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    padding-bottom: env(safe-area-inset-bottom);
-    margin-bottom: 50vh;
-}
-
-
-main {
-    margin: auto;
-    max-width: 95%;
-    max-width: 95vw;
-    max-width: calc(100vw - 4rem);
-    padding-top: 2rem;
-}
-
-
 .app-bar {
-    @include position(sticky);
-    top: 0;
 
     background-color: var(--theme-primary-color);
 
@@ -74,19 +57,16 @@ main {
         color: var(--theme-text-on-primary-color-color) !important;
     }
 
-    padding-top: calc(var(--app-bar-padding-top) + env(safe-area-inset-top));
-    padding-left: calc(var(--app-bar-padding-left) + env(safe-area-inset-left));
-    padding-right: calc(var(--app-bar-padding-right) + env(safe-area-inset-right));
-
-    margin-left: calc(0px - env(safe-area-inset-left));
-    margin-right: calc(0px - env(safe-area-inset-right));
+    .image-button .cta {
+        &:first-of-type {
+            margin-right: 1.5em;
+        }
+    }
 }
 
 
 
-#{$button-selector},
-.fab,
-.fab-mini {
+#{$button-selector} {
     &.accent {
         background-color: var(--theme-accent-color);
         color: var(--theme-text-on-accent-color-color);
