@@ -126,6 +126,18 @@ $app-bar-z-index: 4 !default;
     --app-bar-z-index: $app-bar-z-index,
 ));
 
+:root {
+    --app-bar-height-auto: var(--app-bar-height-phone-portrait);
+
+    @media (min-width: $size-class-phone-tablet-breakpoint) {
+        --app-bar-height-auto: var(--app-bar-height-phone-landscape);
+    }
+    @media (min-width: $size-class-tablet-desktop-breakpoint) {
+        --app-bar-height-auto: var(--app-bar-height-tablet-and-desktop);
+    }
+}
+
+
 
 // MARK: Buttons
 
@@ -212,4 +224,17 @@ $button-selector: $common-button-selector + ', ' + $uncommon-button-selector;
     --ripple-fade-duration: $ripple-fade-duration,
     --ripple-fade-size-multiplier: $ripple-fade-size-multiplier,
     --ripple-midpoint-opacity: $ripple-midpoint-opacity,
-))
+));
+
+
+
+// MARK: - Sidebar
+
+$sidebar-default-width: 3in;
+$sidebar-max-width: 80vw;
+
+
+@include css-vars((
+    --sidebar-default-width: $sidebar-default-width,
+    --sidebar-max-width: $sidebar-max-width,
+));

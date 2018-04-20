@@ -13,7 +13,7 @@
 .app-bar.short {
 
 
-    height: var(--app-bar-height-phone-portrait);
+    height: var(--app-bar-height-auto);
 
     z-index: var(--app-bar-z-index);
 
@@ -28,23 +28,8 @@
     h1 {
         flex-grow: 2;
         line-height: $app-bar-height-phone-portrait - $app-bar-vertical-padding;
-        line-height: calc(var(--app-bar-height-phone-portrait) - var(--app-bar-vertical-padding));
+        line-height: calc(var(--app-bar-height-auto) - var(--app-bar-vertical-padding));
 
-    }
-
-    @media (min-width: $size-class-phone-tablet-breakpoint) {
-        height: var(--app-bar-height-phone-landscape);
-        h1 {
-            line-height: $app-bar-height-phone-landscape - $app-bar-vertical-padding;
-            line-height: calc(var(--app-bar-height-phone-landscape) - var(--app-bar-vertical-padding));
-        }
-    }
-    @media (min-width: $size-class-tablet-desktop-breakpoint) {
-        height: var(--app-bar-height-tablet-and-desktop);
-        h1 {
-            line-height: $app-bar-height-tablet-and-desktop - $app-bar-vertical-padding;
-            line-height: calc(var(--app-bar-height-tablet-and-desktop) - var(--app-bar-vertical-padding));
-        }
     }
 }
 
@@ -66,6 +51,12 @@
     @include flex-row($inline: true, $init-children: false);
     @include flex-justify-center();
     @include flex-align-center();
+    // align-items: center;
+    // flex-direction: row;
+    // justify-items: center;
+    // justify-content: center;
+    // align-content: center;
+
 
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -91,6 +82,7 @@
         box-shadow: var(--button-pressed-shadow);
 
         transform: translateY(0px);
+        transition-duration: 10ms;
     }
 }
 
@@ -164,17 +156,9 @@
         .app-bar & {
             padding: var(--button-app-bar-image-padding);
             margin: var(--button-app-bar-image-margin);
-            min-width: var(--app-bar-height-phone-portrait);
+            min-width: var(--app-bar-height-auto);
 
             transition-property: min-width;
-
-            @media (min-width: $size-class-phone-tablet-breakpoint) {
-                min-width: var(--app-bar-height-phone-landscape);
-            }
-
-            @media (min-width: $size-class-tablet-desktop-breakpoint) {
-                min-width: var(--app-bar-height-tablet-and-desktop);
-            }
         }
 
         // @include flex-row();
@@ -279,6 +263,8 @@
 
 
 
+// MARK: - Shadows
+
 .shadow-z1 { box-shadow: shadow(1); }
 .shadow-z2 { box-shadow: shadow(2); }
 .shadow-z3 { box-shadow: shadow(3); }
@@ -289,3 +275,23 @@
 .shadow-z12 { box-shadow: shadow(12); }
 .shadow-z16 { box-shadow: shadow(16); }
 .shadow-z24 { box-shadow: shadow(24); }
+
+
+
+// MARK: - Sidebar
+
+.sidebar {
+    background: #FFF;
+
+    position: fixed;
+    top: var(--app-bar-height-auto);
+
+    left: calc(0px - var(--sidebar-default-width));
+
+    width: var(--sidebar-default-width);
+    max-width: var(--sidebar-max-width);
+    height: 100vh;
+    height: calc(100vh - var(--app-bar-height-auto));
+
+    transition-property: width, top, left;
+}
