@@ -251,7 +251,8 @@
 }
 
 
-.flex-row {
+.flex-row,
+.grid-adaptive {
     &.flex-reverse {
         @include flex-reverse-row($init-children: false);
     }
@@ -325,7 +326,8 @@
 }
 
 
-.flex-wrap {
+.flex-wrap,
+.grid-adaptive {
     @include flex-wrap();
 }
 
@@ -338,4 +340,14 @@
     @include when-flex-enabled() {
         display: none;
     }
+}
+
+
+
+// Prettification
+
+$grid-children-margin: 1em;
+
+.grid-adaptive>* {
+    margin: var(--grid-children-margin);
 }

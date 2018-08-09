@@ -30,3 +30,10 @@ h6 { font: var(--font-h6); }
 button {
     font: var(--font-button);
 }
+
+ul,
+ol {
+    &>li {
+        margin-left: 1em;
+    }
+}

@@ -13,7 +13,9 @@
     --animation-duration-default: $animation-duration-default,
 ));
 
-* {
+*,
+*::before,
+*::after {
     transition-duration: var(--animation-duration-default);
     transition-timing-function: ease-in-out;
     transition-property: none;

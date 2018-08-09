@@ -18,9 +18,10 @@ body {
 
 main {
     margin: auto;
-    max-width: 95%;
-    max-width: 95vw;
-    max-width: calc(100vw - 4rem);
+    width: 95%;
+    width: 95vw;
+    width: calc(100vw - 4rem);
+    max-width: var(--desktop-xlarge-min-width);
     padding-top: 2rem;
 }
 
