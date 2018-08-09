@@ -1,0 +1,83 @@
+---
+---
+
+/**
+ * Neon Tables
+ * Renders a the basic table styles for Neon themes
+ *
+ * Requires varibles to be set with color stylesheets (like neon-fire.scss or neon-water.scss) prior to calling.
+ */
+
+
+
+table {
+	border-collapse:separate;
+	border-spacing:0.5em;
+	margin-left:auto;
+	margin-right:auto;
+}
+table>caption {
+	font-weight: 900;
+	text-transform: uppercase;
+	font-family: "Roboto Condensed", "Roboto Cn", "Helvetica Condensed", "Roboto", "Helvetica", condensed, sans-serif;
+	margin: 1em 0 0;
+}
+	table,
+	table td,
+	table th {
+		border:none;
+	}
+	table td:not(.plain) ,
+	table th:not(.plain) {
+		padding:0.5em;
+	}
+	table [colspan]:not(.plain) {
+		border-bottom: .25em solid rgba(0,0,0,.1);
+		padding-bottom: .25em;
+	}
+	table [rowspan]:not(.plain) {
+		border-right: .25em solid rgba(0,0,0,.1);
+		padding-right: .25em;
+	}
+	/*table tr td{
+		border-color:#BBB transparent;
+	}
+	table thead td,
+	table tfoot td{
+		border-color:transparent;
+	}*/
+	table th:not(.plain) {
+		background:rgba(127,127,127, 0.2);
+		font-weight: bold;
+	}
+		table thead th:not(.vert):not(.plain) { /* All top-row headers */
+			border-top-style: solid;
+			text-align:center;
+			vertical-align:bottom;
+		}
+		table tr th:last-child:not(.horiz):not(.plain) { /* All right-row headers */
+			border-right-style: solid;
+			text-align:left;
+			vertical-align:middle;
+		}
+		table tfoot th:not(.vert):not(.plain) { /* All total-row headers */
+			border-top-style: double;
+			text-align:center;
+			vertical-align:top;
+		}
+		table tr th:first-child:not(.horiz):not(.plain) { /* All left-row headers */
+			border-left-style: solid;
+			text-align:right;
+			vertical-align:middle;
+		}
+		table thead th:not(.vert):not(.plain),
+		table tr th:last-child:not(.horiz):not(.plain),
+		table tfoot th:not(.vert):not(.plain),
+		table tr th:first-child:not(.horiz):not(.plain) {
+			border-width: 0.5em;
+			border-color: var(--theme-primary-color);
+			margin: 1em 10vw;
+		}
+		table th small {
+			font-weight: normal;
+		}
