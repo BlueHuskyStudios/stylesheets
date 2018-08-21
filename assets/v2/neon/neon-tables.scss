@@ -89,4 +89,12 @@ table>caption {
 
 .wide-table-holder {
     overflow-x: scroll;
+
+    &::after {
+        content: "Pro tip: scroll left and right";
+        text-align: end;
+        display: block;
+        font-size: small;
+        opacity: 0.5;
+    }
 }
