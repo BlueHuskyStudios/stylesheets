@@ -1,0 +1,23 @@
+---
+---
+
+/**
+ * Material Shadows
+ *
+ * A few classes for applying shadows which follow Material Design specs
+ */
+
+ @import 'material-shadows-vars';
+
+
+
+ .shadow-z1  { box-shadow: shadow(1); }
+ .shadow-z2  { box-shadow: shadow(2); }
+ .shadow-z3  { box-shadow: shadow(3); }
+ .shadow-z4  { box-shadow: shadow(4); }
+ .shadow-z6  { box-shadow: shadow(6); }
+ .shadow-z8  { box-shadow: shadow(8); }
+ .shadow-z9  { box-shadow: shadow(9); }
+ .shadow-z12 { box-shadow: shadow(12); }
+ .shadow-z16 { box-shadow: shadow(16); }
+ .shadow-z24 { box-shadow: shadow(24); }
