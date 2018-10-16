@@ -1,0 +1,25 @@
+
+
+.brightness-light {
+    background: var(--light-theme-background-color);
+    color: var(--light-theme-foreground-color);
+}
+.brightness-dark {
+    background: var(--dark-theme-background-color);
+    color: var(--dark-theme-foreground-color);
+}
+.brightness-black {
+    background: var(--black-theme-background-color);
+    color: var(--black-theme-foreground-color);
+}
+
+
+.material {
+    .brightness-black,
+    &.brightness-black,
+    .brightness-black & {
+        .shadow.z1 {
+            box-shadow: 0 0 0 1px #FFF4;
+        }
+    }
+}

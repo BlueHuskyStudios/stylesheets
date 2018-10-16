@@ -14,6 +14,7 @@ $css-vars-use-native: true !default;
 @import 'neon-animation-vars';
 @import '../basics/reset.css';
 @import 'neon-animation-renderer';
+@import 'neon-brightness';
 @import 'neon-typography-vars';
 @import 'neon-typography-renderer';
 @import 'css-vars';
@@ -30,19 +31,6 @@ html {
     color: var(--default-theme-foreground-color);
 
     cursor: default;
-
-    &.brightness-light {
-        background: var(--light-theme-background-color);
-        color: var(--light-theme-foreground-color);
-    }
-    &.brightness-dark {
-        background: var(--dark-theme-background-color);
-        color: var(--dark-theme-foreground-color);
-    }
-    &.brightness-black {
-        background: var(--black-theme-background-color);
-        color: var(--black-theme-foreground-color);
-    }
 }
 
 :link {
