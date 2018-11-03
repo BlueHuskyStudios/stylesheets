@@ -85,6 +85,10 @@ table>caption {
 			font-weight: normal;
 		}
 
+table:not(.plain)>tbody+tbody {
+    box-shadow: 0 calc(-0.5em - 2px) 0 -0.5em;
+}
+
 .wide-table-holder {
     overflow-x: scroll;
 
