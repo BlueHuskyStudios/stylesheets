@@ -13,7 +13,7 @@
 
 $layout-4-column-min-width:  0px !default;
 $layout-4-column-max-width:  480px !default;
-$layout-8-column-min-width:  480px !default;
+$layout-8-column-min-width:  $layout-4-column-max-width !default;
 $layout-8-column-max-width:  840px !default;
 $layout-12-column-min-width: $layout-8-column-max-width !default;
 $layout-12-column-max-width: null !default;
@@ -23,7 +23,7 @@ $desktop-xsmall-max-width: 600px !default;
 $desktop-small-min-width:  $desktop-xsmall-max-width !default;
 $desktop-small-max-width:  960px !default;
 $desktop-medium-min-width: $desktop-small-max-width !default;
-$desktop-medium-max-width: 1280px !default; // TODO: - 16px?
+$desktop-medium-max-width: 1280px !default; // TODO: 1280px - 16px?
 $desktop-large-min-width:  $desktop-medium-max-width !default;
 $desktop-large-max-width:  1920px !default;
 $desktop-xlarge-min-width: $desktop-large-max-width !default;
@@ -82,6 +82,214 @@ $size-class-phone-tablet-breakpoint: $phone-portrait-max-width !default;
 $size-class-tablet-desktop-breakpoint: $tablet-landscape-max-width !default;
 
 
+@mixin phone-portrait {
+  @media screen and (max-width: $phone-portrait-max-width) {
+    @content;
+  }
+}
+
+
+@mixin phone-landscape {
+  @media screen and (max-width: $phone-landscape-max-width) {
+    @content;
+  }
+}
+
+
+@mixin phone-landscape-and-up {
+  @media screen and (min-width: $phone-landscape-min-width) {
+    @content;
+  }
+}
+
+
+@mixin tablet-portrait {
+  @media screen and (max-width: $tablet-portrait-max-width) {
+    @content;
+  }
+}
+
+
+@mixin tablet-portrait-and-up {
+  @media screen and (min-width: $tablet-portrait-min-width) {
+    @content;
+  }
+}
+
+
+@mixin tablet-landscape {
+  @media screen and (max-width: $tablet-landscape-max-width) {
+    @content;
+  }
+}
+
+
+@mixin tablet-landscape-and-up {
+  @media screen and (min-width: $tablet-landscape-min-width) {
+    @content;
+  }
+}
+
+
+@mixin desktop {
+  @include desktop-and-up {
+    @content;
+  }
+}
+
+
+@mixin desktop-and-up {
+  @media screen and (min-width: $size-class-tablet-desktop-breakpoint) {
+    @content;
+  }
+}
+
+
+@mixin desktop-xsmall {
+    @media screen and (max-width: $desktop-xsmall-max-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-xsmall-and-up {
+    @media screen and (min-width: $desktop-xsmall-min-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-small {
+    @media screen and (max-width: $desktop-small-max-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-small-and-up {
+    @media screen and (min-width: $desktop-small-min-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-medium {
+    @media screen and (max-width: $desktop-medium-max-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-medium-and-up {
+    @media screen and (min-width: $desktop-medium-min-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-large {
+    @media screen and (max-width: $desktop-large-max-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-large-and-up {
+    @media screen and (min-width: $desktop-large-min-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-xlarge {
+    @media screen and (max-width: $desktop-xlarge-max-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop-xlarge-and-up {
+    @media screen and (min-width: $desktop-xlarge-min-width) {
+        @content;
+    }
+}
+
+
+
+
+@include css-vars((
+    --layout-4-column-min-width:  $layout-4-column-min-width,
+    --layout-4-column-max-width:  $layout-4-column-max-width,
+    --layout-8-column-min-width:  $layout-8-column-min-width,
+    --layout-8-column-max-width:  $layout-8-column-max-width,
+    --layout-12-column-min-width: $layout-12-column-min-width,
+    --layout-12-column-max-width: $layout-12-column-max-width,
+
+    --desktop-xsmall-min-width: $desktop-xsmall-min-width,
+    --desktop-xsmall-max-width: $desktop-xsmall-max-width,
+    --desktop-small-min-width: $desktop-small-min-width,
+    --desktop-small-max-width: $desktop-small-max-width,
+    --desktop-medium-min-width: $desktop-medium-min-width,
+    --desktop-medium-max-width: $desktop-medium-max-width,
+    --desktop-large-min-width: $desktop-large-min-width,
+    --desktop-large-max-width: $desktop-large-max-width,
+    --desktop-xlarge-min-width: $desktop-xlarge-min-width,
+    --desktop-xlarge-max-width: $desktop-xlarge-max-width,
+
+
+    --phone-portrait-small-min-width: $phone-portrait-small-min-width,
+    --phone-portrait-small-max-width: $phone-portrait-small-max-width,
+    --phone-portrait-medium-min-width: $phone-portrait-medium-min-width,
+    --phone-portrait-medium-max-width: $phone-portrait-medium-max-width,
+    --phone-portrait-large-min-width: $phone-portrait-large-min-width,
+    --phone-portrait-large-max-width: $phone-portrait-large-max-width,
+
+    --phone-portrait-min-width: $phone-portrait-min-width,
+    --phone-portrait-max-width: $phone-portrait-max-width,
+
+
+    --phone-landscape-small-min-width: $phone-landscape-small-min-width,
+    --phone-landscape-small-max-width: $phone-landscape-small-max-width,
+    --phone-landscape-medium-min-width: $phone-landscape-medium-min-width,
+    --phone-landscape-medium-max-width: $phone-landscape-medium-max-width,
+    --phone-landscape-large-min-width: $phone-landscape-large-min-width,
+    --phone-landscape-large-max-width: $phone-landscape-large-max-width,
+
+    --phone-landscape-min-width: $phone-landscape-min-width,
+    --phone-landscape-max-width: $phone-landscape-max-width,
+
+
+    --tablet-portrait-small-min-width: $tablet-portrait-small-min-width,
+    --tablet-portrait-small-max-width: $tablet-portrait-small-max-width,
+    --tablet-portrait-medium-min-width: $tablet-portrait-medium-min-width,
+    --tablet-portrait-medium-max-width: $tablet-portrait-medium-max-width,
+    --tablet-portrait-large-min-width: $tablet-portrait-large-min-width,
+    --tablet-portrait-large-max-width: $tablet-portrait-large-max-width,
+
+    --tablet-portrait-min-width: $tablet-portrait-min-width,
+    --tablet-portrait-max-width: $tablet-portrait-max-width,
+
+
+    --tablet-landscape-small-min-width: $tablet-landscape-small-min-width,
+    --tablet-landscape-small-max-width: $tablet-landscape-small-max-width,
+    --tablet-landscape-medium-min-width: $tablet-landscape-medium-min-width,
+    --tablet-landscape-medium-max-width: $tablet-landscape-medium-max-width,
+    --tablet-landscape-large-min-width: $tablet-landscape-large-min-width,
+    --tablet-landscape-large-max-width: $tablet-landscape-large-max-width,
+
+    --tablet-landscape-min-width: $tablet-landscape-min-width,
+    --tablet-landscape-max-width: $tablet-landscape-max-width,
+
+
+    --min-width-for-both-summary-and-detail-content: $min-width-for-both-summary-and-detail-content,
+    --max-width-for-normal-content: $max-width-for-normal-content,
+
+
+    --size-class-phone-tablet-breakpoint: $size-class-phone-tablet-breakpoint,
+    --size-class-tablet-desktop-breakpoint: $size-class-tablet-desktop-breakpoint,
+));
+
+
 // MARK: - Structure vars
 
 // MARK: App Bar
@@ -105,6 +313,21 @@ $app-bar-padding: $app-bar-padding-top $app-bar-padding-right $app-bar-padding-b
 $app-bar-z-index: 4 !default;
 
 
+// MARK: Content
+
+$content-margin-horiz-phone-portrait: 16px !default;
+$content-margin-horiz-phone-landscape: 16px !default;
+$content-margin-horiz-tablet-and-desktop: 24px !default;
+
+$content-margin-left-phone-portrait: $content-margin-horiz-phone-portrait !default;
+$content-margin-left-phone-landscape: $content-margin-horiz-phone-landscape !default;
+$content-margin-left-tablet-and-desktop: $content-margin-horiz-tablet-and-desktop !default;
+
+$content-margin-right-phone-portrait: $content-margin-horiz-phone-portrait !default;
+$content-margin-right-phone-landscape: $content-margin-horiz-phone-landscape !default;
+$content-margin-right-tablet-and-desktop: $content-margin-horiz-tablet-and-desktop !default;
+
+
 
 @include css-vars((
     --app-bar-height-phone-portrait:     $app-bar-height-phone-portrait,
@@ -124,16 +347,32 @@ $app-bar-z-index: 4 !default;
     --app-bar-padding:            $app-bar-padding,
 
     --app-bar-z-index: $app-bar-z-index,
+
+
+    --content-margin-horiz-phone-portrait: $content-margin-horiz-phone-portrait,
+    --content-margin-horiz-phone-landscape: $content-margin-horiz-phone-landscape,
+    --content-margin-horiz-tablet-and-desktop: $content-margin-horiz-tablet-and-desktop,
+
+    --content-margin-left-phone-portrait: $content-margin-left-phone-portrait,
+    --content-margin-left-phone-landscape: $content-margin-left-phone-landscape,
+    --content-margin-left-tablet-and-desktop: $content-margin-left-tablet-and-desktop,
+
+    --content-margin-right-phone-portrait: $content-margin-right-phone-portrait,
+    --content-margin-right-phone-landscape: $content-margin-right-phone-landscape,
+    --content-margin-right-tablet-and-desktop: $content-margin-right-tablet-and-desktop,
 ));
 
 :root {
     --app-bar-height-auto: var(--app-bar-height-phone-portrait);
+    --content-margin-horiz-auto: var(--content-margin-horiz-phone-portrait);
 
-    @media (min-width: $size-class-phone-tablet-breakpoint) {
+    @include phone-landscape-and-up {
         --app-bar-height-auto: var(--app-bar-height-phone-landscape);
+        --content-margin-horiz-auto: var(--content-margin-horiz-phone-landscape);
     }
-    @media (min-width: $size-class-tablet-desktop-breakpoint) {
+    @include desktop-and-up {
         --app-bar-height-auto: var(--app-bar-height-tablet-and-desktop);
+        --content-margin-horiz-auto: var(--content-margin-horiz-tablet-and-desktop);
     }
 }
 
