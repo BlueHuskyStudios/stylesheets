@@ -55,6 +55,25 @@ html {
             margin-right: 1.5em;
         }
     }
+
+    .title {
+        .material-icons:first-child,
+        .back-to-root-icon {
+            vertical-align: text-bottom;
+            margin-right: 1ex;
+            margin-inline-end: 1ex;
+            width: 1em;
+            transition-property: margin, width, opacity;
+
+            .top-level & {
+                margin-right: 0;
+                margin-inline-end: 0;
+                width: 0;
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
 }
 
 
