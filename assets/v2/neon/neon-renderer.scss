@@ -34,6 +34,10 @@ html {
 }
 
 :link {
+    color: var(--theme-accent-color);
+}
+
+:visited {
 	color: var(--theme-primary-color);
 }
 
