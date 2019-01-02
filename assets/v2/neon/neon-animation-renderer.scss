@@ -29,6 +29,15 @@ html {
 
 
 
+.reduce-motion {
+    &, & * {
+        animation-name: none !important;
+        transition-property: none !important;
+    }
+}
+
+
+
 .app-bar {
     transition-property: background-color, color, height, padding, margin;
 
