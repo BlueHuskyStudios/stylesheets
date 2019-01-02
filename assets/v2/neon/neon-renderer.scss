@@ -41,6 +41,15 @@ html {
 	color: var(--theme-primary-color);
 }
 
+:link, :visited {
+    &[href^="#"],
+    &.does-not-navigate-away {
+        text-decoration: none;
+        cursor: default;
+    }
+}
+
+
 
 .app-bar {
 
