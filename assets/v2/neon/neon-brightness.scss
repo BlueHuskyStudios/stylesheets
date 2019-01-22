@@ -1,18 +1,51 @@
 
+// neon-brightness
+//
+// Allows you to set the theme's brightness
+
+@import 'css-vars';
+@import 'neon-shared-vars';
+
+
+
+@include css-vars((
+    --theme-background-color: var(--default-theme-background-color),
+    --theme-foreground-color: var(--default-theme-foreground-color),
+));
+
+[class^="brightness-"],
+[class*=" brightness-"] {
+    background: var(--theme-background-color);
+    color: var(--theme-foreground-color);
+}
+
+
+
+.brightness-white {
+    --theme-background-color: var(--white-theme-background-color);
+    --theme-foreground-color: var(--white-theme-foreground-color);
+}
+
+
 
 .brightness-light {
-    background: var(--light-theme-background-color);
-    color: var(--light-theme-foreground-color);
-}
-.brightness-dark {
-    background: var(--dark-theme-background-color);
-    color: var(--dark-theme-foreground-color);
-}
-.brightness-black {
-    background: var(--black-theme-background-color);
-    color: var(--black-theme-foreground-color);
+    --theme-background-color: var(--light-theme-background-color);
+    --theme-foreground-color: var(--light-theme-foreground-color);
 }
 
+
+
+.brightness-dark {
+    --theme-background-color: var(--dark-theme-background-color);
+    --theme-foreground-color: var(--dark-theme-foreground-color);
+}
+
+
+
+.brightness-black {
+    --theme-background-color: var(--black-theme-background-color);
+    --theme-foreground-color: var(--black-theme-foreground-color);
+}
 
 .material {
     .brightness-black,
