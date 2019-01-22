@@ -8,11 +8,13 @@ $css-vars-use-native: true;
 
 
 
+$white-theme-background-color: #FFF !default;
 $light-theme-background-color: #FAFAFA !default;
 $dark-theme-background-color: #263238 !default;
 $black-theme-background-color: #000 !default;
 $default-theme-background-color: var(--light-theme-background-color) !default;
 
+$white-theme-foreground-color: #212121 !default;
 $light-theme-foreground-color: #212121 !default;
 $dark-theme-foreground-color: #eee !default;
 $black-theme-foreground-color: #eee !default;
@@ -21,11 +23,13 @@ $default-theme-foreground-color: var(--light-theme-foreground-color) !default;
 
 
 @include css-vars((
+    --white-theme-background-color:   $white-theme-background-color,
     --light-theme-background-color:   $light-theme-background-color,
     --dark-theme-background-color:    $dark-theme-background-color,
     --black-theme-background-color:   $black-theme-background-color,
     --default-theme-background-color: $default-theme-background-color,
 
+    --white-theme-foreground-color:          $white-theme-foreground-color,
     --light-theme-foreground-color:          $light-theme-foreground-color,
     --dark-theme-foreground-color:           $dark-theme-foreground-color,
     --black-theme-foreground-color:          $black-theme-foreground-color,
