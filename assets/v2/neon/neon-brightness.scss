@@ -21,28 +21,32 @@
 
 
 
-.brightness-white {
+.brightness-white.themed-background,
+.brightness-white .themed-background {
     --theme-background-color: var(--white-theme-background-color);
     --theme-foreground-color: var(--white-theme-foreground-color);
 }
 
 
 
-.brightness-light {
+.brightness-light.themed-background,
+.brightness-light .themed-background {
     --theme-background-color: var(--light-theme-background-color);
     --theme-foreground-color: var(--light-theme-foreground-color);
 }
 
 
 
-.brightness-dark {
+.brightness-dark.themed-background,
+.brightness-dark .themed-background {
     --theme-background-color: var(--dark-theme-background-color);
     --theme-foreground-color: var(--dark-theme-foreground-color);
 }
 
 
 
-.brightness-black {
+.brightness-black.themed-background,
+.brightness-black .themed-background {
     --theme-background-color: var(--black-theme-background-color);
     --theme-foreground-color: var(--black-theme-foreground-color);
 }
