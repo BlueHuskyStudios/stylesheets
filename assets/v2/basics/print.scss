@@ -1,0 +1,24 @@
+@media print {
+    *|* {
+        background: 0 0 !important;
+        color: #000 !important;
+        border-color: #000 !important;
+    }
+
+    .hide-print {
+        display: none !important;
+    }
+
+    .print-link,
+    a[href]:not(.no-print-link)::after,
+    :link:not(.no-print-link)::after,
+    :visited:not(.no-print-link)::after {
+        content: ' (' attr(href) ')';
+    }
+}
+
+@media not print {
+    .show-print {
+        display: none !important;
+    }
+}

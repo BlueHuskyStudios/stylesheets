@@ -420,7 +420,7 @@ $ripple-fade-size-multiplier: 1.5 !default;
 $ripple-midpoint-opacity: 0.3 !default;
 
 
-$common-button-selector: 'button, .button, input[type=submit], input[type=reset]';
+$common-button-selector: 'button, .button, :link.button, :visited.button, input[type=submit], input[type=reset]';
 $image-button-selector: '.image-button';
 $floating-action-button-selector: '.floating-action-button, .mini-floating-action-button';
 $uncommon-button-selector: $image-button-selector + ', ' + $floating-action-button-selector;
