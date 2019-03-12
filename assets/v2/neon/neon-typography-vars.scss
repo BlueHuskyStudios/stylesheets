@@ -37,6 +37,7 @@ $font-size-h6: 16px !default;
 $font-size-body: 11px !default;
 $font-size-button: 14px !default;
 $font-size-dense-button: 13px !default;
+$font-size-large-button: 24px !default;
 
 
 
@@ -79,6 +80,7 @@ $font-weight-title: 500 !default;
     --font-size-body: $font-size-body,
     --font-size-button: $font-size-button,
     --font-size-dense-button: $font-size-dense-button,
+    --font-size-large-button: $font-size-large-button,
 
 
     --font-weight-h1: $font-weight-h1,

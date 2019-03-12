@@ -139,10 +139,14 @@
 
     &.dense {
         font-size: var(--font-size-dense-button);
-
         padding: var(--button-dense-padding);
 
         // height: 32px;
+    }
+
+    &.big {
+        font-size: var(--font-size-large-button);
+        padding: var(--button-large-padding);
     }
 }
 
