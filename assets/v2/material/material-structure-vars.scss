@@ -384,6 +384,7 @@ $button-cursor: pointer !default;
 $button-border-radius: 2px !default;
 $button-padding: 11px 16px !default;
 $button-dense-padding: 9.5px 8px !default;
+$button-large-padding: $button-padding !default;
 $button-margin: 8px !default;
 $button-min-width: 64px !default;
 
@@ -431,6 +432,7 @@ $button-selector: $common-button-selector + ', ' + $uncommon-button-selector;
     --button-border-radius: $button-border-radius,
     --button-padding: $button-padding,
     --button-dense-padding: $button-dense-padding,
+    --button-large-padding: $button-large-padding,
     --button-margin: $button-margin,
 
     --button-flat-padding: $button-flat-padding,
