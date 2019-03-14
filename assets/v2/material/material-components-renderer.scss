@@ -73,21 +73,23 @@
     position: relative;
     overflow: hidden;
 
-    &:focus,
-    &:hover {
-        outline: none;
-        box-shadow: var(--button-hover-shadow);
+    &:not([disabled]) {
+        &:focus,
+        &:hover {
+            outline: none;
+            box-shadow: var(--button-hover-shadow);
 
-        transition-duration: 100ms;
+            transition-duration: 100ms;
 
-        transform: translateY(-1px);
-    }
+            transform: translateY(-1px);
+        }
 
-    &:active {
-        box-shadow: var(--button-pressed-shadow);
+        &:active {
+            box-shadow: var(--button-pressed-shadow);
 
-        transform: translateY(0px);
-        transition-duration: 10ms;
+            transform: translateY(0px);
+            transition-duration: 10ms;
+        }
     }
 }
 
@@ -109,9 +111,9 @@
     padding: var(--button-padding);
     margin: var(--button-margin);
 
-
-
     min-width: var(--button-min-width);
+
+    transition-property: background, color, opacity;
 
     &.flat {
         background: none;
@@ -147,6 +149,11 @@
     &.big {
         font-size: var(--font-size-large-button);
         padding: var(--button-large-padding);
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+        cursor: default;
     }
 }
 
@@ -216,57 +223,59 @@
 // MARK: Ripples
 
 #{$button-selector} {
-    &::before {
-        content: "";
-        width: 0px;
-        height: 0px;
-        background-color: currentColor;
-        display: block;
-        position: absolute;
-        border-radius: 99in;
-        left: 50%;
-        top: 50%;
-        opacity: 0.5;
+    &:not([disabled]) {
+        &::before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            background-color: currentColor;
+            display: block;
+            position: absolute;
+            border-radius: 99in;
+            left: 50%;
+            top: 50%;
+            opacity: 0.5;
 
-        transition-duration: 0ms;
-        transition-timing-function: ease-out;
-        transition-property: width, height, top, left, opacity;
-    }
-
-
-    &:active::before {
-        width: var(--ripple-end-diameter);
-        height: var(--ripple-end-diameter);
-        opacity: var(--ripple-midpoint-opacity);
-        left: calc(50% - var(--ripple-end-radius));
-        top: calc(50% - var(--ripple-end-radius));
-        transition-duration: var(--ripple-grow-duration);
-    }
-
-    &:focus:not(:active)::before {
-        width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
-        height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
-        opacity: calc(var(--ripple-midpoint-opacity) / 2);
-        left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
-        top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
-        transition-duration: var(--ripple-fade-duration);
-    }
+            transition-duration: 0ms;
+            transition-timing-function: ease-out;
+            transition-property: width, height, top, left, opacity;
+        }
 
 
-    &.big:active::before,
-    &.big-ripple:active::before {
-        width: calc(var(--ripple-end-diameter) * 2);
-        height: calc(var(--ripple-end-diameter) * 2);
-        left: calc(50% - (var(--ripple-end-radius) * 2));
-        top: calc(50% - (var(--ripple-end-radius) * 2));
-    }
+        &:active::before {
+            width: var(--ripple-end-diameter);
+            height: var(--ripple-end-diameter);
+            opacity: var(--ripple-midpoint-opacity);
+            left: calc(50% - var(--ripple-end-radius));
+            top: calc(50% - var(--ripple-end-radius));
+            transition-duration: var(--ripple-grow-duration);
+        }
 
-    &.big:focus:not(:active)::before,
-    &.big-ripple:focus:not(:active)::before {
-        width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
-        height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
-        left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
-        top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
+        &:focus:not(:active)::before {
+            width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
+            height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
+            opacity: 0;
+            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+            transition-duration: var(--ripple-fade-duration);
+        }
+
+
+        &.big:active::before,
+        &.big-ripple:active::before {
+            width: calc(var(--ripple-end-diameter) * 2);
+            height: calc(var(--ripple-end-diameter) * 2);
+            left: calc(50% - (var(--ripple-end-radius) * 2));
+            top: calc(50% - (var(--ripple-end-radius) * 2));
+        }
+
+        &.big:focus:not(:active)::before,
+        &.big-ripple:focus:not(:active)::before {
+            width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
+            height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
+            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
+            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
+        }
     }
 }
 
