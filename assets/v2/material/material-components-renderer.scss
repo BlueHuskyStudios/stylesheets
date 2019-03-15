@@ -12,7 +12,6 @@
 .app-bar,
 .app-bar.short {
 
-
     height: var(--app-bar-height-auto);
 
     z-index: var(--app-bar-z-index);
@@ -42,12 +41,24 @@
 
 // MARK: - Buttons
 
+$button-base-transition-property: transform, box-shadow, color, background, border, opacity;
+
 @mixin _button-base() {
 
-    background-color: var(--theme-primary-color);
+    &:not(.medium-emphasis):not(.low-emphasis) {
+        background-color: var(--theme-primary-color);
+    }
 
     border: none;
     border-radius: var(--button-border-radius);
+
+    &.medium-emphasis {
+        border: 1px solid var(--theme-primary-color);
+    }
+
+    &.low-emphasis {
+        box-shadow: none;
+    }
 
     box-shadow: var(--button-resting-shadow);
 
@@ -72,6 +83,9 @@
 
     position: relative;
     overflow: hidden;
+
+
+    transition-property: $button-base-transition-property;
 
     &:not([disabled]) {
         &:focus,
@@ -112,8 +126,6 @@
     margin: var(--button-margin);
 
     min-width: var(--button-min-width);
-
-    transition-property: background, color, opacity;
 
     &.flat {
         background: none;
@@ -174,7 +186,7 @@
             margin: var(--button-app-bar-image-margin);
             min-width: var(--app-bar-height-auto);
 
-            transition-property: min-width;
+            transition-property: $button-base-transition-property min-width;
         }
 
         // @include flex-row();
