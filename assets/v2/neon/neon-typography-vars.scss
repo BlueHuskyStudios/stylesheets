@@ -14,6 +14,7 @@ $font-family-primary: 'Roboto', sans-serif !default;
 $font-family-title: $font-family-primary !default;
 $font-family-subheading: 'Roboto Slab', sans-serif !default;
 $font-family-sub-subheading: 'Roboto Condensed', sans-serif !default;
+$font-family-button: var(--font-family-primary) !default;
 
 $font-family-h1: $font-family-title !default;
 $font-family-h2: $font-family-subheading !default;
@@ -55,6 +56,7 @@ $font-weight-title: 500 !default;
 
 @include css-vars((
     --font-family-primary: $font-family-primary,
+    --font-family-button: $font-family-button,
     --font-family-title: $font-family-title,
     --font-family-subheading: $font-family-subheading,
     --font-family-sub-subheading: $font-family-sub-subheading,
@@ -104,7 +106,7 @@ $font-h4: var(--font-weight-h4) var(--font-size-h4) var(--font-family-h4) !defau
 $font-h5: var(--font-weight-h5) var(--font-size-h5) var(--font-family-h5) !default;
 $font-h6: var(--font-weight-h6) var(--font-size-h6) var(--font-family-h6) !default;
 
-$font-button: var(--font-weight-button) var(--font-size-button) var(--font-family-primary) !default;
+$font-button: var(--font-weight-button) var(--font-size-button) var(--font-family-button) !default;
 $font-title: var(--font-weight-title) var(--font-family-title) var(--font-size-title) !default;
 
 
