@@ -45,20 +45,8 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
 @mixin _button-base() {
 
-    &:not(.medium-emphasis):not(.low-emphasis) {
-        background-color: var(--theme-primary-color);
-    }
-
     border: none;
     border-radius: var(--button-border-radius);
-
-    &.medium-emphasis {
-        border: 1px solid var(--theme-primary-color);
-    }
-
-    &.low-emphasis {
-        box-shadow: none;
-    }
 
     box-shadow: var(--button-resting-shadow);
 
@@ -127,9 +115,21 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
     min-width: var(--button-min-width);
 
+    &:not(.medium-emphasis):not(.low-emphasis) {
+        background-color: var(--theme-primary-color);
+    }
+
+    &.medium-emphasis {
+        color: var(--theme-primary-color);
+        border: 1px solid var(--theme-primary-color);
+    }
+
+    &.low-emphasis,
     &.flat {
         background: none;
         color: var(--theme-primary-color);
+
+        box-shadow: none;
 
         padding: var(--button-flat-padding);
         margin: var(--button-flat-margin);
