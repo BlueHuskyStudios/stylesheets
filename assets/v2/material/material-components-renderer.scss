@@ -131,7 +131,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
         @include css-vars((
             --button-resting-shadow: none
-        ))
+        ));
 
         padding: var(--button-flat-padding);
         margin: var(--button-flat-margin);
@@ -145,7 +145,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
         @include css-vars((
             --button-resting-shadow: none
-        ))
+        ));
 
         padding: var(--button-app-bar-padding);
         margin: var(--button-app-bar-margin);
