@@ -12,24 +12,29 @@
 .app-bar,
 .app-bar.short {
 
-    height: var(--app-bar-height-auto);
-
-    z-index: var(--app-bar-z-index);
-
     @include flex-row();
     @include flex-justify-space-between();
     @include flex-align-stretch();
+
+    z-index: var(--app-bar-z-index);
+
+    height: var(--app-bar-height-auto);
+
     box-shadow: shadow(4);
 
     * {
         flex-shrink: 1;
     }
+
     h1 {
         flex-grow: 2;
-        line-height: $app-bar-height-phone-portrait - $app-bar-vertical-padding;
-        line-height: calc(var(--app-bar-height-auto) - var(--app-bar-vertical-padding));
+
+        margin: 0;
 
         transition-property: padding, line-height;
+
+        // line-height: $app-bar-height-phone-portrait - $app-bar-vertical-padding;
+        line-height: calc(var(--app-bar-height-auto) - var(--app-bar-vertical-padding));
 
         &:first-child {
             padding: 0 var(--content-margin-horiz-auto);
@@ -78,12 +83,11 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     &:not([disabled]) {
         &:focus,
         &:hover {
-            outline: none;
-            box-shadow: var(--button-hover-shadow);
-
+            transform: translateY(-1px);
             transition-duration: 100ms;
 
-            transform: translateY(-1px);
+            outline: none;
+            box-shadow: var(--button-hover-shadow);
         }
 
         &:active {
@@ -126,33 +130,35 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
     &.low-emphasis,
     &.flat {
-        background: none;
-        color: var(--theme-primary-color);
 
         @include css-vars((
             --button-resting-shadow: none
         ));
 
-        padding: var(--button-flat-padding);
-        margin: var(--button-flat-margin);
-
         min-width: var(--button-flat-min-width);
+
+        margin: var(--button-flat-margin);
+        padding: var(--button-flat-padding);
+
+        background: none;
+        color: var(--theme-primary-color);
     }
 
     .app-bar &:not(.raised) {
-        background: none;
-        color: var(--theme-primary-color);
 
         @include css-vars((
             --button-resting-shadow: none
         ));
 
-        padding: var(--button-app-bar-padding);
-        margin: var(--button-app-bar-margin);
-
         min-width: var(--button-app-bar-min-width);
 
+        margin: var(--button-app-bar-margin);
+        padding: var(--button-app-bar-padding);
+
         transform: none !important;
+
+        background: none;
+        color: var(--theme-primary-color);
     }
 
     &.dense {
