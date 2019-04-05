@@ -12,8 +12,8 @@
 
 $font-family-primary: 'Roboto', sans-serif !default;
 $font-family-title: $font-family-primary !default;
-$font-family-subheading: 'Roboto Slab', sans-serif !default;
-$font-family-sub-subheading: 'Roboto Condensed', sans-serif !default;
+$font-family-subheading: $font-family-primary !default;
+$font-family-sub-subheading: $font-family-primary !default;
 $font-family-button: var(--font-family-primary) !default;
 
 $font-family-h1: $font-family-title !default;
@@ -42,12 +42,12 @@ $font-size-large-button: 24px !default;
 
 
 
-$font-weight-h1: 100 !default;
-$font-weight-h2: 200 !default;
-$font-weight-h3: 200 !default;
-$font-weight-h4: 300 !default;
-$font-weight-h5: 400 !default;
-$font-weight-h6: 400 !default;
+$font-weight-h1: bolder !default;
+$font-weight-h2: bolder !default;
+$font-weight-h3: bolder !default;
+$font-weight-h4: bolder !default;
+$font-weight-h5: bolder !default;
+$font-weight-h6: bolder !default;
 
 $font-weight-button: 500 !default;
 $font-weight-title: 500 !default;
