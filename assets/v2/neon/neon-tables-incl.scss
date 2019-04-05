@@ -19,11 +19,11 @@ $css-vars-use-native: true;
 
 
 table {
-    border:none;
-	border-collapse:separate;
+    border: none;
+	border-collapse: separate;
 	border-spacing: var(--table-cell-spacing);
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 
     &.center-td td {
         text-align: center;
@@ -109,7 +109,7 @@ table {
     overflow-x: scroll;
 
     :not(.wide-table-holder-holder)>&::after {
-        content: "Pro tip: scroll left and right";
+        content: "Pro tip: scroll left and right if the table is cut off";
         text-align: end;
         display: block;
         font-size: small;
