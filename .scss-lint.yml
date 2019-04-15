@@ -7,3 +7,11 @@ linters:
         order: smacss
     Indentation:
         width: 4
+    QualifyingElement:
+        allow_element_with_attribute: true
+        allow_element_with_class: true
+        allow_element_with_id: true
+    LeadingZero:
+        style: include_zero
+    StringQuotes:
+        style: double_quotes
