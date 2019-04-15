@@ -64,6 +64,13 @@ table {
 	th:not(.plain) {
 		background:rgba(127,127,127, 0.2);
 		font-weight: bold;
+
+        small {
+            opacity: 0.8;
+            color: var(--theme-foreground-color);
+            margin-inline-start: 1ex;
+            margin-inline-end: 1ex;
+        }
 	}
 
 	thead th:not(.vert):not(.plain) { /* All top-row headers */
