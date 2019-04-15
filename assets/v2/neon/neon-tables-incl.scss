@@ -1,69 +1,76 @@
 
-/**
- * Neon Tables
- * Renders a the basic table styles for Neon themes
- *
- * Requires varibles to be set with color stylesheets (like neon-fire.scss or neon-water.scss) prior to calling.
- */
+///
+/// Neon Tables
+/// Renders a the basic table styles for Neon themes
+///
+/// Requires varibles to be set with color stylesheets (like neon-fire.scss or neon-water.scss) prior to calling.
+///
 
-@import 'css-vars';
+@import "css-vars";
 $css-vars-use-native: true;
 
 
 
+// scss-lint:disable ColorVariable
 @include css-vars((
     --table-visual-border-thickness: 0.5em,
     --table-cell-spacing: var(--table-visual-border-thickness),
     --table-large-cell-line-thickness: 0.25em,
+    --table-header-cell-background: rgba(127, 127, 127, 0.2),
+    --table-cell-span-indicator-color: rgba(0, 0, 0, 0.1),
 ));
+// scss-lint:enable ColorVariable
 
 
 table {
+    margin-right: auto;
+    margin-left: auto;
+    border-spacing: var(--table-cell-spacing);
+    border-collapse: separate;
     border: none;
-	border-collapse: separate;
-	border-spacing: var(--table-cell-spacing);
-	margin-left: auto;
-	margin-right: auto;
 
     &.center-td td {
         text-align: center;
         vertical-align: middle;
     }
 
-    &>caption {
-    	font-weight: 900;
-    	text-transform: uppercase;
-    	font-family: "Roboto Condensed", "Roboto Cn", "Helvetica Condensed", "Roboto", "Helvetica", condensed, sans-serif;
-    	margin: 1em 0 0;
+    >caption {
+        margin: 1em 0 0;
+        font-family: "Roboto Condensed", "Roboto Cn", "Helvetica Condensed", "Roboto", "Helvetica", condensed, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
     }
 
-	td,
-	th {
-		border:none;
+    td,
+    th {
+        border: none;
 
-    	&:not(.plain) {
-    		padding: var(--table-cell-spacing);
-    	}
+        &:not(.plain) {
+            padding: var(--table-cell-spacing);
+        }
     }
 
-	[colspan]:not(.plain) {
-		border-bottom: var(--table-large-cell-line-thickness) solid rgba(0,0,0,.1);
-		padding-bottom: var(--table-large-cell-line-thickness);
-	}
-	[rowspan]:not(.plain) {
-		border-right: var(--table-large-cell-line-thickness) solid rgba(0,0,0,.1);
-		padding-right: var(--table-large-cell-line-thickness);
-	}
-	/*tr td{
-		border-color:#BBB transparent;
-	}
-	thead td,
-	tfoot td{
-		border-color:transparent;
-	}*/
-	th:not(.plain) {
-		background:rgba(127,127,127, 0.2);
-		font-weight: bold;
+    [colspan]:not(.plain) {
+        padding-bottom: var(--table-large-cell-line-thickness);
+        border-bottom: var(--table-large-cell-line-thickness) solid var(--table-cell-span-indicator-color);
+    }
+
+    [rowspan]:not(.plain) {
+        padding-right: var(--table-large-cell-line-thickness);
+        border-right: var(--table-large-cell-line-thickness) solid rgba(0,0,0,.1);
+    }
+
+    // tr td{
+    //     border-color:#BBB transparent;
+    // }
+    // thead td,
+    // tfoot td{
+    //     border-color:transparent;
+    // }
+
+    th:not(.plain) {
+        background: var(--table-header-cell-background);
+        font-weight: bold;
 
         small {
             opacity: 0.8;
@@ -71,42 +78,47 @@ table {
             margin-inline-start: 1ex;
             margin-inline-end: 1ex;
         }
-	}
+    }
 
-	thead th:not(.vert):not(.plain) { /* All top-row headers */
-		border-top-style: solid;
-		text-align:center;
-		vertical-align:bottom;
-	}
-	tr th:last-child:not(.horiz):not(.plain) { /* All right-row headers */
-		border-right-style: solid;
-		text-align:left;
-		vertical-align:middle;
-	}
-	tfoot th:not(.vert):not(.plain) { /* All total-row headers */
-		border-top-style: double;
-		text-align:center;
-		vertical-align:top;
-	}
-	tr th:first-child:not(.horiz):not(.plain) { /* All left-row headers */
-		border-left-style: solid;
-		text-align:right;
-		vertical-align:middle;
-	}
-	thead th:not(.vert):not(.plain),
-	tr th:last-child:not(.horiz):not(.plain),
-	tfoot th:not(.vert):not(.plain),
-	tr th:first-child:not(.horiz):not(.plain) {
-		border-width: var(--table-visual-border-thickness);
-		border-color: var(--theme-primary-color);
-		margin: 1em 10vw;
-	}
-	th small {
-		font-weight: normal;
-	}
+    thead th:not(.vert):not(.plain) { // All top-row headers
+        border-top-style: solid;
+        text-align: center;
+        vertical-align: bottom;
+    }
+
+    tr th:last-child:not(.horiz):not(.plain) { // All right-row headers
+        border-right-style: solid;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    tfoot th:not(.vert):not(.plain) { // All total-row headers
+        border-top-style: double;
+        text-align: center;
+        vertical-align: top;
+    }
+
+    tr th:first-child:not(.horiz):not(.plain) { // All left-row headers
+        border-left-style: solid;
+        text-align: right;
+        vertical-align: middle;
+    }
+
+    thead th:not(.vert):not(.plain),
+    tr th:last-child:not(.horiz):not(.plain),
+    tfoot th:not(.vert):not(.plain),
+    tr th:first-child:not(.horiz):not(.plain) {
+        margin: 1em 10vw;
+        border-width: var(--table-visual-border-thickness);
+        border-color: var(--theme-primary-color);
+    }
+
+    th small {
+        font-weight: normal;
+    }
 
     &:not(.plain) {
-        &>tbody+tbody:not(.plain) {
+        >tbody+tbody:not(.plain) {
             box-shadow: 0 calc(-0.5em - 2px) 0 -0.5em;
         }
     }
@@ -116,11 +128,11 @@ table {
     overflow-x: scroll;
 
     :not(.wide-table-holder-holder)>&::after {
-        content: "Pro tip: scroll left and right if the table is cut off";
-        text-align: end;
+        content: "Pro tip: If the table is cut off, scroll left and right";
         display: block;
-        font-size: small;
         opacity: 0.5;
+        font-size: small;
+        text-align: end;
     }
 }
 
@@ -129,9 +141,9 @@ table {
 
     &::before {
         content: "";
-        --shadow-color: #FFF;
-        --shadow-size: 1em;
-        --negative-shadow-size: -1em;
+        position: absolute;
+        width: 100%;
+        height: 100%;
 
         box-shadow: inset var(--shadow-size) 0 var(--shadow-size) var(--negative-shadow-size) var(--shadow-color),
                     inset var(--shadow-size) 0 var(--shadow-size) var(--negative-shadow-size) var(--shadow-color),
@@ -140,9 +152,11 @@ table {
                     inset var(--negative-shadow-size) 0 var(--shadow-size) var(--negative-shadow-size) var(--shadow-color),
                     inset var(--negative-shadow-size) 0 var(--shadow-size) var(--negative-shadow-size) var(--shadow-color),
                     inset var(--negative-shadow-size) 0 var(--shadow-size) var(--negative-shadow-size) var(--shadow-color);
-        position: absolute;
-        width: 100%;
-        height: 100%;
+
         pointer-events: none;
+
+        --shadow-color: #FFF;
+        --shadow-size: 1em;
+        --negative-shadow-size: -1em;
     }
 }
