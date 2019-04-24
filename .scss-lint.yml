@@ -1,5 +1,6 @@
 # https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md
 
+preprocess_command: "gsed '1{/^---$/{:a N;/---$/!ba;d}}'"
 linters:
     BorderZero:
         convention: none
