@@ -43,10 +43,18 @@ html {
 
 :link,
 :visited {
-    &[href^="#"],
+    text-decoration: var(--link-text-decoration);
+
+    --link-text-decoration: underline;
+
+    &[href^="#"]:not(.navigates-away),
     &.does-not-navigate-away {
-        text-decoration: none;
         cursor: default;
+        --link-text-decoration: none;
+    }
+
+    .link-style-underline-on-hover &:not(:hover):not(:focus) {
+        --link-text-decoration: none;
     }
 }
 
