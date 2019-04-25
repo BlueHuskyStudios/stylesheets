@@ -6,6 +6,7 @@ linters:
         convention: none
     PropertySortOrder:
         order: smacss
+        ignore_unspecified: true
     Indentation:
         width: 4
     QualifyingElement:
@@ -16,3 +17,5 @@ linters:
         style: include_zero
     StringQuotes:
         style: double_quotes
+    NestingDepth:
+        max_depth: 5
