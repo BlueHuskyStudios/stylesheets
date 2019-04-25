@@ -246,6 +246,9 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
 #{$button-selector},
 .has-effect-when-pressed {
+
+    position: relative;
+
     &:not([disabled]) {
         &::before {
             content: "";
