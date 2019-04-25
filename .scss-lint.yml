@@ -19,3 +19,5 @@ linters:
         style: double_quotes
     NestingDepth:
         max_depth: 5
+    DuplicateProperty:
+        ignore_consecutive: true
