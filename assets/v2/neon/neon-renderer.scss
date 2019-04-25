@@ -1,26 +1,26 @@
 ---
 ---
 
-/**
- * Neon Renderer
- * Renders a Neon theme
- *
- * Requires varibles to be set with other stylesheets prior to calling
- */
+//
+// Neon Renderer
+// Renders a Neon theme
+//
+// Requires varibles to be set with other stylesheets prior to calling
+//
 
 $css-vars-use-native: true !default;
 
 @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
-@import 'neon-animation-vars';
-@import '../basics/reset.css';
-@import 'neon-animation-renderer';
-@import 'neon-brightness';
-@import 'neon-typography-vars';
-@import 'neon-typography-renderer';
-@import 'css-vars';
-@import 'neon-structure';
-@import 'neon-effects';
-@import 'neon-tables.css';
+@import "neon-animation-vars";
+@import "../basics/reset.css";
+@import "neon-animation-renderer";
+@import "neon-brightness";
+@import "neon-typography-vars";
+@import "neon-typography-renderer";
+@import "css-vars";
+@import "neon-structure";
+@import "neon-effects";
+@import "neon-tables.css";
 
 
 
@@ -38,10 +38,11 @@ html {
 }
 
 :visited {
-	color: var(--theme-primary-color);
+    color: var(--theme-primary-color);
 }
 
-:link, :visited {
+:link,
+:visited {
     &[href^="#"],
     &.does-not-navigate-away {
         text-decoration: none;
@@ -55,8 +56,11 @@ html {
 
     background-color: var(--theme-primary-color);
 
-    &, * {
+    &,
+    * {
+        // scss-lint:disable ImportantRule
         color: var(--theme-text-on-primary-color-color) !important;
+        // scss-lint:enable ImportantRule
     }
 
     .image-button .cta {
@@ -68,11 +72,11 @@ html {
     .title {
         .material-icons:first-child,
         .back-to-root-icon {
-            vertical-align: middle;
+            width: 1em;
             margin-right: 1ex;
             margin-inline-end: 1ex;
-            width: 1em;
             transition-property: margin, width, opacity;
+            vertical-align: middle;
 
             .top-level & {
                 margin-right: 0;
