@@ -2,10 +2,10 @@
 // NOTE: This file does NOT set the actual values. For that, you must first import a stylesheet that does, like 'material-structure-vars'
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import 'material-shadows-vars';
-@import 'material-structure-vars';
-@import 'flex-incl';
-@import 'css-vars';
+@import "material-shadows-vars";
+@import "material-structure-vars";
+@import "flex-incl";
+@import "css-vars";
 
 
 
@@ -92,10 +92,10 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         }
 
         &:active {
-            box-shadow: var(--button-pressed-shadow);
-
-            transform: translateY(0px);
+            transform: translateY(0);
             transition-duration: 10ms;
+
+            box-shadow: var(--button-pressed-shadow);
         }
     }
 }
@@ -113,20 +113,20 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
 #{$button-selector} {
 
-    color: var(--theme-text-on-primary-color-color);
-
-    padding: var(--button-padding);
-    margin: var(--button-margin);
-
     min-width: var(--button-min-width);
+
+    margin: var(--button-margin);
+    padding: var(--button-padding);
+
+    color: var(--theme-text-on-primary-color-color);
 
     &:not(.medium-emphasis):not(.low-emphasis) {
         background-color: var(--theme-primary-color);
     }
 
     &.medium-emphasis {
-        color: var(--theme-primary-color);
         border: 1px solid var(--theme-primary-color);
+        color: var(--theme-primary-color);
     }
 
     &.low-emphasis,
@@ -148,7 +148,9 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         margin: var(--button-app-bar-margin);
         padding: var(--button-app-bar-padding);
 
+        // scss-lint:disable ImportantRule
         transform: none !important;
+        // scss-lint:enable ImportantRule
 
         background: none;
         color: var(--theme-primary-color);
@@ -162,16 +164,17 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         --button-pressed-shadow: none;
     }
 
-    &.dense {
-        font-size: var(--font-size-dense-button);
-        padding: var(--button-dense-padding);
 
+    &.dense {
         // height: 32px;
+
+        padding: var(--button-dense-padding);
+        font-size: var(--font-size-dense-button);
     }
 
     &.big {
-        font-size: var(--font-size-large-button);
         padding: var(--button-large-padding);
+        font-size: var(--font-size-large-button);
     }
 
     &[disabled] {
@@ -186,16 +189,14 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     .image-button,
     &.image-button {
 
-        & {
-            padding: var(--button-image-padding);
-            margin: var(--button-image-margin);
-            min-width: var(--button-image-min-width);
-        }
+        min-width: var(--button-image-min-width);
+        margin: var(--button-image-margin);
+        padding: var(--button-image-padding);
 
         .app-bar & {
-            padding: var(--button-app-bar-image-padding);
-            margin: var(--button-app-bar-image-margin);
             min-width: var(--app-bar-height-auto);
+            margin: var(--button-app-bar-image-margin);
+            padding: var(--button-app-bar-image-padding);
 
             transition-property: $button-base-transition-property min-width;
         }
@@ -210,21 +211,23 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
     position: absolute;
 
+    right: 1em;
+    bottom: 1em;
+    width: var(--fab-diameter);
+    height: var(--fab-diameter);
+    padding: 0;
+
+    border-radius: 99in;
+
+    box-shadow: shadow(6);
+
+    text-align: center;
+
     body &,
     main &,
     &-global {
         position: fixed;
     }
-
-    right: 1em;
-    bottom: 1em;
-    border-radius: 99in;
-    width: var(--fab-diameter);
-    height: var(--fab-diameter);
-    text-align: center;
-    padding: 0;
-
-    box-shadow: shadow(6);
 
     &:focus,
     &:hover {
@@ -253,55 +256,63 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     &:not([disabled]) {
         &::before {
             content: "";
-            width: 0px;
-            height: 0px;
-            background-color: currentColor;
             display: block;
-            position: absolute;
-            border-radius: 99in;
-            left: 50%;
-            top: 50%;
-            opacity: 0.5;
 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 0;
+            height: 0;
+
+            transition-property: width, height, top, left, opacity;
             transition-duration: 0ms;
             transition-timing-function: ease-out;
-            transition-property: width, height, top, left, opacity;
+
+            border-radius: 99in;
+
+            opacity: 0.5;
+            background-color: currentColor;
         }
 
 
         &:active::before {
+            top: calc(50% - var(--ripple-end-radius));
+            left: calc(50% - var(--ripple-end-radius));
             width: var(--ripple-end-diameter);
             height: var(--ripple-end-diameter);
-            opacity: var(--ripple-midpoint-opacity);
-            left: calc(50% - var(--ripple-end-radius));
-            top: calc(50% - var(--ripple-end-radius));
+
             transition-duration: var(--ripple-grow-duration);
+
+            opacity: var(--ripple-midpoint-opacity);
         }
 
         &:focus:not(:active)::before {
+            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
             width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
             height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
-            opacity: 0;
-            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
-            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+
             transition-duration: var(--ripple-fade-duration);
+
+            opacity: 0;
         }
 
 
         &.big:active::before,
         &.big-ripple:active::before {
+            top: calc(50% - (var(--ripple-end-radius) * 2));
+            left: calc(50% - (var(--ripple-end-radius) * 2));
             width: calc(var(--ripple-end-diameter) * 2);
             height: calc(var(--ripple-end-diameter) * 2);
-            left: calc(50% - (var(--ripple-end-radius) * 2));
-            top: calc(50% - (var(--ripple-end-radius) * 2));
         }
 
         &.big:focus:not(:active)::before,
         &.big-ripple:focus:not(:active)::before {
+            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
+            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
             width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
             height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
-            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
-            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
         }
     }
 }
@@ -310,36 +321,35 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
 // MARK: - Shadows
 
-@import '/assets/v2/material/material-shadows.css';
+@import "/assets/v2/material/material-shadows.css";
 
 
 
 // MARK: - Sidebar
 
 .sidebar {
-    background: #FFF;
 
     position: fixed;
+    z-index: 16;
+
     top: var(--app-bar-height-auto);
-
     left: calc(0px - var(--sidebar-default-width));
-
     width: var(--sidebar-default-width);
     max-width: var(--sidebar-max-width);
     height: 100vh;
     height: calc(100vh - var(--app-bar-height-auto));
 
-    transition-property: width, top, left;
+    transition-property: background, width, top, left;
     will-change: width, top, left;
-    transition-timing-function: cubic-bezier(.75,0,.95,1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
+    background: #FFF;
     box-shadow: shadow(16);
-    z-index: 16;
 
     .sidebar-shown &,
     [data-sidebar=shown] & {
         left: 0;
-        transition-timing-function: cubic-bezier(.06,0,.25,1);
+        transition-timing-function: cubic-bezier(0.06, 0, 0.25, 1);
     }
 
     // &::before {
