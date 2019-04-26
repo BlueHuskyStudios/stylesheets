@@ -56,3 +56,43 @@
         }
     }
 }
+
+
+// MARK: - Layers
+
+:root {
+    --theme-background-color-at-level-1: hsl(0, 0%, 98%);
+    --theme-background-color-at-level-2: hsl(0, 0%, 93%);
+    --theme-background-color-at-level-3: hsl(0, 0%, 86%);
+
+    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-1);
+    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-2);
+}
+
+.brightness-dark,
+.brightness-black {
+    --theme-background-color-at-level-1: hsl(200, 19.1%, 18%);
+    --theme-background-color-at-level-2: hsl(200, 22.1%, 15%);
+    --theme-background-color-at-level-3: hsl(200, 25.1%, 12%);
+}
+
+.z0 {
+    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-1);
+    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-2);
+}
+
+.z1 {
+    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-2);
+    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-3);
+}
+
+.z2 {
+    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-3);
+    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-3);
+}
+
+.z0,
+.z1,
+.z2 {
+    background: var(--theme-background-color-at-level-raised);
+}

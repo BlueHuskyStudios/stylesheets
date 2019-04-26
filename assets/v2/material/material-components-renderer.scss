@@ -343,7 +343,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     will-change: width, top, left;
     transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
-    background: #FFF;
+    background: var(--theme-background-color-at-level-raised);
     box-shadow: shadow(16);
 
     .sidebar-shown &,
