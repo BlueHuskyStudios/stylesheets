@@ -148,10 +148,6 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         margin: var(--button-app-bar-margin);
         padding: var(--button-app-bar-padding);
 
-        // scss-lint:disable ImportantRule
-        transform: none !important;
-        // scss-lint:enable ImportantRule
-
         background: none;
         color: var(--theme-primary-color);
     }
@@ -159,6 +155,10 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     &.low-emphasis,
     &.flat,
     .app-bar &:not(.raised) {
+        // scss-lint:disable ImportantRule
+        transform: none !important;
+        // scss-lint:enable ImportantRule
+
         --button-resting-shadow: none;
         --button-hover-shadow: none;
         --button-pressed-shadow: none;
