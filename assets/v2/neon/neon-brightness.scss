@@ -65,8 +65,8 @@
     --theme-background-color-at-level-2: hsl(0, 0%, 93%);
     --theme-background-color-at-level-3: hsl(0, 0%, 86%);
 
-    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-1);
-    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-2);
+    --theme-background-color-at-level-flat: var(--theme-background-color-at-level-1);
+    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-2);
 }
 
 .brightness-dark,
@@ -77,18 +77,18 @@
 }
 
 .z0 {
-    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-1);
-    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-2);
+    --theme-background-color-at-level-flat: var(--theme-background-color-at-level-1);
+    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-2);
 }
 
 .z1 {
-    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-2);
-    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-3);
+    --theme-background-color-at-level-flat: var(--theme-background-color-at-level-2);
+    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-3);
 }
 
 .z2 {
+    --theme-background-color-at-level-flat: var(--theme-background-color-at-level-3);
     --theme-background-color-at-level-raised: var(--theme-background-color-at-level-3);
-    --theme-background-color-at-level-raised-higher: var(--theme-background-color-at-level-3);
 }
 
 .z0,
