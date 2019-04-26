@@ -347,7 +347,8 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     box-shadow: shadow(16);
 
     .sidebar-shown &,
-    [data-sidebar=shown] & {
+    [data-sidebar=shown] &,
+    &:target {
         left: 0;
         transition-timing-function: cubic-bezier(0.06, 0, 0.25, 1);
     }
