@@ -71,6 +71,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     -moz-appearance: none;
     appearance: none;
 
+    text-align: center;
     text-transform: $text-transform-button;
     text-decoration: $text-decoration-button;
 
@@ -131,10 +132,6 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     &.low-emphasis,
     &.flat {
 
-        @include css-vars((
-            --button-resting-shadow: none
-        ));
-
         min-width: var(--button-flat-min-width);
 
         margin: var(--button-flat-margin);
@@ -146,10 +143,6 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
     .app-bar &:not(.raised) {
 
-        @include css-vars((
-            --button-resting-shadow: none
-        ));
-
         min-width: var(--button-app-bar-min-width);
 
         margin: var(--button-app-bar-margin);
@@ -159,6 +152,14 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
         background: none;
         color: var(--theme-primary-color);
+    }
+
+    &.low-emphasis,
+    &.flat,
+    .app-bar &:not(.raised) {
+        --button-resting-shadow: none;
+        --button-hover-shadow: none;
+        --button-pressed-shadow: none;
     }
 
     &.dense {
