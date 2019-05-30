@@ -394,7 +394,7 @@ $button-flat-min-width: 88px !default;
 
 $button-app-bar-padding: $button-flat-padding !default;
 $button-app-bar-margin: 0 !default;
-$button-app-bar-min-width: $button-flat-min-width !default;
+$button-app-bar-min-width: var(--app-bar-height-auto) !default;
 
 $button-image-padding: 0 !default;
 $button-image-margin: $button-margin !default;
