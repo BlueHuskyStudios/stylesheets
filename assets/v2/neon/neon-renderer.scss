@@ -21,6 +21,7 @@ $css-vars-use-native: true !default;
 @import "neon-structure";
 @import "neon-effects";
 @import "neon-tables.css";
+@import "neon-footer";
 
 
 
@@ -87,9 +88,9 @@ html {
             vertical-align: middle;
 
             .top-level & {
+                width: 0;
                 margin-right: 0;
                 margin-inline-end: 0;
-                width: 0;
                 opacity: 0;
                 pointer-events: none;
             }
