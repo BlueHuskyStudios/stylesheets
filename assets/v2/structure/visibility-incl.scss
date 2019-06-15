@@ -1,0 +1,85 @@
+//
+// Visibility
+//
+// Some visibility conveniences
+//
+
+
+
+.hide-when-small,
+.hidden-when-small {
+    @media (max-width: var(--phone-landscape-small-max-width)) {
+        display: none;
+    }
+}
+
+
+// --layout-4-column-min-width:  $layout-4-column-min-width
+// --layout-4-column-max-width:  $layout-4-column-max-width
+// --layout-8-column-min-width:  $layout-8-column-min-width
+// --layout-8-column-max-width:  $layout-8-column-max-width
+// --layout-12-column-min-width: $layout-12-column-min-width
+// --layout-12-column-max-width: $layout-12-column-max-width
+
+// --desktop-xsmall-min-width: $desktop-xsmall-min-width
+// --desktop-xsmall-max-width: $desktop-xsmall-max-width
+// --desktop-small-min-width: $desktop-small-min-width
+// --desktop-small-max-width: $desktop-small-max-width
+// --desktop-medium-min-width: $desktop-medium-min-width
+// --desktop-medium-max-width: $desktop-medium-max-width
+// --desktop-large-min-width: $desktop-large-min-width
+// --desktop-large-max-width: $desktop-large-max-width
+// --desktop-xlarge-min-width: $desktop-xlarge-min-width
+// --desktop-xlarge-max-width: $desktop-xlarge-max-width
+
+
+// --phone-portrait-small-min-width: $phone-portrait-small-min-width
+// --phone-portrait-small-max-width: $phone-portrait-small-max-width
+// --phone-portrait-medium-min-width: $phone-portrait-medium-min-width
+// --phone-portrait-medium-max-width: $phone-portrait-medium-max-width
+// --phone-portrait-large-min-width: $phone-portrait-large-min-width
+// --phone-portrait-large-max-width: $phone-portrait-large-max-width
+
+// --phone-portrait-min-width: $phone-portrait-min-width
+// --phone-portrait-max-width: $phone-portrait-max-width
+
+
+// --phone-landscape-small-min-width: $phone-landscape-small-min-width
+// --phone-landscape-small-max-width: $phone-landscape-small-max-width
+// --phone-landscape-medium-min-width: $phone-landscape-medium-min-width
+// --phone-landscape-medium-max-width: $phone-landscape-medium-max-width
+// --phone-landscape-large-min-width: $phone-landscape-large-min-width
+// --phone-landscape-large-max-width: $phone-landscape-large-max-width
+
+// --phone-landscape-min-width: $phone-landscape-min-width
+// --phone-landscape-max-width: $phone-landscape-max-width
+
+
+// --tablet-portrait-small-min-width: $tablet-portrait-small-min-width
+// --tablet-portrait-small-max-width: $tablet-portrait-small-max-width
+// --tablet-portrait-medium-min-width: $tablet-portrait-medium-min-width
+// --tablet-portrait-medium-max-width: $tablet-portrait-medium-max-width
+// --tablet-portrait-large-min-width: $tablet-portrait-large-min-width
+// --tablet-portrait-large-max-width: $tablet-portrait-large-max-width
+
+// --tablet-portrait-min-width: $tablet-portrait-min-width
+// --tablet-portrait-max-width: $tablet-portrait-max-width
+
+
+// --tablet-landscape-small-min-width: $tablet-landscape-small-min-width
+// --tablet-landscape-small-max-width: $tablet-landscape-small-max-width
+// --tablet-landscape-medium-min-width: $tablet-landscape-medium-min-width
+// --tablet-landscape-medium-max-width: $tablet-landscape-medium-max-width
+// --tablet-landscape-large-min-width: $tablet-landscape-large-min-width
+// --tablet-landscape-large-max-width: $tablet-landscape-large-max-width
+
+// --tablet-landscape-min-width: $tablet-landscape-min-width
+// --tablet-landscape-max-width: $tablet-landscape-max-width
+
+
+// --min-width-for-both-summary-and-detail-content: $min-width-for-both-summary-and-detail-content
+// --max-width-for-normal-content: $max-width-for-normal-content
+
+
+// --size-class-phone-tablet-breakpoint: $size-class-phone-tablet-breakpoint
+// --size-class-tablet-desktop-breakpoint: $size-class-tablet-desktop-breakpoint
