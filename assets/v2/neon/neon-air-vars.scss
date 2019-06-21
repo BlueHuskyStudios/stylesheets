@@ -24,6 +24,7 @@ $theme-text-on-accent-color-color: hsla(205, 87%, 97%, 1);
     $theme-text-on-primary-color-color: #263238;
     $theme-text-on-accent-color-color: #000;
 
+    $css-vars-at-root: false;
     @include css-vars((
         --theme-primary-color: $theme-primary-color,
         --theme-accent-color: $theme-accent-color,
