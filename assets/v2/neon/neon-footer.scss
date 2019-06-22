@@ -7,15 +7,18 @@
 
 
 
-footer {
-    max-width: var(--tablet-landscape-small-max-width);
-    margin: auto;
-    text-align: center;
-
-    aside {
-        width: auto;
-        margin: 10vh 0 3vh;
-        opacity: 0.5;
+main,
+body {
+    footer {
+        max-width: var(--tablet-landscape-small-max-width);
+        margin: auto;
         text-align: center;
+
+        aside {
+            width: auto;
+            margin: 10vh 0 3vh;
+            opacity: 0.5;
+            text-align: center;
+        }
     }
 }
