@@ -120,6 +120,8 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
     color: var(--theme-text-on-primary-color-color);
 
+    user-select: none;
+
     &:not(.medium-emphasis):not(.low-emphasis) {
         background-color: var(--theme-primary-color);
     }
@@ -327,63 +329,4 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
 // MARK: - Sidebar
 
-.sidebar {
-
-    position: fixed;
-    z-index: 16;
-
-    top: var(--app-bar-height-auto);
-    left: calc(0px - var(--sidebar-default-width));
-    width: var(--sidebar-default-width);
-    max-width: var(--sidebar-max-width);
-    height: 100vh;
-    height: calc(100vh - var(--app-bar-height-auto));
-
-    transition-property: background, width, top, left;
-    will-change: width, top, left;
-    transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
-
-    background: var(--theme-background-color-at-level-raised);
-    box-shadow: shadow(16);
-
-    .sidebar-shown &,
-    [data-sidebar=shown] &,
-    &:target {
-        left: 0;
-        transition-timing-function: cubic-bezier(0.06, 0, 0.25, 1);
-    }
-
-    // &::before {
-    //     content: "";
-    //     width: 100vw;
-    //     height: 100vh;
-    //     background-color: rgba(0,0,0,0.0);
-    //     pointer-events: none;
-    //     position: fixed;
-    //     z-index: 15;
-    //     top: 0;
-    //     left: 0;
-    //
-    //     transition-property: background-color;
-    //     will-change: background-color;
-    // }
-    //
-    // .sidebar-shown &::before {
-    //     background-color: rgba(0,0,0,0.3);
-    // }
-
-    // @at-root
-    // body>:not(.sidebar):not(.app-bar) {
-    //     transition-property: filter;
-    //     will-change: filter, pointer-events;
-    //     filter: blur(0px) brightness(100%);
-    // }
-    // @at-root
-    // .sidebar-shown body,
-    // body.sidebar-shown {
-    //     &>:not(.sidebar):not(.app-bar) {
-    //         filter: blur(5px) brightness(50%);
-    //         pointer-events: none;
-    //     }
-    // }
-}
+@import "material-sidebar-renderer";

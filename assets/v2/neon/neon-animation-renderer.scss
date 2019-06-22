@@ -38,6 +38,13 @@ html {
 
 
 
+:link,
+:visited {
+    transition-property: color;
+}
+
+
+
 .app-bar {
     transition-property: background-color, color, height, padding, margin;
 
