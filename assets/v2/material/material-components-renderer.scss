@@ -120,6 +120,8 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
     color: var(--theme-text-on-primary-color-color);
 
+    user-select: none;
+
     &:not(.medium-emphasis):not(.low-emphasis) {
         background-color: var(--theme-primary-color);
     }
