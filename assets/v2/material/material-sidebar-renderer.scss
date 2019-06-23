@@ -29,12 +29,6 @@
     background: var(--theme-background-color-at-level-raised);
     box-shadow: shadow(16);
 
-    #{$sidebar-parent-sidebar-shown-selector} &,
-    &:target {
-        left: 0;
-        transition-timing-function: cubic-bezier(0.06, 0, 0.25, 1);
-    }
-
     // &::before {
     //     content: "";
     //     width: 100vw;
@@ -100,9 +94,20 @@
 
     pointer-events: none;
     user-select: none;
+}
 
-    #{$sidebar-parent-sidebar-shown-selector} .sidebar-scrim {
+
+
+#{$sidebar-parent-sidebar-shown-selector} {
+    @at-root
+    & .sidebar,
+    .sidebar:target {
+        left: 0;
+        transition-timing-function: cubic-bezier(0.06, 0, 0.25, 1);
+    }
+
+    .sidebar-scrim {
         background: var(--sidebar-scrim-background-color);
         pointer-events: auto;
-    }
+   }
 }
