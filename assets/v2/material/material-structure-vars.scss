@@ -310,7 +310,16 @@ $app-bar-vertical-padding: $app-bar-padding-top + $app-bar-padding-bottom !defau
 $app-bar-horizontal-padding: $app-bar-padding-left + $app-bar-padding-right !default;
 $app-bar-padding: $app-bar-padding-top $app-bar-padding-right $app-bar-padding-bottom $app-bar-padding-left !default;
 
+
+// MARK: Z Indices
+
 $app-bar-z-index: 4 !default;
+$sidebar-z-index: 16 !default;
+
+@include css-vars((
+    --app-bar-z-index: $app-bar-z-index,
+    --sidebar-z-index: $sidebar-z-index,
+));
 
 
 // MARK: Content

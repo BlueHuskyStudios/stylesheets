@@ -6,6 +6,7 @@
 
 
 @import "material-sidebar-vars";
+@import "material-structure-vars";
 @import "css-vars";
 
 
@@ -13,7 +14,7 @@
 .sidebar {
 
     position: fixed;
-    z-index: 16;
+    z-index: var(--sidebar-z-index);
 
     top: var(--app-bar-height-auto);
     left: calc(0px - var(--sidebar-default-width));
@@ -27,7 +28,7 @@
     transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
     background: var(--theme-background-color-at-level-raised);
-    box-shadow: shadow(16);
+    box-shadow: shadow($sidebar-z-index);
 
     // &::before {
     //     content: "";
