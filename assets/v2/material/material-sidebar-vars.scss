@@ -1,0 +1,21 @@
+
+// material-sidebar-vars
+//
+// Variables for Material navigation drawers
+
+
+
+@import "css-vars";
+
+
+
+$sidebar-scrim-background-color: hsla(0, 0, 0, 32%);
+$sidebar-scrim-background-hidden-color: hsla(0, 0, 0, 0%);
+
+@include css-vars((
+    --sidebar-scrim-background-color: $sidebar-scrim-background-color,
+    --sidebar-scrim-background-hidden-color: $sidebar-scrim-background-hidden-color,
+));
+
+
+$sidebar-parent-sidebar-shown-selector: ".sidebar-shown, [data-sidebar=shown]";
