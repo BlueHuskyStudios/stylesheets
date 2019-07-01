@@ -3,11 +3,11 @@
 //
 // Variables that the Neon Water subtheme uses
 
-@import 'neon-shared-vars';
+@import "neon-shared-vars";
 
 $theme-primary-color: #00b0ff;
-$theme-accent-color: #FBC02D;
-$theme-text-on-primary-color-color: #FFF;
+$theme-accent-color: #4db6ac;
+$theme-text-on-primary-color-color: #fff;
 $theme-text-on-accent-color-color: #000;
 
 @include css-vars((
