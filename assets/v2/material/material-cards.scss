@@ -1,6 +1,38 @@
 
+// material-cards
+//
+// Renders Material cards
+// See also: https://material.io/design/components/cards.html
 
-.cards .card {
-    border-radius: 1ex;
+
+@import "css-vars";
+@import "material-shadows-vars";
+
+
+
+:root {
+    --card-shadow-default: var(--box-shadow-z1);
+    --card-shadow-raised: var(--box-shadow-z8);
+
+    @media (min-width: $phone-portrait-large-max-width) {
+        --card-shadow-default: var(--box-shadow-z0);
+    }
+}
+
+
+@mixin _card-base($shadow: var(--card-shadow-default), $shadow-raised: var(--card-shadow-raised)) {
     padding: 1ex;
+    border-radius: 1ex;
+    background: var(--theme-background-color-at-level-raised);
+    box-shadow: $shadow;
+
+
+    .raised {
+        box-shadow: $shadow-raised;
+    }
+}
+
+
+.card {
+    @include _card-base();
 }
