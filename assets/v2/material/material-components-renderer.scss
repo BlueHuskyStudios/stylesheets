@@ -48,12 +48,14 @@
 
 $button-base-transition-property: transform, box-shadow, color, background, border, opacity;
 
-@mixin _button-base() {
+@mixin _button-base($has-shadow: true) {
 
     border: none;
     border-radius: var(--button-border-radius);
 
-    box-shadow: var(--button-resting-shadow);
+    @if ($has-shadow) {
+        box-shadow: var(--button-resting-shadow);
+    }
 
     cursor: var(--button-cursor);
 
@@ -245,9 +247,11 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 // MARK: Ripples
 
 #{$button-selector},
+#{$chip-selector},
 .has-effect-when-pressed {
 
     position: relative;
+    overflow: hidden;
 
     &:not([disabled]) {
         &::before {

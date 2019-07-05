@@ -431,10 +431,10 @@ $ripple-midpoint-opacity: 0.3 !default;
 
 $common-button-selector: "button, .button, :link.button, :visited.button, input[type=submit], input[type=reset]";
 $image-button-selector: ".image-button";
-$chip-button-selector: ".chip, .pill";
+$chip-selector: ".chip, .pill";
 $floating-action-button-selector: ".floating-action-button, .mini-floating-action-button";
-$uncommon-button-selector: $image-button-selector + ", " + $floating-action-button-selector + ", " + $chip-button-selector;
-$stationary-button-selector: $common-button-selector + ", " + $image-button-selector + ", " + $chip-button-selector;
+$uncommon-button-selector: $image-button-selector + ", " + $floating-action-button-selector;
+$stationary-button-selector: $common-button-selector + ", " + $image-button-selector;
 $button-selector: $common-button-selector + ", " + $uncommon-button-selector;
 
 $chip-button-group-selector: ".chips, .pills";
