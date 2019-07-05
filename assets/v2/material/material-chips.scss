@@ -1,0 +1,35 @@
+
+// material-chips
+//
+// Renders Material chips
+// See also: https://material.io/design/components/chips.html
+
+
+
+@import "material-structure-vars";
+
+:root {
+    --chip-background: #7777;
+}
+
+
+#{$chip-button-selector} {
+
+    display: inline-block;
+    height: 32px;
+    margin: 0 8px;
+    padding: 0.75ex 12px;
+    border-radius: 99in;
+    background-color: var(--chip-background);
+}
+
+
+#{$chip-button-group-selector} {
+
+    list-style-type: none;
+
+    >* {
+        margin: 0;
+        padding: 0;
+    }
+}

@@ -31,7 +31,7 @@
 
         margin: 0;
 
-        transition-property: padding, line-height;
+        transition-property: padding, line-height, font-size;
 
         // line-height: $app-bar-height-phone-portrait - $app-bar-vertical-padding;
         line-height: calc(var(--app-bar-height-auto) - var(--app-bar-vertical-padding));
@@ -330,3 +330,9 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 // MARK: - Sidebar
 
 @import "material-sidebar-renderer";
+
+
+
+// MARK: - Chips
+
+@import "material-chips";
