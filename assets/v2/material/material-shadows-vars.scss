@@ -142,6 +142,7 @@ $css-vars-use-native: true;
 
 
 @include css-vars((
+    --box-shadow-z0: shadow(0),
     --box-shadow-z1: shadow(1),
     --box-shadow-z2: shadow(2),
     --box-shadow-z3: shadow(3),
