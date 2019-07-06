@@ -1,0 +1,22 @@
+
+
+
+@import "material-buttons";
+@import "icons-import";
+
+
+
+#{$button-selector} {
+    #{$icon-selector} {
+
+        margin: 0 1em;
+
+        &:first-child {
+            margin-inline-start: 0;
+        }
+
+        &:last-child {
+            margin-inline-end: 0;
+        }
+    }
+}
