@@ -31,11 +31,14 @@
 
     --card-border-radius: var(--card-padding);
 
+    --card-border-color: #7770;
+
     --card-shadow-default: var(--box-shadow-z1);
     --card-shadow-raised: var(--box-shadow-z8);
 
     @media (min-width: $phone-portrait-large-max-width) {
         --card-shadow-default: var(--box-shadow-z0);
+        --card-border-color: #7774;
     }
 }
 
@@ -43,15 +46,17 @@
 @mixin _card-base($shadow: var(--card-shadow-default), $shadow-raised: var(--card-shadow-raised)) {
     margin: var(--card-margin);
     padding: var(--card-padding);
+    border: 1px solid var(--card-border-color);
     border-radius: var(--card-border-radius);
     background-color: var(--theme-background-color-at-level-raised);
     box-shadow: $shadow;
 
-    transition-property: box-shadow, background;
+    transition-property: box-shadow, background, border-color;
 
 
     &.raised {
         box-shadow: $shadow-raised;
+        --card-border-color: #7770;
     }
 
     >footer:last-child {
