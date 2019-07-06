@@ -12,6 +12,7 @@ sass:
     load_paths:
         - assets
         - assets/v2/basics
+        - assets/v2/general
         - assets/v2/structure
         - assets/v2/material
         - assets/v2/neon

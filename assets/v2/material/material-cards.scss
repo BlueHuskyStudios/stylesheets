@@ -21,13 +21,16 @@
 
 
 @mixin _card-base($shadow: var(--card-shadow-default), $shadow-raised: var(--card-shadow-raised)) {
+    margin: 1ex;
     padding: 1ex;
     border-radius: 1ex;
-    background: var(--theme-background-color-at-level-raised);
+    background-color: var(--theme-background-color-at-level-raised);
     box-shadow: $shadow;
 
+    transition-property: box-shadow, background;
 
-    .raised {
+
+    &.raised {
         box-shadow: $shadow-raised;
     }
 }
