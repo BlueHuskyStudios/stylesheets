@@ -7,18 +7,29 @@
 
 
 @import "material-structure-vars";
+@import "material-buttons";
 
 :root {
-    --chip-background: #7777;
+    --chip-background: #7774;
 }
 
 
 #{$chip-selector} {
+
     display: inline-block;
     margin: 0.5ex 1ex;
     padding: 0.75ex 1.5ex;
     border-radius: 99in;
     background: var(--chip-background);
+
+    user-select: none;
+
+
+    &,
+    &:link,
+    &:visited {
+        color: var(--theme-foreground-color);
+    }
 }
 
 
