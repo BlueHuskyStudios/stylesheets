@@ -7,7 +7,6 @@
 
 @import "css-vars";
 @import "material-shadows-vars";
-@import "material-buttons-vars";
 
 
 
@@ -56,9 +55,9 @@
     }
 
     >footer:last-child {
-        margin-block-end: calc(0px - var(--card-padding-block-end));
+        margin-block-end: 0;
 
-        > #{$button-selector} {
+        #{$button-selector} {
             margin-block-end: 0;
         }
     }
