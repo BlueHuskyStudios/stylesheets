@@ -11,6 +11,26 @@
 
 
 :root {
+    --card-margin-block-start: 1ex;
+    --card-margin-block-end: 1ex;
+    --card-margin-inline-start: 1ex;
+    --card-margin-inline-end: 1ex;
+    --card-margin: var(--card-margin-block-start)
+                   var(--card-margin-inline-end)
+                   var(--card-margin-block-end)
+                   var(--card-margin-inline-start);
+
+    --card-padding-block-start: 1ex;
+    --card-padding-block-end: 1ex;
+    --card-padding-inline-start: 1ex;
+    --card-padding-inline-end: 1ex;
+    --card-padding: var(--card-padding-block-start)
+                    var(--card-padding-inline-end)
+                    var(--card-padding-block-end)
+                    var(--card-padding-inline-start);
+
+    --card-border-radius: var(--card-padding);
+
     --card-shadow-default: var(--box-shadow-z1);
     --card-shadow-raised: var(--box-shadow-z8);
 
@@ -21,9 +41,9 @@
 
 
 @mixin _card-base($shadow: var(--card-shadow-default), $shadow-raised: var(--card-shadow-raised)) {
-    margin: 1ex;
-    padding: 1ex;
-    border-radius: 1ex;
+    margin: var(--card-margin);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
     background-color: var(--theme-background-color-at-level-raised);
     box-shadow: $shadow;
 

@@ -17,7 +17,7 @@
     z-index: var(--sidebar-z-index);
 
     top: var(--app-bar-height-auto);
-    left: calc(0px - var(--sidebar-default-width));
+    left: calc(-46px - var(--sidebar-default-width));
     width: var(--sidebar-default-width);
     max-width: var(--sidebar-max-width);
     height: 100vh;
