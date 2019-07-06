@@ -9,38 +9,9 @@
 
 
 
-.app-bar,
-.app-bar.short {
+// MARK: - App Bar
 
-    @include flex-row();
-    @include flex-justify-space-between();
-    @include flex-align-stretch();
-
-    z-index: var(--app-bar-z-index);
-
-    height: var(--app-bar-height-auto);
-
-    box-shadow: shadow(4);
-
-    * {
-        flex-shrink: 1;
-    }
-
-    h1 {
-        flex-grow: 2;
-
-        margin: 0;
-
-        transition-property: padding, line-height, font-size;
-
-        // line-height: $app-bar-height-phone-portrait - $app-bar-vertical-padding;
-        line-height: calc(var(--app-bar-height-auto) - var(--app-bar-vertical-padding));
-
-        &:first-child {
-            padding: 0 var(--content-margin-horiz-auto);
-        }
-    }
-}
+@import "material-app-bar";
 
 
 
