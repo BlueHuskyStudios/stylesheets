@@ -81,13 +81,14 @@
         }
 
         &:nth-last-child(2) {
-            margin-bottom: -1px;
+            border-block-end-style: none;
         }
 
         &:last-child {
             position: sticky;
             bottom: 0;
 
+            border-block-start-style: solid;
             border-block-end-style: none;
         }
     }
