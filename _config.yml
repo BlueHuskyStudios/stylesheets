@@ -17,6 +17,7 @@ sass:
         - assets/v2/material
         - assets/v2/neon
         - assets/v2/3p/css-vars
+        - assets/v2/3p/Font-Awesome/scss
     sass_dir: assets
 twitter_username: BenLeggiero
 github_username:  BenLeggiero
