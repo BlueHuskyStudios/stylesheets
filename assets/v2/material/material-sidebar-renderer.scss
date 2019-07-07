@@ -67,9 +67,6 @@
     // }
 
     section {
-        position: sticky;
-        top: 0;
-
         border-width: 1px;
         border-style: solid none;
         border-color: #607D8B80;
@@ -82,8 +79,10 @@
         }
 
         &:last-child {
-            border-block-end-style: none;
+            position: sticky;
             bottom: 0;
+
+            border-block-end-style: none;
         }
     }
 }
