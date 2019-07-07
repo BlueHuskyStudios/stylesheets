@@ -68,7 +68,7 @@
 
     section {
         position: sticky;
-        bottom: 0;
+        top: 0;
 
         border-width: 1px;
         border-style: solid none;
@@ -83,6 +83,7 @@
 
         &:last-child {
             border-block-end-style: none;
+            bottom: 0;
         }
     }
 }
