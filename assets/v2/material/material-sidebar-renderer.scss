@@ -67,8 +67,10 @@
     // }
 
     section {
+        transition-property: background;
+
         border-width: 1px;
-        border-style: solid none;
+        border-style: none none solid;
         border-color: #607D8B80;
 
         background-color: var(--sidebar-background-color);
@@ -76,6 +78,10 @@
 
         &:first-child {
             border-block-start-style: none;
+        }
+
+        &:nth-last-child(2) {
+            margin-bottom: -1px;
         }
 
         &:last-child {
