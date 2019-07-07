@@ -23,11 +23,13 @@
     height: 100vh;
     height: calc(100vh - var(--app-bar-height-auto));
 
+    overflow: auto;
+
     transition-property: background, width, top, left;
     will-change: width, top, left;
     transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
-    background: var(--theme-background-color-at-level-raised);
+    background: var(--sidebar-background-color);
     box-shadow: shadow($sidebar-z-index);
 
     // &::before {
@@ -65,9 +67,14 @@
     // }
 
     section {
+        position: sticky;
+        bottom: 0;
+
         border-width: 1px;
         border-style: solid none;
         border-color: #607D8B80;
+
+        background-color: var(--sidebar-background-color);
 
 
         &:first-child {
