@@ -11,10 +11,12 @@
 
 $sidebar-scrim-background-color: hsla(0, 0, 0, 32%);
 $sidebar-scrim-background-hidden-color: hsla(0, 0, 0, 0%);
+$sidebar-background-color: var(--theme-background-color-at-level-raised);
 
 @include css-vars((
     --sidebar-scrim-background-color: $sidebar-scrim-background-color,
     --sidebar-scrim-background-hidden-color: $sidebar-scrim-background-hidden-color,
+    --sidebar-background-color: $sidebar-background-color,
 ));
 
 
