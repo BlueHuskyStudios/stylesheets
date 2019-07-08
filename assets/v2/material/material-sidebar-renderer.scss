@@ -92,6 +92,17 @@
             border-block-end-style: none;
         }
     }
+
+
+    ul,
+    ol,
+    .link-list {
+        list-style-type: none;
+
+        li {
+            margin: 0;
+        }
+    }
 }
 
 
@@ -114,12 +125,14 @@
 
 
 #{$sidebar-parent-sidebar-shown-selector} {
+    // scss-lint:disable UnnecessaryParentReference
     @at-root
     & .sidebar,
     .sidebar:target {
         left: 0;
         transition-timing-function: cubic-bezier(0.06, 0, 0.25, 1);
     }
+    // scss-lint:enable UnnecessaryParentReference
 
     .sidebar-scrim {
         background: var(--sidebar-scrim-background-color);
