@@ -7,28 +7,31 @@
     ol,
     .link-list {
         #{$common-button-selector} {
-            // scss-lint:disable ImportantRule
-            display: block !important;
-            // scss-lint:enable ImportantRule
+            &:not(.medium-emphasis):not(.low-emphasis) {
+                --button-background: transparent;
+                --button-border-color: transparent;
+                --button-text-color: var(--theme-primary-color);
 
-            min-width: var(--button-flat-min-width);
+                --button-resting-shadow: none;
+                --button-hover-shadow: none;
+                --button-pressed-shadow: none;
 
-            margin: var(--button-flat-margin);
-            padding: var(--button-flat-padding);
+                // scss-lint:disable ImportantRule
+                display: block !important;
+                // scss-lint:enable ImportantRule
 
-            transform: none;
+                min-width: var(--button-flat-min-width);
 
-            background: none;
-            color: var(--theme-primary-color);
+                margin: var(--button-flat-margin);
+                padding: var(--button-flat-padding);
 
-            text-align: left;
-            text-align: unset;
-            text-align: start;
-            text-transform: none;
+                transform: none;
 
-            --button-resting-shadow: none;
-            --button-hover-shadow: none;
-            --button-pressed-shadow: none;
+                text-align: left;
+                text-align: unset;
+                text-align: start;
+                text-transform: none;
+            }
         }
     }
 }

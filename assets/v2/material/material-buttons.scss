@@ -10,8 +10,10 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
 @mixin _button-base($has-shadow: true) {
 
-    border: none;
+    border: 1px solid var(--button-border-color);
     border-radius: var(--button-border-radius);
+    background: var(--button-background);
+    color: var(--button-text-color);
 
     @if ($has-shadow) {
         box-shadow: var(--button-resting-shadow);
@@ -79,24 +81,26 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     user-select: none;
 
     &:not(.medium-emphasis):not(.low-emphasis) {
-        background-color: var(--theme-primary-color);
+        --button-background: var(--theme-primary-color);
     }
 
     &.medium-emphasis {
-        border: 1px solid var(--theme-primary-color);
-        color: var(--theme-primary-color);
+        --button-background: none;
+        --button-border-color: var(--theme-primary-color);
+        --button-text-color: var(--theme-primary-color);
     }
 
     &.low-emphasis,
     &.flat {
+        --button-background: none;
+        --button-border-color: transparent;
+        --button-text-color: var(--theme-primary-color);
 
         min-width: var(--button-flat-min-width);
 
         margin: var(--button-flat-margin);
         padding: var(--button-flat-padding);
 
-        background: none;
-        color: var(--theme-primary-color);
     }
 
     .app-bar &:not(.raised) {
