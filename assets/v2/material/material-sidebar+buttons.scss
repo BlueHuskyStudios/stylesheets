@@ -1,0 +1,34 @@
+
+@import "material-buttons-vars";
+
+
+.sidebar {
+    ul,
+    ol,
+    .link-list {
+        #{$common-button-selector} {
+            // scss-lint:disable ImportantRule
+            display: block !important;
+            // scss-lint:enable ImportantRule
+
+            min-width: var(--button-flat-min-width);
+
+            margin: var(--button-flat-margin);
+            padding: var(--button-flat-padding);
+
+            transform: none;
+
+            background: none;
+            color: var(--theme-primary-color);
+
+            text-align: left;
+            text-align: unset;
+            text-align: start;
+            text-transform: none;
+
+            --button-resting-shadow: none;
+            --button-hover-shadow: none;
+            --button-pressed-shadow: none;
+        }
+    }
+}

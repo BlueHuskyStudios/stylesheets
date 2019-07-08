@@ -32,39 +32,6 @@
     background: var(--sidebar-background-color);
     box-shadow: shadow($sidebar-z-index);
 
-    // &::before {
-    //     content: "";
-    //     width: 100vw;
-    //     height: 100vh;
-    //     background-color: rgba(0,0,0,0.0);
-    //     pointer-events: none;
-    //     position: fixed;
-    //     z-index: 15;
-    //     top: 0;
-    //     left: 0;
-    //
-    //     transition-property: background-color;
-    //     will-change: background-color;
-    // }
-    //
-    // .sidebar-shown &::before {
-    //     background-color: rgba(0,0,0,0.3);
-    // }
-
-    // @at-root
-    // body>:not(.sidebar):not(.app-bar) {
-    //     transition-property: filter;
-    //     will-change: filter, pointer-events;
-    //     filter: blur(0px) brightness(100%);
-    // }
-    // @at-root
-    // .sidebar-shown body,
-    // body.sidebar-shown {
-    //     &>:not(.sidebar):not(.app-bar) {
-    //         filter: blur(5px) brightness(50%);
-    //         pointer-events: none;
-    //     }
-    // }
 
     section {
         transition-property: background;
@@ -92,6 +59,17 @@
             border-block-end-style: none;
         }
     }
+
+
+    ul,
+    ol,
+    .link-list {
+        list-style-type: none;
+
+        li {
+            margin: 0;
+        }
+    }
 }
 
 
@@ -114,12 +92,14 @@
 
 
 #{$sidebar-parent-sidebar-shown-selector} {
+    // scss-lint:disable UnnecessaryParentReference
     @at-root
     & .sidebar,
     .sidebar:target {
         left: 0;
         transition-timing-function: cubic-bezier(0.06, 0, 0.25, 1);
     }
+    // scss-lint:enable UnnecessaryParentReference
 
     .sidebar-scrim {
         background: var(--sidebar-scrim-background-color);
