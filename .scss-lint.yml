@@ -6,22 +6,24 @@ linters:
         convention: none
     Comment:
         allowed: '^/\*\*'
+    DuplicateProperty:
+        ignore_consecutive: true
+    ElsePlacement:
+        style: new_line
+    Indentation:
+        width: 4
+    LeadingZero:
+        style: include_zero
+    NestingDepth:
+        max_depth: 5
     PropertySortOrder:
         order: smacss
         ignore_unspecified: true
-    Indentation:
-        width: 4
     QualifyingElement:
         allow_element_with_attribute: true
         allow_element_with_class: true
         allow_element_with_id: true
-    LeadingZero:
-        style: include_zero
-    StringQuotes:
-        style: double_quotes
-    NestingDepth:
-        max_depth: 5
     SelectorDepth:
         max_depth: 5
-    DuplicateProperty:
-        ignore_consecutive: true
+    StringQuotes:
+        style: double_quotes
