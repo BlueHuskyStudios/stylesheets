@@ -25,16 +25,16 @@
 
     overflow: auto;
 
-    transition-property: background, width, top, left;
+    transition-property: background, background-color, width, top, left;
     will-change: width, top, left;
     transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
-    background: var(--sidebar-background-color);
+    background-color: var(--sidebar-background-color);
     box-shadow: shadow($sidebar-z-index);
 
 
     section {
-        transition-property: background;
+        transition-property: background, background-color;
 
         border-width: 1px;
         border-style: none none solid;
