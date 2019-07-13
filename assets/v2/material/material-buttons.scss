@@ -90,8 +90,6 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
     &.low-emphasis,
     &.flat {
-        --button-background: none;
-        --button-border-color: transparent;
         --button-text-color: var(--theme-primary-color);
 
         min-width: var(--button-flat-min-width);
@@ -99,6 +97,19 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         margin: var(--button-flat-margin);
         padding: var(--button-flat-padding);
 
+    }
+
+    &.low-emphasis,
+    &.flat,
+    .app-bar &:not(.raised) {
+        // scss-lint:disable ImportantRule
+        transform: none !important;
+        // scss-lint:enable ImportantRule
+
+        --button-background: none;
+        --button-hover-shadow: none;
+        --button-pressed-shadow: none;
+        --button-resting-shadow: none;
     }
 
     .app-bar &:not(.raised) {
@@ -109,19 +120,8 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         padding: var(--button-app-bar-padding);
 
         background: none;
-        color: var(--theme-primary-color);
-    }
 
-    &.low-emphasis,
-    &.flat,
-    .app-bar &:not(.raised) {
-        // scss-lint:disable ImportantRule
-        transform: none !important;
-        // scss-lint:enable ImportantRule
-
-        --button-resting-shadow: none;
-        --button-hover-shadow: none;
-        --button-pressed-shadow: none;
+        --button-text-color: var(--theme-text-on-primary-color-color);
     }
 
 

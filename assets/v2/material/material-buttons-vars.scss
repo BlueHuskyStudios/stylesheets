@@ -51,7 +51,7 @@ $chip-button-group-selector: ".chips, .pills";
 
 
 @include css-vars((
-    --button-border-color: var(--theme-primary-color),
+    --button-border-color: transparent,
     --button-background: var(--theme-primary-color),
     --button-text-color: var(--theme-text-on-primary-color-color),
 

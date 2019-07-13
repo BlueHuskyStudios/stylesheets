@@ -6,7 +6,7 @@
 @import "neon-shared-vars";
 
 $theme-primary-color: #0d47a1;
-$theme-accent-color: #616161;
+$theme-accent-color: #0091ea;
 $theme-text-on-primary-color-color: hsla(37, 100%, 96%, 1);
 $theme-text-on-accent-color-color: hsla(205, 87%, 97%, 1);
 
@@ -22,7 +22,7 @@ $css-vars-at-root: null;
 .brightness-dark,
 .brightness-black {
     $theme-primary-color: #bbdefb;
-    $theme-accent-color: #f5f5f5;
+    $theme-accent-color: #ffe082;
     $theme-text-on-primary-color-color: #263238;
     $theme-text-on-accent-color-color: #000;
 
