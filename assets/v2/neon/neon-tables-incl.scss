@@ -80,7 +80,8 @@ table {
         }
     }
 
-    thead th:not(.vert):not(.plain) { // All top-row headers
+    thead th:not(.vert):not(.plain),
+    thead th:only-child:not(.horiz):not(.vert):not(.plain) { // All top-row headers
         border-top-style: solid;
         text-align: center;
         vertical-align: bottom;
@@ -92,7 +93,7 @@ table {
         vertical-align: middle;
     }
 
-    tfoot th:not(.vert):not(.plain) { // All total-row headers
+    tfoot th:not(.vert):not(.plain) { // All total-row footers
         border-top-style: double;
         text-align: center;
         vertical-align: top;
