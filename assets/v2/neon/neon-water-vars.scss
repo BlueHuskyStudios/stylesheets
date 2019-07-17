@@ -3,33 +3,13 @@
 //
 // Variables that the Neon Water subtheme uses
 
-@import "neon-shared-vars";
-
-$theme-primary-color: #00b0ff;
-$theme-accent-color: #009688;
-$theme-text-on-primary-color-color: #fff;
-$theme-text-on-accent-color-color: #000;
+@import "./neon-shared-vars.css";
+@import "css-vars";
+$css-vars-use-native: true;
 
 @include css-vars((
-    --theme-primary-color: $theme-primary-color,
-    --theme-accent-color: $theme-accent-color,
-    --theme-text-on-primary-color-color: $theme-text-on-primary-color-color,
-    --theme-text-on-accent-color-color: $theme-text-on-accent-color-color,
+    --theme-primary-color: var(--theme-water-primary-color),
+    --theme-accent-color: var(--theme-water-accent-color),
+    --theme-text-on-primary-color-color: var(--theme-water-text-on-primary-color-color),
+    --theme-text-on-accent-color-color: var(--theme-water-text-on-accent-color-color),
 ));
-
-$css-vars-at-root: null;
-
-.brightness-dark,
-.brightness-black {
-    $theme-primary-color: #00b0ff;
-    $theme-accent-color: #fbc02d;
-    $theme-text-on-primary-color-color: #fff;
-    $theme-text-on-accent-color-color: #000;
-
-    @include css-vars((
-        --theme-primary-color: $theme-primary-color,
-        --theme-accent-color: $theme-accent-color,
-        --theme-text-on-primary-color-color: $theme-text-on-primary-color-color,
-        --theme-text-on-accent-color-color: $theme-text-on-accent-color-color,
-    ));
-}

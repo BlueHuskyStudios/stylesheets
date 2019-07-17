@@ -3,28 +3,15 @@
 //
 // Variables that the Neon Fire subtheme uses
 
-@import "neon-shared-vars";
+@import "./neon-shared-vars.css";
 @import "css-vars";
+$css-vars-use-native: true;
 
-$theme-primary-color: #ff6e40;
-$theme-accent-color: #2196f3;
-$theme-text-on-primary-color-color: #fff;
-$theme-text-on-accent-color-color: #fff;
+
 
 @include css-vars((
-    --theme-primary-color: $theme-primary-color,
-    --theme-accent-color: $theme-accent-color,
-    --theme-text-on-primary-color-color: $theme-text-on-primary-color-color,
-    --theme-text-on-accent-color-color: $theme-text-on-accent-color-color,
+    --theme-primary-color: var(--theme-fire-primary-color),
+    --theme-accent-color: var(--theme-fire-accent-color),
+    --theme-text-on-primary-color-color: var(--theme-fire-text-on-primary-color-color),
+    --theme-text-on-accent-color-color: var(--theme-fire-text-on-accent-color-color),
 ));
-
-$css-vars-at-root: false;
-
-.brightness-dark,
-.brightness-black {
-    $theme-accent-color: #00e5ff;
-
-    @include css-vars((
-        --theme-accent-color: $theme-accent-color,
-    ));
-}

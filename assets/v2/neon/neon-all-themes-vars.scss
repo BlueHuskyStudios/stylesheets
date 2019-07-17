@@ -1,0 +1,92 @@
+---
+---
+// scss-lint:disable Comment
+// scss-lint:disable ColorVariable
+
+
+@import "css-vars";
+$css-vars-use-native: true;
+
+
+
+/* Neon Water */
+
+$css-vars-at-root: true;
+
+@include css-vars((
+    --theme-water-primary-color: #00b0ff,
+    --theme-water-accent-color: #009688,
+    --theme-water-text-on-primary-color-color: #fff,
+    --theme-water-text-on-accent-color-color: #000,
+));
+
+$css-vars-at-root: false;
+
+.brightness-dark,
+.brightness-black {
+
+    @include css-vars((
+        --theme-water-primary-color: #00b0ff,
+        --theme-water-accent-color: #fbc02d,
+        --theme-water-text-on-primary-color-color: #fff,
+        --theme-water-text-on-accent-color-color: #000,
+    ));
+}
+
+
+
+/* Neon Earth */
+
+$css-vars-at-root: true;
+
+@include css-vars((
+    --theme-earth-primary-color: #4caf50,
+    --theme-earth-accent-color: #ff7043,
+));
+
+
+
+/* Neon Fire */
+
+$css-vars-at-root: true;
+
+@include css-vars((
+    --theme-fire-primary-color: #ff6e40,
+    --theme-fire-accent-color: #2196f3,
+    --theme-fire-text-on-primary-color-color: #fff,
+    --theme-fire-text-on-accent-color-color: #fff,
+));
+
+$css-vars-at-root: false;
+
+.brightness-dark,
+.brightness-black {
+    @include css-vars((
+        --theme-fire-accent-color: #00e5ff,
+    ));
+}
+
+
+
+/* Neon Air */
+
+$css-vars-at-root: true;
+
+@include css-vars((
+    --theme-air-primary-color: #0d47a1,
+    --theme-air-accent-color: #0091ea,
+    --theme-air-text-on-primary-color-color: hsla(37, 100%, 96%, 1),
+    --theme-air-text-on-accent-color-color: hsla(205, 87%, 97%, 1),
+));
+
+$css-vars-at-root: false;
+
+.brightness-dark,
+.brightness-black {
+    @include css-vars((
+        --theme-air-primary-color: #bbdefb,
+        --theme-air-accent-color: #ffe082,
+        --theme-air-text-on-primary-color-color: #263238,
+        --theme-air-text-on-accent-color-color: #000,
+    ));
+}
