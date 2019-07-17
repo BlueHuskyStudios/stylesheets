@@ -10,6 +10,11 @@
 @import 'structure-renderer';
 
 
+:root {
+    --main-total-inline-margin: 4em;
+}
+
+
 body {
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
@@ -22,7 +27,7 @@ main {
     margin: auto;
     width: 95%;
     width: 95vw;
-    width: calc(100vw - 4rem);
+    width: calc(100vw - var(--main-total-inline-margin));
     max-width: var(--desktop-xlarge-min-width);
     padding-top: 2rem;
 }
