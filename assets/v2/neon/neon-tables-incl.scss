@@ -131,6 +131,9 @@ table {
     :not(.wide-table-holder-holder)>&::after {
         content: "Pro tip: If the table is cut off, scroll left and right";
         display: block;
+        position: sticky;
+        left: 0;
+        margin: 0 0 18px;
         opacity: 0.5;
         font-size: small;
         text-align: end;
