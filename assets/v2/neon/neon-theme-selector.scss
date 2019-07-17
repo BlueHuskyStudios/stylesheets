@@ -1,0 +1,104 @@
+
+@import "./neon-all-themes-vars.css";
+
+.theme-color-selection-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 1ex;
+
+
+    &,
+    &>li {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    li {
+        padding: 0;
+    }
+}
+
+
+$color-swatch-border-color-warning: #ff0;
+$color-swatch-fill-color-warning: #f00;
+
+
+.color-swatch {
+    display: block;
+    width: 32px;
+    height: 32px;
+
+    transition-property: border, background;
+
+    border-width: 0 0 8px;
+    border-style: solid;
+    border-radius: 32px;
+    border-color: var(--color-swatch-accent-color);
+    background: var(--color-swatch-primary-color);
+    font-size: 0;
+
+    --color-swatch-primary-color: $color-swatch-fill-color-warning;
+    --color-swatch-accent-color: $color-swatch-border-color-warning;
+
+    .theme-color-selection-list & {
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 0 0.5rem #607D8B;
+        }
+    }
+
+
+
+
+    &[theme-swatch-type="brightness"][theme-swatch-value="dark"] {
+        --color-swatch-primary-color: #253137;
+        --color-swatch-accent-color: #1e292f;
+    }
+
+
+    &[theme-swatch-type="brightness"][theme-swatch-value="light"] {
+        --color-swatch-primary-color: #fafafa;
+        --color-swatch-accent-color: #dbdbdb;
+    }
+
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="water"] {
+        --color-swatch-primary-color: #00b0ff;
+        --color-swatch-accent-color: #4db6ac;
+
+        .brightness-dark &,
+        .brightness-black & {
+            --color-swatch-accent-color: #fbc02d;
+        }
+    }
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="fire"] {
+        --color-swatch-primary-color: #ff6e40;
+        --color-swatch-accent-color: #2196f3;
+
+        .brightness-dark &,
+        .brightness-black & {
+            --color-swatch-accent-color: #00e5ff;
+        }
+    }
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="earth"] {
+        --color-swatch-primary-color: #4caf50;
+        --color-swatch-accent-color: #ff7043;
+    }
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="air"] {
+        --color-swatch-primary-color: #0d47a1;
+        --color-swatch-accent-color: #616161;
+
+        .brightness-dark &,
+        .brightness-black & {
+            --color-swatch-primary-color: #bbdefb;
+            --color-swatch-accent-color: #f5f5f5;
+        }
+    }
+}
