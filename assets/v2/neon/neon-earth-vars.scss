@@ -3,12 +3,13 @@
 //
 // Variables that the Neon Earth subtheme uses
 
-@import "neon-shared-vars";
+@import "./neon-shared-vars.css";
+@import "css-vars";
+$css-vars-use-native: true;
 
-$theme-primary-color: #4caf50;
-$theme-accent-color: #ff7043;
+
 
 @include css-vars((
-    --theme-primary-color: $theme-primary-color,
-    --theme-accent-color: $theme-accent-color,
+    --theme-primary-color: var(--theme-earth-primary-color),
+    --theme-accent-color: var(--theme-earth-accent-color),
 ));

@@ -3,33 +3,11 @@
 //
 // Variables that the Neon Air subtheme uses
 
-@import "neon-shared-vars";
+@import "./neon-shared-vars.css";
 
-$theme-primary-color: #0d47a1;
-$theme-accent-color: #0091ea;
-$theme-text-on-primary-color-color: hsla(37, 100%, 96%, 1);
-$theme-text-on-accent-color-color: hsla(205, 87%, 97%, 1);
-
-@include css-vars((
-    --theme-primary-color: $theme-primary-color,
-    --theme-accent-color: $theme-accent-color,
-    --theme-text-on-primary-color-color: $theme-text-on-primary-color-color,
-    --theme-text-on-accent-color-color: $theme-text-on-accent-color-color,
-));
-
-$css-vars-at-root: null;
-
-.brightness-dark,
-.brightness-black {
-    $theme-primary-color: #bbdefb;
-    $theme-accent-color: #ffe082;
-    $theme-text-on-primary-color-color: #263238;
-    $theme-text-on-accent-color-color: #000;
-
-    @include css-vars((
-        --theme-primary-color: $theme-primary-color,
-        --theme-accent-color: $theme-accent-color,
-        --theme-text-on-primary-color-color: $theme-text-on-primary-color-color,
-        --theme-text-on-accent-color-color: $theme-text-on-accent-color-color,
-    ));
+:root {
+    --theme-primary-color: var(--theme-air-primary-color);
+    --theme-accent-color: var(--theme-air-accent-color);
+    --theme-text-on-primary-color-color: var(--theme-air-text-on-primary-color-color);
+    --theme-text-on-accent-color-color: var(--theme-air-text-on-accent-color-color);
 }

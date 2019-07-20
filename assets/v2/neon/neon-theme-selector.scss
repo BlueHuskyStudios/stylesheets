@@ -1,0 +1,91 @@
+
+@import "./neon-shared-vars.css";
+
+
+
+.theme-color-selection-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 1ex;
+
+
+    &,
+    &>li {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    li {
+        padding: 0;
+    }
+}
+
+
+$color-swatch-border-color-warning: #ff0;
+$color-swatch-fill-color-warning: #f00;
+$color-swatch-hover-focus-ring-color: #607d8b;
+
+
+.color-swatch {
+    display: block;
+    width: 32px;
+    height: 32px;
+
+    transition-property: border, background;
+
+    border-width: 0 0 8px;
+    border-style: solid;
+    border-radius: 32px;
+    border-color: var(--color-swatch-accent-color);
+    background: var(--color-swatch-primary-color);
+    font-size: 0;
+
+    --color-swatch-primary-color: $color-swatch-fill-color-warning;
+    --color-swatch-accent-color: $color-swatch-border-color-warning;
+
+    .theme-color-selection-list & {
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 0 0.5rem $color-swatch-hover-focus-ring-color;
+        }
+    }
+
+
+
+
+    &[theme-swatch-type="brightness"][theme-swatch-value="dark"] {
+        --color-swatch-primary-color: var(--dark-theme-background-color);
+        --color-swatch-accent-color: var(--dark-theme-background-color-at-level-2);
+    }
+
+
+    &[theme-swatch-type="brightness"][theme-swatch-value="light"] {
+        --color-swatch-primary-color: var(--light-theme-background-color);
+        --color-swatch-accent-color: var(--light-theme-background-color-at-level-2);
+    }
+
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="water"] {
+        --color-swatch-primary-color: var(--theme-water-primary-color);
+        --color-swatch-accent-color: var(--theme-water-accent-color);
+    }
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="fire"] {
+        --color-swatch-primary-color: var(--theme-fire-primary-color);
+        --color-swatch-accent-color: var(--theme-fire-accent-color);
+    }
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="earth"] {
+        --color-swatch-primary-color: var(--theme-earth-primary-color);
+        --color-swatch-accent-color: var(--theme-earth-accent-color);
+    }
+
+
+    &[theme-swatch-type="color"][theme-swatch-value="air"] {
+        --color-swatch-primary-color: var(--theme-air-primary-color);
+        --color-swatch-accent-color: var(--themeairr-accent-color);
+    }
+}
