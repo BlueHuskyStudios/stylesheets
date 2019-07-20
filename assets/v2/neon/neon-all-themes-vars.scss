@@ -9,6 +9,30 @@ $css-vars-use-native: true;
 
 
 
+/* Brightness Light */
+
+$css-vars-at-root: true;
+
+@include css-vars((
+    --brightness-light-theme-background-color-at-level-1: hsl(0, 0%, 98%),
+    --brightness-light-theme-background-color-at-level-2: hsl(0, 0%, 93%),
+    --brightness-light-theme-background-color-at-level-3: hsl(0, 0%, 86%),
+));
+
+
+
+/* Brightness Dark */
+
+$css-vars-at-root: true;
+
+@include css-vars((
+    --brightness-dark-theme-background-color-at-level-1: hsl(200, 19.1%, 18%),
+    --brightness-dark-theme-background-color-at-level-2: hsl(200, 22.1%, 15%),
+    --brightness-dark-theme-background-color-at-level-3: hsl(200, 25.1%, 12%),
+));
+
+
+
 /* Neon Water */
 
 $css-vars-at-root: true;
