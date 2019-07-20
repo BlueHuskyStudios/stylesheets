@@ -86,6 +86,6 @@ $color-swatch-hover-focus-ring-color: #607d8b;
 
     &[theme-swatch-type="color"][theme-swatch-value="air"] {
         --color-swatch-primary-color: var(--theme-air-primary-color);
-        --color-swatch-accent-color: var(--themeairr-accent-color);
+        --color-swatch-accent-color: var(--theme-air-accent-color);
     }
 }
