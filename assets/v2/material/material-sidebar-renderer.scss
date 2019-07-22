@@ -32,6 +32,8 @@
     background-color: var(--sidebar-background-color);
     box-shadow: shadow($sidebar-z-index);
 
+    clip-path: inset(0);
+
 
     section {
         transition-property: background, background-color;
@@ -59,6 +61,13 @@
             border-block-end-style: none;
         }
     }
+
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
 
 
     ul,

@@ -52,7 +52,10 @@ html {
     &[href^="#"]:not(.navigates-away),
     &.does-not-navigate-away {
         cursor: default;
-        --link-text-decoration: none;
+
+        &:not(:hover):not(:link):not(:active) {
+            --link-text-decoration: none;
+        }
     }
 
     .link-style-underline-on-hover &:not(:hover):not(:focus) {
