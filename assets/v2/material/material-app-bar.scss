@@ -35,7 +35,8 @@
         line-height: calc(var(--app-bar-height-auto) - var(--app-bar-vertical-padding));
 
         &:first-child {
-            padding: 0 var(--content-margin-horiz-auto);
+            padding: 0;// var(--content-margin-horiz-auto);
+            line-height: 1;
         }
     }
 }
