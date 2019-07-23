@@ -11,8 +11,8 @@ $css-vars-use-native: true;
 @include css-vars((
     --kbd-background: var(--theme-background-color-at-level-raised),
 
-    --kbd-highlight-box-shadow: inset 0.1ex 0.2ex hsl(0, 0%, 100%, 10%),
-    --kbd-shade-box-shadow: inset -0.1ex -0.2ex hsl(0, 0%, 0%, 10%),
+    --kbd-highlight-box-shadow: inset 0.1ex 0.2ex hsla(0, 0%, 100%, 10%),
+    --kbd-shade-box-shadow: inset -0.1ex -0.2ex hsla(0, 0%, 0%, 10%),
     --kbd-external-shadow: var(--box-shadow-z1),
 ));
 
