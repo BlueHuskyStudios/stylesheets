@@ -13,10 +13,20 @@ $sidebar-scrim-background-color: hsla(0, 0, 0, 32%);
 $sidebar-scrim-background-hidden-color: hsla(0, 0, 0, 0%);
 $sidebar-background-color: var(--theme-background-color-at-level-raised);
 
+$sidebar-subtitle-padding-each-side: 0;
+$sidebar-subtitle-margin-each-side: 2ex;
+$sidebar-subtitle-font-size: 14px;
+$sidebar-subtitle-font-weight: normal;
+
 @include css-vars((
     --sidebar-scrim-background-color: $sidebar-scrim-background-color,
     --sidebar-scrim-background-hidden-color: $sidebar-scrim-background-hidden-color,
     --sidebar-background-color: $sidebar-background-color,
+
+    --sidebar-subtitle-padding-each-side: $sidebar-subtitle-padding-each-side,
+    --sidebar-subtitle-margin-each-side: $sidebar-subtitle-margin-each-side,
+    --sidebar-subtitle-font-size: $sidebar-subtitle-font-size,
+    --sidebar-subtitle-font-weight: $sidebar-subtitle-font-weight,
 ));
 
 

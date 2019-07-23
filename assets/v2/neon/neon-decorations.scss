@@ -1,0 +1,28 @@
+
+/**
+ * neon-decorations
+ */
+
+@import "css-vars";
+$css-vars-use-native: true;
+
+
+
+@include css-vars((
+    --kbd-background: var(--theme-background-color-at-level-raised),
+
+    --kbd-highlight-box-shadow: inset 0.1ex 0.2ex hsl(0, 0%, 100%, 10%),
+    --kbd-shade-box-shadow: inset -0.1ex -0.2ex hsl(0, 0%, 0%, 10%),
+    --kbd-external-shadow: var(--box-shadow-z1),
+));
+
+
+
+kbd {
+    background: var(--kbd-background);
+    padding: 0.5ex 1ex;
+    font-family: inherit;
+    font-size: 80%;
+    border-radius: 0.5ex;
+    box-shadow: var(--kbd-highlight-box-shadow), var(--kbd-shade-box-shadow), var(--kbd-external-shadow);
+}
