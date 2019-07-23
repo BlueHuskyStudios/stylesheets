@@ -23,7 +23,8 @@
 
 $color-swatch-border-color-warning: #ff0;
 $color-swatch-fill-color-warning: #f00;
-$color-swatch-hover-focus-ring-color: #607d8b;
+$color-swatch-hover-normal-ring-color: hsla(200, 18%, 46%, 25%);
+$color-swatch-hover-focus-ring-color: hsl(200, 18%, 46%);
 
 
 .color-swatch {
@@ -44,6 +45,8 @@ $color-swatch-hover-focus-ring-color: #607d8b;
     --color-swatch-accent-color: $color-swatch-border-color-warning;
 
     .theme-color-selection-list & {
+        box-shadow: 0 0 0 1px $color-swatch-hover-normal-ring-color;
+
         &:hover,
         &:focus {
             box-shadow: 0 0 0 0.5rem $color-swatch-hover-focus-ring-color;

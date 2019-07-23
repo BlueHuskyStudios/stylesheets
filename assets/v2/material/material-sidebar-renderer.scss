@@ -30,9 +30,9 @@
     transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
     background-color: var(--sidebar-background-color);
-    box-shadow: shadow($sidebar-z-index);
+    box-shadow: var(--box-shadow-z#{$sidebar-z-index});
 
-    clip-path: inset(0);
+    clip-path: inset(0 -1in);
 
 
     section {
@@ -54,12 +54,14 @@
         }
 
         &:last-child {
-            position: sticky;
-            bottom: 0;
-
             border-block-start-style: solid;
             border-block-end-style: none;
         }
+    }
+
+    >section:last-child {
+        position: sticky;
+        bottom: 0;
     }
 
 
@@ -78,6 +80,19 @@
         li {
             margin: 0;
         }
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding: var(--sidebar-subtitle-padding-each-side);
+        margin: var(--sidebar-subtitle-margin-each-side);
+        font-size: var(--sidebar-subtitle-font-size);
+        font-weight: var(--sidebar-subtitle-font-weight);
     }
 }
 

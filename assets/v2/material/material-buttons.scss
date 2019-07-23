@@ -74,7 +74,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     min-width: var(--button-min-width);
 
     margin: var(--button-margin);
-    padding: var(--button-padding);
+    padding: var(--button-padding-each-vertical) var(--button-padding-each-horizontal);
 
     user-select: none;
 
@@ -133,7 +133,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     }
 
     &.big {
-        padding: var(--button-large-padding);
+        padding: var(--button-large-padding-each-vertical) var(--button-large-padding-each-horizontal);
         font-size: var(--font-size-large-button);
     }
 
@@ -141,9 +141,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         opacity: 0.5;
         cursor: default;
     }
-}
 
-#{$button-selector} {
 
     @at-root
     .image-button,
@@ -164,6 +162,16 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
         // @include flex-row();
         // @include flex-align-stretch();
         // @include flex-justify-stretch();
+    }
+
+
+    @at-root
+    .icon-button,
+    &.icon-button {
+
+        min-width: var(--button-icon-min-width);
+        margin: var(--button-icon-margin);
+        padding: var(--button-icon-padding);
     }
 }
 

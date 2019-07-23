@@ -1,27 +1,39 @@
 
 $button-cursor: pointer !default;
 $button-border-radius: 2px !default;
-$button-padding: 11px 16px !default;
-$button-dense-padding: 9.5px 8px !default;
-$button-large-padding: $button-padding !default;
+$button-padding-each-vertical: 11px !default;
+$button-padding-each-horizontal: 16px !default;
+$button-dense-padding-each-vertical: 9.5px !default;
+$button-dense-padding-each-horizontal: 8px !default;
+$button-large-padding-each-vertical: $button-padding-each-vertical !default;
+$button-large-padding-each-horizontal: $button-padding-each-horizontal !default;
 $button-margin: 8px !default;
 $button-min-width: 64px !default;
 
-$button-flat-padding: 11px 8px !default;
+$button-flat-padding-each-vertical: 11px !default;
+$button-flat-padding-each-horizontal: 8px !default;
 $button-flat-margin: 8px !default;
 $button-flat-min-width: 88px !default;
 
-$button-app-bar-padding: $button-flat-padding !default;
+$button-app-bar-padding-each-vertical: $button-flat-padding-each-vertical !default;
+$button-app-bar-padding-each-horizontal: $button-flat-padding-each-horizontal !default;
 $button-app-bar-margin: 0 !default;
 $button-app-bar-min-width: var(--app-bar-height-auto) !default;
 
-$button-image-padding: 0 !default;
+$button-image-padding-each-vertical: 0 !default;
+$button-image-padding-each-horizontal: 0 !default;
 $button-image-margin: $button-margin !default;
 $button-image-min-width: 36px !default;
 
-$button-app-bar-image-padding: $button-app-bar-padding !default;
+$button-app-bar-image-padding-each-vertical: $button-app-bar-padding-each-vertical !default;
+$button-app-bar-image-padding-each-horizontal: $button-app-bar-padding-each-horizontal !default;
 $button-app-bar-image-margin: $button-app-bar-margin !default;
 $button-app-bar-image-min-width: $button-image-min-width !default;
+
+$button-icon-padding-each-vertical: $button-padding-each-vertical !default;
+$button-icon-padding-each-horizontal: $button-padding-each-vertical !default;
+$button-icon-margin: $button-margin !default;
+$button-icon-min-width: 2em !default;
 
 $button-resting-shadow: shadow(2) !default;
 $button-hover-shadow: shadow(8) !default;
@@ -57,24 +69,45 @@ $chip-button-group-selector: ".chips, .pills";
 
     --button-cursor: $button-cursor,
     --button-border-radius: $button-border-radius,
-    --button-padding: $button-padding,
-    --button-dense-padding: $button-dense-padding,
-    --button-large-padding: $button-large-padding,
+    --button-padding-each-vertical: $button-padding-each-vertical,
+    --button-padding-each-horizontal: $button-padding-each-horizontal,
+    --button-padding: var(--button-padding-each-vertical) var(--button-padding-each-horizontal),
+    --button-dense-padding-each-vertical: $button-dense-padding-each-vertical,
+    --button-dense-padding-each-horizontal: $button-dense-padding-each-horizontal,
+    --button-dense-padding: var(--button-dense-padding-each-vertical) var(--button-dense-padding-each-horizontal),
+    --button-large-padding-each-vertical: $button-large-padding-each-vertical,
+    --button-large-padding-each-horizontal: $button-large-padding-each-horizontal,
+    --button-large-padding: var(--button-large-padding-each-vertical) var(--button-large-padding-each-horizontal),
     --button-margin: $button-margin,
+    --button-min-width: $button-min-width,
 
-    --button-flat-padding: $button-flat-padding,
+    --button-flat-padding-each-vertical: $button-flat-padding-each-vertical,
+    --button-flat-padding-each-horizontal: $button-flat-padding-each-horizontal,
+    --button-flat-padding: var(--button-flat-padding-each-vertical) var(--button-flat-padding-each-horizontal),
     --button-flat-margin: $button-flat-margin,
     --button-flat-min-width: $button-flat-min-width,
 
-    --button-app-bar-padding: $button-app-bar-padding,
+    --button-app-bar-padding-each-vertical: $button-app-bar-padding-each-vertical,
+    --button-app-bar-padding-each-horizontal: $button-app-bar-padding-each-horizontal,
+    --button-app-bar-padding: var(--button-app-bar-padding-each-vertical) var(--button-app-bar-padding-each-horizontal),
     --button-app-bar-margin: $button-app-bar-margin,
     --button-app-bar-min-width: $button-app-bar-min-width,
 
-    --button-image-padding: $button-image-padding,
+    --button-image-padding-each-vertical: $button-image-padding-each-vertical,
+    --button-image-padding-each-horizontal: $button-image-padding-each-horizontal,
+    --button-image-padding: var(--button-image-padding-each-vertical) var(--button-image-padding-each-horizontal),
     --button-image-margin: $button-image-margin,
     --button-image-min-width: $button-image-min-width,
 
-    --button-app-bar-image-padding: $button-app-bar-image-padding,
+    --button-icon-padding-each-vertical: $button-icon-padding-each-vertical,
+    --button-icon-padding-each-horizontal: $button-icon-padding-each-horizontal,
+    --button-icon-padding: var(--button-icon-padding-each-vertical) var(--button-icon-padding-each-horizontal),
+    --button-icon-margin: $button-icon-margin,
+    --button-icon-min-width: $button-icon-min-width,
+
+    --button-app-bar-image-padding-each-vertical: $button-app-bar-image-padding-each-vertical,
+    --button-app-bar-image-padding-each-horizontal: $button-app-bar-image-padding-each-horizontal,
+    --button-app-bar-image-padding: var(--button-app-bar-image-padding-each-vertical) var(--button-app-bar-image-padding-each-horizontal),
     --button-app-bar-image-margin: $button-app-bar-image-margin,
     --button-app-bar-image-min-width: $button-app-bar-image-min-width,
 
