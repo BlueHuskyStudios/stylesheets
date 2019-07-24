@@ -1,0 +1,33 @@
+/**
+ * Neon Theme Visibility
+ *
+ * @author Ben leggiero
+ * @since 2018-09-17
+ */
+
+
+//
+//                        Is visible?
+//                   ┌───────┬──────┬───────┬───────┬───────┐
+//      Actual Theme │       │      │       │       │       │
+// Declared Theme  ╲ │ Black │ Dark │ Light │ White │ Unset │
+// ┌─────────────────┼───────┼──────┼───────┼───────┼───────┤
+// │           Black │ Yes   │      │       │       │       │
+// ├─────────────────┼───────┼──────┼───────┼───────┼───────┤
+// │            Dark │ Yes   │ Yes  │       │       │       │
+// ├─────────────────┼───────┼──────┼───────┼───────┼───────┤
+// │           Light │       │      │ Yes   │ Yes   │ Yes   │
+// ├─────────────────┼───────┼──────┼───────┼───────┼───────┤
+// │           White │       │      │       │ Yes   │ Yes   │
+// └─────────────────┴───────┴──────┴───────┴───────┴───────┘
+//
+
+.brightness-white [data-target-theme]:not([data-target-theme="white"]):not([data-target-theme="light"]),
+
+:root:not(.brightness-white):not(.brightness-light):not(.brightness-dark):not(.brightness-black) [data-target-theme]:not([data-target-theme="light"]),
+.brightness-light [data-target-theme]:not([data-target-theme="light"]),
+
+.brightness-dark  [data-target-theme]:not([data-target-theme="dark"]),
+.brightness-black [data-target-theme]:not([data-target-theme="dark"]):not([data-target-theme="black"]) {
+    display: none;
+}
