@@ -29,9 +29,11 @@
                     var(--card-padding-block-end)
                     var(--card-padding-inline-start);
 
-    --card-border-radius: var(--card-padding);
+    --card-border-radius: 1ex;
 
     --card-border-color: #7770;
+
+    --card-background: var(--theme-background-color-at-level-raised);
 
     --card-shadow-default: var(--box-shadow-z1);
     --card-shadow-raised: var(--box-shadow-z8);
@@ -48,7 +50,7 @@
     padding: var(--card-padding);
     border: 1px solid var(--card-border-color);
     border-radius: var(--card-border-radius);
-    background-color: var(--theme-background-color-at-level-raised);
+    background: var(--card-background);
     box-shadow: $shadow;
 
     transition-property: box-shadow, background, border-color;
