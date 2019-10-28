@@ -16,9 +16,7 @@
                 --button-hover-shadow: none;
                 --button-pressed-shadow: none;
 
-                // scss-lint:disable ImportantRule
-                display: block !important;
-                // scss-lint:enable ImportantRule
+                display: block;
 
                 min-width: var(--button-flat-min-width);
 
