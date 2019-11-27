@@ -4,7 +4,8 @@
 // Variables defining the structure of a page that uses Material design
 
 
-@import 'material-shadows-vars';
+@import "material-shadows-vars";
+@import "z-indices";
 
 
 // MARK: - Breakpoints
@@ -311,17 +312,6 @@ $app-bar-horizontal-padding: $app-bar-padding-left + $app-bar-padding-right !def
 $app-bar-padding: $app-bar-padding-top $app-bar-padding-right $app-bar-padding-bottom $app-bar-padding-left !default;
 
 
-// MARK: Z Indices
-
-$app-bar-z-index: 4 !default;
-$sidebar-z-index: 16 !default;
-
-@include css-vars((
-    --app-bar-z-index: $app-bar-z-index,
-    --sidebar-z-index: $sidebar-z-index,
-));
-
-
 // MARK: Content
 
 $content-margin-horiz-phone-portrait: 16px !default;
@@ -354,8 +344,6 @@ $content-margin-right-tablet-and-desktop: $content-margin-horiz-tablet-and-deskt
     --app-bar-vertical-padding:   $app-bar-vertical-padding,
     --app-bar-horizontal-padding: $app-bar-horizontal-padding,
     --app-bar-padding:            $app-bar-padding,
-
-    --app-bar-z-index: $app-bar-z-index,
 
 
     --content-margin-horiz-phone-portrait: $content-margin-horiz-phone-portrait,

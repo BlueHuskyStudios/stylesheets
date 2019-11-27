@@ -8,13 +8,14 @@
 @import "material-sidebar-vars";
 @import "material-structure-vars";
 @import "css-vars";
+@import "z-indices";
 
 
 
 .sidebar {
 
     position: fixed;
-    z-index: var(--sidebar-z-index);
+    z-index: var(--z-index-sidebar);
 
     top: var(--app-bar-height-auto);
     left: calc(-46px - var(--sidebar-default-width));

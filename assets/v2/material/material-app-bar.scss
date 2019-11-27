@@ -4,6 +4,8 @@
 // Renders the Material app bar
 // See also: https://material.io/design/components/app-bar.html
 
+@import "z-indices";
+
 
 
 .app-bar,
@@ -13,7 +15,7 @@
     @include flex-justify-space-between();
     @include flex-align-stretch();
 
-    z-index: var(--app-bar-z-index);
+    z-index: var(--z-index-app-bar);
 
     height: var(--app-bar-height-auto);
 

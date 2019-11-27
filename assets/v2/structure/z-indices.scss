@@ -1,0 +1,23 @@
+
+// z-indices
+//
+// Keeps track of the important `z-index` variables
+
+
+
+$z-index-base: 0 !default;
+$z-index-tier-offset: 1000 !default;
+$z-index-app-bar-tier-multiplier: 4 !default;
+$z-index-sidebar-tier-multiplier: 16 !default;
+
+
+:root {
+    --z-index-base: $z-index-base;
+    --z-index-tier-offset: $z-index-tier-offset;
+
+    --z-index-app-bar-tier-multiplier: $z-index-app-bar-tier-multiplier;
+    --z-index-app-bar: calc(var(--z-index-base) + (var(--z-index-tier-offset) * var(--z-index-app-bar-tier-multiplier)));
+
+    --z-index-sidebar-tier-multiplier: $z-index-sidebar-tier-multiplier;
+    --z-index-sidebar: calc(var(--z-index-base) + (var(--z-index-tier-offset) * var(--z-index-sidebar-tier-multiplier)));
+}
