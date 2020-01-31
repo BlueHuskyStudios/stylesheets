@@ -2,6 +2,7 @@
 ---
 // scss-lint:disable Comment
 // scss-lint:disable ColorVariable
+// scss-lint:disable MergeableSelector
 
 
 @import "css-vars";
@@ -99,8 +100,8 @@ $css-vars-at-root: true;
 @include css-vars((
     --theme-air-primary-color: #0d47a1,
     --theme-air-accent-color: #0091ea,
-    --theme-air-text-on-primary-color-color: hsla(37, 100%, 96%, 1),
-    --theme-air-text-on-accent-color-color: hsla(205, 87%, 97%, 1),
+    --theme-air-text-on-primary-color-color: hsl(37, 100%, 96%),
+    --theme-air-text-on-accent-color-color: hsl(205, 87%, 97%),
 ));
 
 $css-vars-at-root: false;
