@@ -90,10 +90,19 @@
     h4,
     h5,
     h6 {
-        padding: var(--sidebar-subtitle-padding-each-side);
         margin: var(--sidebar-subtitle-margin-each-side);
+        padding: var(--sidebar-subtitle-padding-each-side);
         font-size: var(--sidebar-subtitle-font-size);
         font-weight: var(--sidebar-subtitle-font-weight);
+    }
+
+
+    header img.avatar {
+        display: block;
+        max-height: 4cm;
+        margin: 1em auto;
+        border: 1px solid var(--sidebar-avatar-outline-color);
+        border-radius: 99in;
     }
 }
 

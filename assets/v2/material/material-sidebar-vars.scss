@@ -18,6 +18,8 @@ $sidebar-subtitle-margin-each-side: 2ex;
 $sidebar-subtitle-font-size: 14px;
 $sidebar-subtitle-font-weight: normal;
 
+$sidebar-avatar-outline-color: hsla(0, 0%, 50%, 0.5) !default;
+
 @include css-vars((
     --sidebar-scrim-background-color: $sidebar-scrim-background-color,
     --sidebar-scrim-background-hidden-color: $sidebar-scrim-background-hidden-color,
@@ -27,6 +29,8 @@ $sidebar-subtitle-font-weight: normal;
     --sidebar-subtitle-margin-each-side: $sidebar-subtitle-margin-each-side,
     --sidebar-subtitle-font-size: $sidebar-subtitle-font-size,
     --sidebar-subtitle-font-weight: $sidebar-subtitle-font-weight,
+
+    --sidebar-avatar-outline-color: $sidebar-avatar-outline-color,
 ));
 
 
