@@ -17,11 +17,12 @@
     z-index: var(--sidebar-z-index);
 
     top: var(--app-bar-height-auto);
+    bottom: 0;
     left: calc(-46px - var(--sidebar-default-width));
     width: var(--sidebar-default-width);
     max-width: var(--sidebar-max-width);
-    height: 100vh;
-    height: calc(100vh - var(--app-bar-height-auto));
+    max-height: 100%;
+    max-height: calc(100vh - var(--app-bar-height-auto));
 
     overflow: auto;
 
