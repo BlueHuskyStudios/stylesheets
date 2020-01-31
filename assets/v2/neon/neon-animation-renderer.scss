@@ -30,9 +30,12 @@ html {
 
 
 .reduce-motion {
-    &, & * {
-        animation-name: none !important;
-        transition-property: none !important;
+    &,
+    & *,
+    & *::before,
+    & *::after {
+        transition-property: none !important; // scss-lint:disable ImportantRule
+        animation-name: none !important;      // scss-lint:disable ImportantRule
     }
 }
 
