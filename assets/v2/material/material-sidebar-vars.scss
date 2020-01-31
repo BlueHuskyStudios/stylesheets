@@ -9,14 +9,14 @@
 
 
 
-$sidebar-scrim-background-color: hsla(0, 0, 0, 32%);
-$sidebar-scrim-background-hidden-color: hsla(0, 0, 0, 0%);
-$sidebar-background-color: var(--theme-background-color-at-level-raised);
+$sidebar-scrim-background-color: hsla(0, 0, 0, 0.32) !default;
+$sidebar-scrim-background-hidden-color: hsla(0, 0, 0, 0) !default;
+$sidebar-background-color: var(--theme-background-color-at-level-raised) !default;
 
-$sidebar-subtitle-padding-each-side: 0;
-$sidebar-subtitle-margin-each-side: 2ex;
-$sidebar-subtitle-font-size: 14px;
-$sidebar-subtitle-font-weight: normal;
+$sidebar-subtitle-padding-each-side: 0 !default;
+$sidebar-subtitle-margin-each-side: 2ex !default;
+$sidebar-subtitle-font-size: 14px !default;
+$sidebar-subtitle-font-weight: normal !default;
 
 $sidebar-avatar-outline-color: hsla(0, 0%, 50%, 0.5) !default;
 
@@ -34,4 +34,4 @@ $sidebar-avatar-outline-color: hsla(0, 0%, 50%, 0.5) !default;
 ));
 
 
-$sidebar-parent-sidebar-shown-selector: ".sidebar-shown, [data-sidebar=shown]";
+$sidebar-parent-sidebar-shown-selector: ".sidebar-shown, [data-sidebar=shown]" !default;
