@@ -10,7 +10,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 
 @mixin _button-base($has-shadow: true) {
 
-    border: 1px solid var(--button-border-color);
+    border: var(--button-border-width) solid var(--button-border-color);
     border-radius: var(--button-border-radius);
     background: var(--button-background);
     color: var(--button-text-color);
@@ -235,7 +235,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
             width: 0;
             height: 0;
 
-            transition-property: width, height, top, left, opacity;
+            transition-property: width, height, top, left, opacity !important; // scss-lint:disable ImportantRule
             transition-duration: 0ms;
             transition-timing-function: ease-out;
 
