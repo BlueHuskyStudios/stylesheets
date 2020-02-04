@@ -67,7 +67,7 @@
 
     .figure-card-thumbnail {
         width: 100%;
-        // max-height: var(--figure-card-width);
+        border-radius: calc(var(--button-border-radius) - var(--button-border-width));
     }
 
     .figure-card-text {
@@ -90,6 +90,10 @@
     .figure-card-description {
         font-size: 1rem;
         font-weight: normal;
+
+        @at-root .figure-card-title~.figure-card-description {
+            color: var(--theme-foreground-color);
+        }
     }
 
 

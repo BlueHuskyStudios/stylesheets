@@ -53,6 +53,15 @@
     background: var(--card-background);
     box-shadow: $shadow;
 
+    max-width: 100%;
+    max-width: calc(100vw
+            - var(--card-margin-inline-start)
+            - var(--card-margin-inline-end)
+            - var(--card-padding-inline-start)
+            - var(--card-padding-inline-end)
+            - var(--main-total-inline-margin));
+
+
     transition-property: box-shadow, background, border-color;
 
 
