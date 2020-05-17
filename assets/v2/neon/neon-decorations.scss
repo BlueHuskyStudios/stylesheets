@@ -26,3 +26,15 @@ kbd {
     font-family: inherit;
     font-size: 80%;
 }
+
+
+
+blockquote>cite {
+    display: block;
+    margin-block-start: 1em;
+    text-align: end;
+
+    &::before {
+        content: " — ";
+    }
+}
