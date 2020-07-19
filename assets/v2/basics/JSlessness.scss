@@ -1,0 +1,22 @@
+//
+// JSlessness.scss
+//
+// For improving the user experience when JS is or is not present
+//
+// Originally written 2020-07-18 by Ben Leggiero for Blue Husky Studios Stylesheets
+// https://github.com/BlueHuskyStudios/stylesheets
+//
+
+
+
+// scss-lint:disable Comment
+/*!!
+
+This requires that you also include the Blue Husky Studios standard scripts in the page - they will
+then show elements with the "show-only-when-js-is-enabled" class
+
+!!*/
+// scss-lint:enable Comment
+.show-only-when-js-is-enabled {
+    display: none;
+}
