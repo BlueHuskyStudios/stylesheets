@@ -9,14 +9,14 @@
 
 
 
-// scss-lint:disable Comment
-/*!!
-
-This requires that you also include the Blue Husky Studios standard scripts in the page - they will
-then show elements with the "show-only-when-js-is-enabled" class
-
-!!*/
-// scss-lint:enable Comment
 .show-only-when-js-is-enabled {
+    // scss-lint:disable Comment
+    /*!!
+
+    This requires that you also include the Blue Husky Studios standard scripts in the page - they will
+    then show elements with the "show-only-when-js-is-enabled" class
+
+    !!*/
+    // scss-lint:enable Comment
     display: none;
 }
