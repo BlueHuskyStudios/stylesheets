@@ -6,8 +6,12 @@
  * @author Kyli Rouge
  * @author anonymous
  *
- * @version 2.3.0
+ * @version 2.4.0
+ *         . 2.4.0 (2020-12-30) - Ben Leggiero added blank lines between rules
+ *         + 2.4.0 (2020-12-30) - Ben Leggiero added cite de-italicization
  */
+
+
 
 /**
  * This removes both the default margin and padding from every element except dialogs. Dialogs are allowed to keep these
@@ -26,6 +30,7 @@
 }
 
 
+
 /**
  * Makes all browsers calculate the size of a box the same way
  *
@@ -36,6 +41,8 @@
 * {
     box-sizing: border-box;
 }
+
+
 
 /**
  * This pushes common actions like scrolling to the GPU, so it shouldn't ever be laggy.
@@ -49,6 +56,8 @@
 main {
     transform: translate3d(0,0,0)
 }
+
+
 
 /**
  * This tells the browser to render these new HTML5 elements as blocks.
@@ -73,6 +82,8 @@ summary {
     display: block;
 }
 
+
+
 /**
  * This tells the browser to NOT render these elements. Currently this is solely the template element (because it
  * should never be shown) and the dialog element when it doesn't have the open attribute.
@@ -90,6 +101,8 @@ dialog:not([open]) {
     display: none !important;
 }
 
+
+
 /**
  * This ensures that super/sub script text doesn't push around the lines above/below it.
  *
@@ -100,4 +113,17 @@ dialog:not([open]) {
 sup,
 sub {
     line-height: 0;
+}
+
+
+
+/**
+ * This ensures that cite elements aren't all italic.
+ *
+ * @author Ben Leggiero
+ * @version 1.0.0
+ *         + 1.0.0 (2020-12-30; 2.4.0) - Ben Leggiero added cite de-italicization
+ */
+cite {
+    font-style: unset;
 }
