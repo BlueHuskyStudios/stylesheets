@@ -29,12 +29,24 @@ kbd {
 
 
 
-blockquote>cite {
-    display: block;
-    margin-block-start: 1em;
-    text-align: end;
+cite,
+.help {
+    &[title]:not([title=""]):not(.plain) {
+        cursor: help;
+        text-decoration: dotted underline;
+    }
+}
 
-    &::before {
-        content: " — ";
+
+
+cite {
+    blockquote>& {
+        display: block;
+        margin-block-start: 1em;
+        text-align: end;
+
+        &::before {
+            content: " — ";
+        }
     }
 }
