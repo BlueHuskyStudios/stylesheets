@@ -12,13 +12,19 @@ $css-vars-use-native: true;
 
 
 // scss-lint:disable ColorVariable
-@include css-vars((
-    --table-visual-border-thickness: 0.5em,
-    --table-cell-spacing: var(--table-visual-border-thickness),
-    --table-large-cell-line-thickness: 0.25em,
-    --table-header-cell-background: rgba(127, 127, 127, 0.2),
-    --table-cell-span-indicator-color: rgba(0, 0, 0, 0.1),
-));
+:root {
+    --table-visual-border-thickness: 0.5em;
+    --table-cell-spacing: var(--table-visual-border-thickness);
+    --table-large-cell-line-thickness: 0.25em;
+    --table-header-cell-background: rgba(127, 127, 127, 0.2);
+    --table-cell-span-indicator-color: rgba(0, 0, 0, 0.1);
+
+    @at-root
+    .brightness-dark,
+    .brightness-black {
+        --table-cell-span-indicator-color: rgba(255, 255, 255, 0.1);
+    }
+}
 // scss-lint:enable ColorVariable
 
 
@@ -57,7 +63,7 @@ table {
 
     [rowspan]:not(.plain) {
         padding-right: var(--table-large-cell-line-thickness);
-        border-right: var(--table-large-cell-line-thickness) solid rgba(0,0,0,.1);
+        border-right: var(--table-large-cell-line-thickness) solid var(--table-cell-span-indicator-color);
     }
 
     // tr td{
