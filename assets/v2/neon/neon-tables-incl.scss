@@ -12,13 +12,22 @@ $css-vars-use-native: true;
 
 
 // scss-lint:disable ColorVariable
-@include css-vars((
-    --table-visual-border-thickness: 0.5em,
-    --table-cell-spacing: var(--table-visual-border-thickness),
-    --table-large-cell-line-thickness: 0.25em,
-    --table-header-cell-background: rgba(127, 127, 127, 0.2),
-    --table-cell-span-indicator-color: rgba(0, 0, 0, 0.1),
-));
+:root {
+    --table-visual-border-thickness: 0.5em;
+    --table-cell-spacing: var(--table-visual-border-thickness);
+    --table-large-cell-line-thickness: 0.25em;
+    --table-header-cell-background: rgba(127, 127, 127, 0.2);
+    --table-cell-span-indicator-color: rgba(0, 0, 0, 0.1);
+    --table-cell-span-background-color: rgba(0, 0, 0, 0.05);
+    --table-cell-span-background-image: url(http://localhost:4001/assets/v2/supplemental%20images/Small%20Polka%20Dots%2021x18.svg);
+
+    @at-root
+    .brightness-dark,
+    .brightness-black {
+        --table-cell-span-indicator-color: rgba(255, 255, 255, 0.1);
+        --table-cell-span-background-color: rgba(255, 255, 255, 0.02);
+    }
+}
 // scss-lint:enable ColorVariable
 
 
@@ -50,14 +59,22 @@ table {
         }
     }
 
-    [colspan]:not(.plain) {
-        padding-bottom: var(--table-large-cell-line-thickness);
-        border-bottom: var(--table-large-cell-line-thickness) solid var(--table-cell-span-indicator-color);
-    }
+    :not(.plain) {
+        [colspan] {
+            padding-bottom: var(--table-large-cell-line-thickness);
+            border-bottom: var(--table-large-cell-line-thickness) solid var(--table-cell-span-indicator-color);
+        }
 
-    [rowspan]:not(.plain) {
-        padding-right: var(--table-large-cell-line-thickness);
-        border-right: var(--table-large-cell-line-thickness) solid rgba(0,0,0,.1);
+        [rowspan] {
+            padding-right: var(--table-large-cell-line-thickness);
+            border-right: var(--table-large-cell-line-thickness) solid var(--table-cell-span-indicator-color);
+        }
+
+        td[colspan],
+        td[rowspan] {
+            background: var(--table-cell-span-background-color) var(--table-cell-span-background-image);
+            background-size: 24px;
+        }
     }
 
     // tr td{
@@ -103,6 +120,13 @@ table {
         border-left-style: solid;
         text-align: right;
         vertical-align: middle;
+
+        &.sticky {
+            position: sticky;
+            left: 0;
+
+            backdrop-filter: blur(1cm);
+        }
     }
 
     thead th:not(.vert):not(.plain),
@@ -127,6 +151,8 @@ table {
 
 .wide-table-holder {
     overflow-x: scroll;
+
+    margin-inline: calc(0px - (var(--main-total-inline-margin) / 2));
 
     :not(.wide-table-holder-holder)>&::after {
         content: "Pro tip: If the table is cut off, scroll left and right";
