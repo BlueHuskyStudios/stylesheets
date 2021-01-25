@@ -104,13 +104,32 @@
         border: 1px solid var(--sidebar-avatar-outline-color);
         border-radius: 99in;
     }
+
+
+    @at-root
+    .full-height-sidebar {
+        --app-bar-z-index: calc(var(--sidebar-z-index) + 1);
+
+        .sidebar {
+            top: 0;
+            padding-top: var(--app-bar-height-auto);
+            max-height: 100vh;
+
+            @at-root
+            #{$sidebar-parent-sidebar-shown-selector} {
+                &.full-height-sidebar .app-bar * {
+                    --button-text-color: var(--theme-foreground-color) !important;
+                }
+            }
+        }
+    }
 }
 
 
 
 .sidebar-scrim {
     position: fixed;
-    z-index: 1;
+    z-index: var(--sidebar-z-index);
     width: 100vw;
     height: 100vh;
 
