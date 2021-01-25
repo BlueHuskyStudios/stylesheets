@@ -26,7 +26,7 @@
 
     overflow: auto;
 
-    transition-property: background, background-color, width, top, left;
+    transition-property: background, background-color, width, top, left, padding, min-height, z-index;
     will-change: width, top, left;
     transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
@@ -38,6 +38,7 @@
 
     section {
         transition-property: background, background-color;
+        transition-timing-function: inherit;
 
         border-width: 1px;
         border-style: none none solid;
