@@ -73,45 +73,6 @@ html {
 
 
 
-.app-bar {
-
-    background-color: var(--theme-primary-color);
-
-    &,
-    * {
-        // scss-lint:disable ImportantRule
-        color: var(--theme-text-on-primary-color-color) !important;
-        // scss-lint:enable ImportantRule
-    }
-
-    .image-button .cta {
-        &:first-of-type {
-            margin-right: 1.5em;
-        }
-    }
-
-    .title {
-        .material-icons:first-child,
-        .back-to-root-icon {
-            width: 1em;
-            margin-right: 1ex;
-            margin-inline-end: 1ex;
-            transition-property: margin, width, opacity;
-            vertical-align: middle;
-
-            .top-level & {
-                width: 0;
-                margin-right: 0;
-                margin-inline-end: 0;
-                opacity: 0;
-                pointer-events: none;
-            }
-        }
-    }
-}
-
-
-
 #{$button-selector} {
     &.accent {
         background-color: var(--theme-accent-color);

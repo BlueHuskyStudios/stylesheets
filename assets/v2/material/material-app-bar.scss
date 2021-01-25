@@ -20,8 +20,23 @@
     background-color: var(--theme-background-color);
     box-shadow: shadow(4);
 
+    background-color: var(--theme-primary-color);
+
+    &,
+    * {
+        // scss-lint:disable ImportantRule
+        color: var(--theme-text-on-primary-color-color) !important;
+        // scss-lint:enable ImportantRule
+    }
+
     * {
         flex-shrink: 1;
+    }
+
+    .image-button .cta {
+        &:first-of-type {
+            margin-right: 1.5em;
+        }
     }
 
     h1 {
@@ -40,8 +55,36 @@
         }
     }
 
-    .title-text {
-        display: inline-block;
-        text-align: center;
+    .title {
+        .material-icons:first-child,
+        .back-to-root-icon {
+            width: 1em;
+            margin-right: 1ex;
+            margin-inline-end: 1ex;
+            transition-property: margin, width, opacity;
+            vertical-align: middle;
+
+            .top-level & {
+                width: 0;
+                margin-right: 0;
+                margin-inline-end: 0;
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        .title-text {
+            display: inline-block;
+            text-align: center;
+        }
+        .subtitle-text {
+            opacity: 0.75;
+            text-transform: none;
+
+            &::before {
+                content: " / ";
+                opacity: 0.5;
+            }
+        }
     }
 }
