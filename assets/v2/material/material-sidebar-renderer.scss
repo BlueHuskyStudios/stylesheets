@@ -26,7 +26,7 @@
 
     overflow: auto;
 
-    transition-property: background, background-color, width, top, left;
+    transition-property: background, background-color, width, top, left, padding, min-height, z-index;
     will-change: width, top, left;
     transition-timing-function: cubic-bezier(0.75, 0, 0.95, 1);
 
@@ -38,6 +38,7 @@
 
     section {
         transition-property: background, background-color;
+        transition-timing-function: inherit;
 
         border-width: 1px;
         border-style: none none solid;
@@ -104,13 +105,32 @@
         border: 1px solid var(--sidebar-avatar-outline-color);
         border-radius: 99in;
     }
+
+
+    @at-root
+    .full-height-sidebar {
+        --app-bar-z-index: calc(var(--sidebar-z-index) + 1);
+
+        .sidebar {
+            top: 0;
+            padding-top: var(--app-bar-height-auto);
+            max-height: 100vh;
+
+            @at-root
+            #{$sidebar-parent-sidebar-shown-selector} {
+                &.full-height-sidebar .app-bar * {
+                    --button-text-color: var(--theme-foreground-color) !important;
+                }
+            }
+        }
+    }
 }
 
 
 
 .sidebar-scrim {
     position: fixed;
-    z-index: 1;
+    z-index: var(--sidebar-z-index);
     width: 100vw;
     height: 100vh;
 
