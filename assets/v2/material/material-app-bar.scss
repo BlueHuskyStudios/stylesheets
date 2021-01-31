@@ -17,10 +17,9 @@
 
     height: var(--app-bar-height-auto);
 
-    background-color: var(--theme-background-color);
     box-shadow: shadow(4);
 
-    background-color: var(--theme-primary-color);
+    background-color: var(--theme-primary-color, var(--theme-background-color));
 
     &,
     * {
