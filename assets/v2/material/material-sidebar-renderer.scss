@@ -128,6 +128,10 @@
                 }
             }
         }
+
+        .sidebar-scrim {
+            z-index: var(--sidebar-z-index);
+        }
     }
 }
 
@@ -135,7 +139,7 @@
 
 .sidebar-scrim {
     position: fixed;
-    z-index: var(--sidebar-z-index);
+    z-index: var(--app-bar-z-index);
     width: 100vw;
     height: 100vh;
 
