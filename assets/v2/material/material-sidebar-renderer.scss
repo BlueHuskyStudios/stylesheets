@@ -118,8 +118,13 @@
 
             @at-root
             #{$sidebar-parent-sidebar-shown-selector} {
-                &.full-height-sidebar .app-bar * {
-                    --button-text-color: var(--theme-foreground-color) !important;
+                &.full-height-sidebar .app-bar {
+
+                    z-index: calc(var(--sidebar-z-index) + 1);
+
+                    * {
+                        --button-text-color: var(--theme-foreground-color) !important;
+                    }
                 }
             }
         }
@@ -135,7 +140,6 @@
     height: 100vh;
 
     transition-property: background;
-    transition-delay: 0s, 3s;
 
     background: var(--sidebar-scrim-background-hidden-color);
 
