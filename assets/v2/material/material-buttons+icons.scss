@@ -10,6 +10,9 @@
     #{$icon-selector} {
 
         margin: 0 1ex;
+        text-align: center;
+        width: 2ex;
+        line-height: 1.5ex;
 
         &:first-child {
             margin-inline-start: 0;
