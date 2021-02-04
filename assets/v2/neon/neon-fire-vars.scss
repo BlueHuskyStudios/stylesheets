@@ -4,14 +4,12 @@
 // Variables that the Neon Fire subtheme uses
 
 @import "./neon-shared-vars.css";
-@import "css-vars";
-$css-vars-use-native: true;
 
 
 
-@include css-vars((
-    --theme-primary-color: var(--theme-fire-primary-color),
-    --theme-accent-color: var(--theme-fire-accent-color),
-    --theme-text-on-primary-color-color: var(--theme-fire-text-on-primary-color-color),
-    --theme-text-on-accent-color-color: var(--theme-fire-text-on-accent-color-color),
-));
+:root {
+    --theme-primary-color: var(--theme-fire-primary-color);
+    --theme-accent-color: var(--theme-fire-accent-color);
+    --theme-text-on-primary-color-color: var(--theme-fire-text-on-primary-color-color);
+    --theme-text-on-accent-color-color: var(--theme-fire-text-on-accent-color-color);
+}

@@ -2,7 +2,7 @@
 // material-app-bar
 //
 // Renders the Material app bar
-// See also: https://material.io/design/components/app-bar.html
+// See also: https://material.io/components/app-bars-top
 
 
 
@@ -80,7 +80,7 @@
             opacity: 0.75;
             text-transform: none;
 
-            &::before {
+            &:not(:empty)::before {
                 content: " / ";
                 opacity: 0.5;
             }
