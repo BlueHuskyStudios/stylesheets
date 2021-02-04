@@ -80,7 +80,7 @@
             opacity: 0.75;
             text-transform: none;
 
-            &::before {
+            &:not(:empty)::before {
                 content: " / ";
                 opacity: 0.5;
             }
