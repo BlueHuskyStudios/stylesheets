@@ -1,8 +1,10 @@
 ---
 ---
+// These are all OK for this particular file
 // scss-lint:disable Comment
 // scss-lint:disable ColorVariable
 // scss-lint:disable MergeableSelector
+/* stylelint-disable no-duplicate-selectors */
 
 
 
@@ -89,3 +91,6 @@
     --theme-air-text-on-primary-color-color: #263238;
     --theme-air-text-on-accent-color-color: #000;
 }
+
+
+/* stylelint-enable no-duplicate-selectors */
