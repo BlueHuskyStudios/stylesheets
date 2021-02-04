@@ -7,23 +7,21 @@
 // Variables that all Neon subthemes use
 
 @import "./neon-all-themes-vars.css";
-@import "css-vars";
-$css-vars-use-native: true;
 
 
-@include css-vars((
-    --white-theme-background-color: hsl(0,0, 100%),
-    --light-theme-background-color: hsl(0,0, 90%),
-    --dark-theme-background-color: hsl(200, 19%, 18%),
-    --black-theme-background-color: hsl(0,0, 0),
-    --default-theme-background-color: var(--light-theme-background-color),
+:root {
+    --white-theme-background-color: hsl(0,0, 100%);
+    --light-theme-background-color: hsl(0,0, 90%);
+    --dark-theme-background-color: hsl(200, 19%, 18%);
+    --black-theme-background-color: hsl(0,0, 0);
+    --default-theme-background-color: var(--light-theme-background-color);
 
-    --white-theme-foreground-color: hsl(0, 0%, 13%),
-    --light-theme-foreground-color: hsl(0, 0%, 13%),
-    --dark-theme-foreground-color: hsl(0, 0%, 93%),
-    --black-theme-foreground-color: hsl(0, 0%, 93%),
-    --default-theme-foreground-color: var(--light-theme-foreground-color),
+    --white-theme-foreground-color: hsl(0, 0%, 13%);
+    --light-theme-foreground-color: hsl(0, 0%, 13%);
+    --dark-theme-foreground-color: hsl(0, 0%, 93%);
+    --black-theme-foreground-color: hsl(0, 0%, 93%);
+    --default-theme-foreground-color: var(--light-theme-foreground-color);
 
-    --theme-text-on-primary-color-color: #fff,
-    --theme-text-on-accent-color-color: #000,
-));
+    --theme-text-on-primary-color-color: #fff;
+    --theme-text-on-accent-color-color: #000;
+}
