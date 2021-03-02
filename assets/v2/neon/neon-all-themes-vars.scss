@@ -35,7 +35,7 @@
     --theme-water-primary-color: #00b0ff;
     --theme-water-accent-color: #009688;
     --theme-water-text-on-primary-color-color: #fff;
-    --theme-water-text-on-accent-color-color: #000;
+    --theme-water-text-on-accent-color-color: #fff;
 }
 
 .brightness-dark,
@@ -63,13 +63,14 @@
     --theme-fire-primary-color: #ff6e40;
     --theme-fire-accent-color: #2196f3;
     --theme-fire-text-on-primary-color-color: #fff;
-    --theme-fire-text-on-accent-color-color: #000;
+    --theme-fire-text-on-accent-color-color: #fff;
 }
 
 
 .brightness-dark,
 .brightness-black {
     --theme-fire-accent-color: #00e5ff;
+    --theme-fire-text-on-accent-color-color: #000;
 }
 
 

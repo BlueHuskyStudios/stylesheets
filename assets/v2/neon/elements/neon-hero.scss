@@ -1,0 +1,25 @@
+
+:root {
+    --hero-padding-vertical: 1em;
+    --hero-padding-horizontal: 2em;
+    --hero-padding: var(--hero-padding-vertical) var(--hero-padding-horizontal);
+
+    --hero-min-height: 2in;
+    --hero-max-height: calc(100vh - 1in);
+}
+
+.hero {
+    background-color: var(--theme-accent-color);
+    color: var(--theme-text-on-accent-color-color);
+    font-size: var(--font-size-h2);
+    text-align: center;
+    padding: var(--hero-padding);
+    min-height: var(--hero-min-height);
+    max-height: var(--hero-max-height);
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: color, background-color;
+}
