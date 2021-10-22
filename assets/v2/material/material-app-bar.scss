@@ -24,7 +24,7 @@
     &,
     * {
         // scss-lint:disable ImportantRule
-        color: var(--theme-text-on-primary-color-color) !important;
+        color: var(--theme-text-on-primary-color-color);// !important;
         // scss-lint:enable ImportantRule
     }
 

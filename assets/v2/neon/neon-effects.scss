@@ -22,3 +22,24 @@
         }
     }
 }
+
+
+.shows-child-on-hover {
+    position: relative;
+    outline: none;
+
+    .shown-on-parent-hover {
+        transition-property: visibility;
+
+        .reduce-motion & {
+            transition-property: visibility !important;
+        }
+    }
+
+    &:not(:hover):not(:focus) {
+        .shown-on-parent-hover {
+            visibility: hidden;
+            transition-delay: 1s;
+        }
+    }
+}
