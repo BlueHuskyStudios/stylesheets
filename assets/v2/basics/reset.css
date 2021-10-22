@@ -2,13 +2,13 @@
  * Reset.css
  * Original by anonymous, further adapted by Blue Husky Studios.
  *
- * @author Ben Leggiero
+ * @author Ky Leggiero
  * @author Kyli Rouge
  * @author anonymous
  *
  * @version 2.4.0
- *         . 2.4.0 (2020-12-30) - Ben Leggiero added blank lines between rules
- *         + 2.4.0 (2020-12-30) - Ben Leggiero added cite de-italicization
+ *         . 2.4.0 (2020-12-30) - Ky Leggiero added blank lines between rules
+ *         + 2.4.0 (2020-12-30) - Ky Leggiero added cite de-italicization
  */
 
 
@@ -34,7 +34,7 @@
 /**
  * Makes all browsers calculate the size of a box the same way
  *
- * @author Ben Leggiero
+ * @author Ky Leggiero
  * @version 1.0.0
  *         . 1.0.0 (2018-04-09) - Ben added this rule to make everything size the same across browsers
  */
@@ -89,9 +89,9 @@ summary {
  * should never be shown) and the dialog element when it doesn't have the open attribute.
  *
  * @author Kyli Rouge
- * @author Ben Leggiero
+ * @author Ky Leggiero
  * @version 1.2.0
- *         - 1.2.0 (2018-03-19; 2.3.0) - Ben Leggiero removed polymer-element from selectors
+ *         - 1.2.0 (2018-03-19; 2.3.0) - Ky Leggiero removed polymer-element from selectors
  *         + 1.1.0 (2014-12-31; 2.1.0) - Kyli Rouge added polymer-element to selectors
  *         + 1.0.0 (2014-11-13; 2.0.0) - Kyli Rouge added dialog:not([open]) to the selectors, and !important to the
  *                                       display rule
@@ -120,9 +120,9 @@ sub {
 /**
  * This ensures that cite elements aren't all italic.
  *
- * @author Ben Leggiero
+ * @author Ky Leggiero
  * @version 1.0.0
- *         + 1.0.0 (2020-12-30; 2.4.0) - Ben Leggiero added cite de-italicization
+ *         + 1.0.0 (2020-12-30; 2.4.0) - Ky Leggiero added cite de-italicization
  */
 cite {
     font-style: unset;

@@ -14,6 +14,7 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     border-radius: var(--button-border-radius);
     background: var(--button-background);
     color: var(--button-text-color);
+    text-indent: 0;
 
     @if ($has-shadow) {
         box-shadow: var(--button-resting-shadow);
@@ -66,6 +67,9 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     &,
     .app-bar & {
         @include _button-base();
+
+        height: var(--app-bar-height-auto);
+        min-width: var(--app-bar-height-auto);
     }
 }
 
