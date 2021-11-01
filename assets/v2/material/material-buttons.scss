@@ -67,7 +67,9 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
     &,
     .app-bar & {
         @include _button-base();
+    }
 
+    .app-bar & {
         height: var(--app-bar-height-auto);
         min-width: var(--app-bar-height-auto);
     }
