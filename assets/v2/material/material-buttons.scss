@@ -223,7 +223,6 @@ $button-base-transition-property: transform, box-shadow, color, background, bord
 // MARK: Ripples
 
 #{$button-selector},
-#{$chip-selector},
 .has-effect-when-pressed {
 
     position: relative;

@@ -8,7 +8,7 @@ $css-vars-use-native: true;
 
 
 
-:root {
+#{$applies-to-everything-selector} {
     --kbd-background: var(--theme-background-color-at-level-raised);
 
     --kbd-highlight-box-shadow: inset 0.1ex 0.2ex hsla(0, 0%, 100%, 0.10);

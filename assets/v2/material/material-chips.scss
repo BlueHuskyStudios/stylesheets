@@ -9,7 +9,7 @@
 @import "material-structure-vars";
 @import "material-buttons";
 
-:root {
+#{$applies-to-everything-selector} {
     --chip-background: #7774;
 }
 

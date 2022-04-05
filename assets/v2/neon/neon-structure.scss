@@ -10,7 +10,7 @@
 @import 'structure-renderer';
 
 
-:root {
+#{$applies-to-everything-selector} {
     --main-total-inline-margin: 4em;
 }
 

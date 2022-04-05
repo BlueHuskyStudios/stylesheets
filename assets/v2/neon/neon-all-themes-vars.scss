@@ -6,12 +6,13 @@
 // scss-lint:disable MergeableSelector
 /* stylelint-disable no-duplicate-selectors */
 
+@import "neon-shared-vars-incl";
 
 
 
 /* Brightness Light */
 
-:root {
+#{$applies-to-everything-selector} {
     --light-theme-background-color-at-level-1: hsl(0, 0%, 98%);
     --light-theme-background-color-at-level-2: hsl(0, 0%, 93%);
     --light-theme-background-color-at-level-3: hsl(0, 0%, 86%);
@@ -21,7 +22,7 @@
 
 /* Brightness Dark */
 
-:root {
+#{$applies-to-everything-selector} {
     --dark-theme-background-color-at-level-1: hsl(200, 19.1%, 18%);
     --dark-theme-background-color-at-level-2: hsl(200, 22.1%, 15%);
     --dark-theme-background-color-at-level-3: hsl(200, 25.1%, 12%);
@@ -31,7 +32,7 @@
 
 /* Neon Water */
 
-:root {
+#{$applies-to-everything-selector} {
     --theme-water-primary-color: #00b0ff;
     --theme-water-accent-color: #009688;
     --theme-water-text-on-primary-color-color: #fff;
@@ -50,7 +51,7 @@
 
 /* Neon Earth */
 
-:root {
+#{$applies-to-everything-selector} {
     --theme-earth-primary-color: #4caf50;
     --theme-earth-accent-color: #ff7043;
 }
@@ -59,7 +60,7 @@
 
 /* Neon Fire */
 
-:root {
+#{$applies-to-everything-selector} {
     --theme-fire-primary-color: #ff6e40;
     --theme-fire-accent-color: #2196f3;
     --theme-fire-text-on-primary-color-color: #fff;
@@ -77,7 +78,7 @@
 
 /* Neon Air */
 
-:root {
+#{$applies-to-everything-selector} {
     --theme-air-primary-color: #0d47a1;
     --theme-air-accent-color: #0091ea;
     --theme-air-text-on-primary-color-color: hsl(37, 100%, 96%);

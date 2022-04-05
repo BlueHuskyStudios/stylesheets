@@ -1,0 +1,8 @@
+// prebuilt-selectors
+//
+// Some SCSS variables which contains & semantically represent common selectors
+
+$top-level-selector: ":root";
+$css-created-pseudo-elements-selector: "::before, ::after";
+$applies-to-everything-selector: $top-level-selector + ", " + $css-created-pseudo-elements-selector;
+$apply-css-vars-everywhere-selector: $applies-to-everything-selector;

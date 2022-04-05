@@ -54,47 +54,47 @@ $font-weight-title: 500 !default;
 
 
 
-@include css-vars((
-    --font-family-primary: $font-family-primary,
-    --font-family-button: $font-family-button,
-    --font-family-title: $font-family-title,
-    --font-family-subheading: $font-family-subheading,
-    --font-family-sub-subheading: $font-family-sub-subheading,
+#{$applies-to-everything-selector} {
+    --font-family-primary: $font-family-primary;
+    --font-family-button: $font-family-button;
+    --font-family-title: $font-family-title;
+    --font-family-subheading: $font-family-subheading;
+    --font-family-sub-subheading: $font-family-sub-subheading;
 
-    --font-family-h1: $font-family-h1,
-    --font-family-h2: $font-family-h2,
-    --font-family-h3: $font-family-h3,
-    --font-family-h4: $font-family-h4,
-    --font-family-h5: $font-family-h5,
-    --font-family-h6: $font-family-h6,
-
-
-    --font-size-title: $font-size-title,
-    --font-size-subheading: $font-size-subheading,
-
-    --font-size-h1: $font-size-h1,
-    --font-size-h2: $font-size-h2,
-    --font-size-h3: $font-size-h3,
-    --font-size-h4: $font-size-h4,
-    --font-size-h5: $font-size-h5,
-    --font-size-h6: $font-size-h6,
-
-    --font-size-body: $font-size-body,
-    --font-size-button: $font-size-button,
-    --font-size-dense-button: $font-size-dense-button,
-    --font-size-large-button: $font-size-large-button,
+    --font-family-h1: $font-family-h1;
+    --font-family-h2: $font-family-h2;
+    --font-family-h3: $font-family-h3;
+    --font-family-h4: $font-family-h4;
+    --font-family-h5: $font-family-h5;
+    --font-family-h6: $font-family-h6;
 
 
-    --font-weight-h1: $font-weight-h1,
-    --font-weight-h2: $font-weight-h2,
-    --font-weight-h3: $font-weight-h3,
-    --font-weight-h4: $font-weight-h4,
-    --font-weight-h5: $font-weight-h5,
-    --font-weight-h6: $font-weight-h6,
+    --font-size-title: $font-size-title;
+    --font-size-subheading: $font-size-subheading;
 
-    --font-weight-button: $font-weight-button,
-    --font-weight-title: $font-weight-title,
-));
+    --font-size-h1: $font-size-h1;
+    --font-size-h2: $font-size-h2;
+    --font-size-h3: $font-size-h3;
+    --font-size-h4: $font-size-h4;
+    --font-size-h5: $font-size-h5;
+    --font-size-h6: $font-size-h6;
+
+    --font-size-body: $font-size-body;
+    --font-size-button: $font-size-button;
+    --font-size-dense-button: $font-size-dense-button;
+    --font-size-large-button: $font-size-large-button;
+
+
+    --font-weight-h1: $font-weight-h1;
+    --font-weight-h2: $font-weight-h2;
+    --font-weight-h3: $font-weight-h3;
+    --font-weight-h4: $font-weight-h4;
+    --font-weight-h5: $font-weight-h5;
+    --font-weight-h6: $font-weight-h6;
+
+    --font-weight-button: $font-weight-button;
+    --font-weight-title: $font-weight-title;
+}
 
 
 // MARK: - Aggregates
@@ -120,23 +120,23 @@ $text-decoration-button: none !default;
 
 
 
-@include css-vars((
+#{$applies-to-everything-selector} {
 
-    --font-h1: $font-h1,
-    --font-h2: $font-h2,
-    --font-h3: $font-h3,
-    --font-h4: $font-h4,
-    --font-h5: $font-h5,
-    --font-h6: $font-h6,
+    --font-h1: $font-h1;
+    --font-h2: $font-h2;
+    --font-h3: $font-h3;
+    --font-h4: $font-h4;
+    --font-h5: $font-h5;
+    --font-h6: $font-h6;
 
-    --font-button: $font-button,
-    --font-title: $font-title,
-
-
-
-    --text-align-title: $text-align-title,
+    --font-button: $font-button;
+    --font-title: $font-title;
 
 
 
-    --text-transform-button: $text-transform-button,
-));
+    --text-align-title: $text-align-title;
+
+
+
+    --text-transform-button: $text-transform-button;
+}

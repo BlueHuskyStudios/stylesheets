@@ -3,13 +3,13 @@
 //
 // Variables that the Neon Water subtheme uses
 
-@import "./neon-shared-vars.css";
+@import "prebuilt-selectors";
 @import "css-vars";
 $css-vars-use-native: true;
 
-@include css-vars((
-    --theme-primary-color: var(--theme-water-primary-color),
-    --theme-accent-color: var(--theme-water-accent-color),
-    --theme-text-on-primary-color-color: var(--theme-water-text-on-primary-color-color),
-    --theme-text-on-accent-color-color: var(--theme-water-text-on-accent-color-color),
-));
+#{$apply-css-vars-everywhere-selector} {
+    --theme-primary-color: var(--theme-water-primary-color);
+    --theme-accent-color: var(--theme-water-accent-color);
+    --theme-text-on-primary-color-color: var(--theme-water-text-on-primary-color-color);
+    --theme-text-on-accent-color-color: var(--theme-water-text-on-accent-color-color);
+}

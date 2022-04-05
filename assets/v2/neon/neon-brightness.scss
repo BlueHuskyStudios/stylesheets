@@ -3,48 +3,76 @@
 //
 // Allows you to set the theme's brightness
 
-@import "css-vars";
+@import "prebuilt-selectors";
 @import "./neon-shared-vars.css";
 
 
 
-@include css-vars((
-    --theme-background-color: var(--default-theme-background-color),
-    --theme-foreground-color: var(--default-theme-foreground-color),
-));
+:root {
+    --theme-background-color: var(--default-theme-background-color);
+    --theme-foreground-color: var(--default-theme-foreground-color);
+}
+
+
+#{$css-created-pseudo-elements-selector} {
+    --theme-foreground-color: var(--default-theme-foreground-color);
+}
+
+
 
 [class^="brightness-"],
 [class*=" brightness-"] {
     background: var(--theme-background-color);
-    color: var(--theme-foreground-color);
+
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        color: var(--theme-foreground-color);
+    }
 }
 
 
 
 .brightness-white {
-    --theme-background-color: var(--white-theme-background-color);
-    --theme-foreground-color: var(--white-theme-foreground-color);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color: var(--white-theme-background-color);
+        --theme-foreground-color: var(--white-theme-foreground-color);
+    }
 }
 
 
 
 .brightness-light {
-    --theme-background-color: var(--light-theme-background-color);
-    --theme-foreground-color: var(--light-theme-foreground-color);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color: var(--light-theme-background-color);
+        --theme-foreground-color: var(--light-theme-foreground-color);
+    }
 }
 
 
 
 .brightness-dark {
-    --theme-background-color: var(--dark-theme-background-color);
-    --theme-foreground-color: var(--dark-theme-foreground-color);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color: var(--dark-theme-background-color);
+        --theme-foreground-color: var(--dark-theme-foreground-color);
+    }
 }
 
 
 
 .brightness-black {
-    --theme-background-color: var(--black-theme-background-color);
-    --theme-foreground-color: var(--black-theme-foreground-color);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color: var(--black-theme-background-color);
+        --theme-foreground-color: var(--black-theme-foreground-color);
+    }
 }
 
 .material {
@@ -60,7 +88,7 @@
 
 // MARK: - Layers
 
-:root {
+#{$applies-to-everything-selector} {
     --theme-background-color-at-level-1: hsl(0, 0%, 98%);
     --theme-background-color-at-level-2: hsl(0, 0%, 93%);
     --theme-background-color-at-level-3: hsl(0, 0%, 86%);
@@ -71,24 +99,40 @@
 
 .brightness-dark,
 .brightness-black {
-    --theme-background-color-at-level-1: hsl(200, 19.1%, 18%);
-    --theme-background-color-at-level-2: hsl(200, 22.1%, 15%);
-    --theme-background-color-at-level-3: hsl(200, 25.1%, 12%);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color-at-level-1: hsl(200, 19.1%, 18%);
+        --theme-background-color-at-level-2: hsl(200, 22.1%, 15%);
+        --theme-background-color-at-level-3: hsl(200, 25.1%, 12%);
+    }
 }
 
 .z0 {
-    --theme-background-color-at-level-flat: var(--theme-background-color-at-level-1);
-    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-2);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color-at-level-flat: var(--theme-background-color-at-level-1);
+        --theme-background-color-at-level-raised: var(--theme-background-color-at-level-2);
+    }
 }
 
 .z1 {
-    --theme-background-color-at-level-flat: var(--theme-background-color-at-level-2);
-    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-3);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color-at-level-flat: var(--theme-background-color-at-level-2);
+        --theme-background-color-at-level-raised: var(--theme-background-color-at-level-3);
+    }
 }
 
 .z2 {
-    --theme-background-color-at-level-flat: var(--theme-background-color-at-level-3);
-    --theme-background-color-at-level-raised: var(--theme-background-color-at-level-3);
+    &,
+    &#{$css-created-pseudo-elements-selector},
+    & #{$css-created-pseudo-elements-selector} {
+        --theme-background-color-at-level-flat: var(--theme-background-color-at-level-3);
+        --theme-background-color-at-level-raised: var(--theme-background-color-at-level-3);
+    }
 }
 
 .z0,

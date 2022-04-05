@@ -7,6 +7,7 @@
 
 // TODO: Eventually use @apply like in https://github.com/PolymerElements/paper-styles/blob/master/shadow.html
 
+@import "prebuilt-selectors";
 @import 'css-vars';
 $css-vars-use-native: true;
 
@@ -141,16 +142,16 @@ $css-vars-use-native: true;
 }
 
 
-@include css-vars((
-    --box-shadow-z0: shadow(0),
-    --box-shadow-z1: shadow(1),
-    --box-shadow-z2: shadow(2),
-    --box-shadow-z3: shadow(3),
-    --box-shadow-z4: shadow(4),
-    --box-shadow-z6: shadow(6),
-    --box-shadow-z8: shadow(8),
-    --box-shadow-z9: shadow(9),
-    --box-shadow-z12: shadow(12),
-    --box-shadow-z16: shadow(16),
-    --box-shadow-z24: shadow(24),
-))
+#{$apply-css-vars-everywhere-selector} {
+    --box-shadow-z0: shadow(0);
+    --box-shadow-z1: shadow(1);
+    --box-shadow-z2: shadow(2);
+    --box-shadow-z3: shadow(3);
+    --box-shadow-z4: shadow(4);
+    --box-shadow-z6: shadow(6);
+    --box-shadow-z8: shadow(8);
+    --box-shadow-z9: shadow(9);
+    --box-shadow-z12: shadow(12);
+    --box-shadow-z16: shadow(16);
+    --box-shadow-z24: shadow(24);
+}

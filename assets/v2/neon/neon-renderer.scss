@@ -10,6 +10,7 @@
 
 $css-vars-use-native: true !default;
 
+@import "neon-shared-vars-incl";
 @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 @import "neon-animation-vars";
 

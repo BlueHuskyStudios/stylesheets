@@ -6,13 +6,14 @@
 /// Requires varibles to be set with color stylesheets (like neon-fire.scss or neon-water.scss) prior to calling.
 ///
 
+@import "neon-shared-vars-incl";
 @import "css-vars";
 $css-vars-use-native: true;
 
 
 
 // scss-lint:disable ColorVariable
-:root {
+#{$applies-to-everything-selector} {
     --table-visual-border-thickness: 0.5em;
     --table-cell-spacing: var(--table-visual-border-thickness);
     --table-large-cell-line-thickness: 0.25em;

@@ -3,11 +3,11 @@
 //
 // Variables that the Neon Fire subtheme uses
 
-@import "./neon-shared-vars.css";
+@import "neon-shared-vars-incl";
 
 
 
-:root {
+#{$applies-to-everything-selector} {
     --theme-primary-color: var(--theme-fire-primary-color);
     --theme-accent-color: var(--theme-fire-accent-color);
     --theme-text-on-primary-color-color: var(--theme-fire-text-on-primary-color-color);

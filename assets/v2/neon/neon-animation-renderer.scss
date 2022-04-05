@@ -9,9 +9,9 @@
 
 // MARK: - Marshall SCSS vars to CSS vars
 
-@include css-vars((
-    --animation-duration-default: $animation-duration-default,
-));
+#{$apply-css-vars-everywhere-selector} {
+    --animation-duration-default: $animation-duration-default;
+}
 
 *,
 *::before,

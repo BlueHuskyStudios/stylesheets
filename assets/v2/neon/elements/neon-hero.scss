@@ -1,5 +1,5 @@
 
-:root {
+#{$applies-to-everything-selector} {
     --hero-padding-vertical: 1em;
     --hero-padding-horizontal: 2em;
     --hero-padding: var(--hero-padding-vertical) var(--hero-padding-horizontal);

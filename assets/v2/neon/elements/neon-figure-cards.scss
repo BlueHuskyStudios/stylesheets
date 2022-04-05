@@ -1,4 +1,4 @@
-:root {
+#{$applies-to-everything-selector} {
     --figure-card-width: calc(var(--phone-portrait-small-max-width) - (var(--main-total-inline-margin) / 2));
 }
 

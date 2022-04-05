@@ -5,7 +5,7 @@
 
 
 
-@import "css-vars";
+@import "prebuilt-selectors";
 
 
 
@@ -20,18 +20,18 @@ $sidebar-subtitle-font-weight: normal !default;
 
 $sidebar-avatar-outline-color: hsla(0, 0%, 50%, 0.5) !default;
 
-@include css-vars((
-    --sidebar-scrim-background-color: $sidebar-scrim-background-color,
-    --sidebar-scrim-background-hidden-color: $sidebar-scrim-background-hidden-color,
-    --sidebar-background-color: $sidebar-background-color,
+#{$apply-css-vars-everywhere-selector} {
+    --sidebar-scrim-background-color: $sidebar-scrim-background-color;
+    --sidebar-scrim-background-hidden-color: $sidebar-scrim-background-hidden-color;
+    --sidebar-background-color: $sidebar-background-color;
 
-    --sidebar-subtitle-padding-each-side: $sidebar-subtitle-padding-each-side,
-    --sidebar-subtitle-margin-each-side: $sidebar-subtitle-margin-each-side,
-    --sidebar-subtitle-font-size: $sidebar-subtitle-font-size,
-    --sidebar-subtitle-font-weight: $sidebar-subtitle-font-weight,
+    --sidebar-subtitle-padding-each-side: $sidebar-subtitle-padding-each-side;
+    --sidebar-subtitle-margin-each-side: $sidebar-subtitle-margin-each-side;
+    --sidebar-subtitle-font-size: $sidebar-subtitle-font-size;
+    --sidebar-subtitle-font-weight: $sidebar-subtitle-font-weight;
 
-    --sidebar-avatar-outline-color: $sidebar-avatar-outline-color,
-));
+    --sidebar-avatar-outline-color: $sidebar-avatar-outline-color;
+}
 
 
 $sidebar-parent-sidebar-shown-selector: ".sidebar-shown, [data-sidebar=shown]" !default;

@@ -3,9 +3,9 @@
 //
 // Variables that the Neon Air subtheme uses
 
-@import "./neon-shared-vars.css";
+@import "neon-shared-vars-incl";
 
-:root {
+#{$applies-to-everything-selector} {
     --theme-primary-color: var(--theme-air-primary-color);
     --theme-accent-color: var(--theme-air-accent-color);
     --theme-text-on-primary-color-color: var(--theme-air-text-on-primary-color-color);

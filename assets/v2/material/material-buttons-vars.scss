@@ -1,4 +1,6 @@
 
+@import "prebuilt-selectors";
+
 $button-cursor: pointer !default;
 $button-border-radius: 2px !default;
 $button-padding-each-vertical: 11px !default;
@@ -62,68 +64,68 @@ $button-selector: $common-button-selector + ", " + $uncommon-button-selector;
 $chip-button-group-selector: ".chips, .pills";
 
 
-@include css-vars((
-    --button-border-color: transparent,
-    --button-border-width: 1px,
-    --button-background: var(--theme-primary-color),
-    --button-text-color: var(--theme-text-on-primary-color-color),
+#{$apply-css-vars-everywhere-selector} {
+    --button-border-color: transparent;
+    --button-border-width: 1px;
+    --button-background: var(--theme-primary-color);
+    --button-text-color: var(--theme-text-on-primary-color-color);
 
-    --button-cursor: $button-cursor,
-    --button-border-radius: $button-border-radius,
-    --button-padding-each-vertical: $button-padding-each-vertical,
-    --button-padding-each-horizontal: $button-padding-each-horizontal,
-    --button-padding: var(--button-padding-each-vertical) var(--button-padding-each-horizontal),
-    --button-dense-padding-each-vertical: $button-dense-padding-each-vertical,
-    --button-dense-padding-each-horizontal: $button-dense-padding-each-horizontal,
-    --button-dense-padding: var(--button-dense-padding-each-vertical) var(--button-dense-padding-each-horizontal),
-    --button-large-padding-each-vertical: $button-large-padding-each-vertical,
-    --button-large-padding-each-horizontal: $button-large-padding-each-horizontal,
-    --button-large-padding: var(--button-large-padding-each-vertical) var(--button-large-padding-each-horizontal),
-    --button-margin: $button-margin,
-    --button-min-width: $button-min-width,
+    --button-cursor: $button-cursor;
+    --button-border-radius: $button-border-radius;
+    --button-padding-each-vertical: $button-padding-each-vertical;
+    --button-padding-each-horizontal: $button-padding-each-horizontal;
+    --button-padding: var(--button-padding-each-vertical) var(--button-padding-each-horizontal);
+    --button-dense-padding-each-vertical: $button-dense-padding-each-vertical;
+    --button-dense-padding-each-horizontal: $button-dense-padding-each-horizontal;
+    --button-dense-padding: var(--button-dense-padding-each-vertical) var(--button-dense-padding-each-horizontal);
+    --button-large-padding-each-vertical: $button-large-padding-each-vertical;
+    --button-large-padding-each-horizontal: $button-large-padding-each-horizontal;
+    --button-large-padding: var(--button-large-padding-each-vertical) var(--button-large-padding-each-horizontal);
+    --button-margin: $button-margin;
+    --button-min-width: $button-min-width;
 
-    --button-flat-padding-each-vertical: $button-flat-padding-each-vertical,
-    --button-flat-padding-each-horizontal: $button-flat-padding-each-horizontal,
-    --button-flat-padding: var(--button-flat-padding-each-vertical) var(--button-flat-padding-each-horizontal),
-    --button-flat-margin: $button-flat-margin,
-    --button-flat-min-width: $button-flat-min-width,
+    --button-flat-padding-each-vertical: $button-flat-padding-each-vertical;
+    --button-flat-padding-each-horizontal: $button-flat-padding-each-horizontal;
+    --button-flat-padding: var(--button-flat-padding-each-vertical) var(--button-flat-padding-each-horizontal);
+    --button-flat-margin: $button-flat-margin;
+    --button-flat-min-width: $button-flat-min-width;
 
-    --button-app-bar-padding-each-vertical: $button-app-bar-padding-each-vertical,
-    --button-app-bar-padding-each-horizontal: $button-app-bar-padding-each-horizontal,
-    --button-app-bar-padding: var(--button-app-bar-padding-each-vertical) var(--button-app-bar-padding-each-horizontal),
-    --button-app-bar-margin: $button-app-bar-margin,
-    --button-app-bar-min-width: $button-app-bar-min-width,
+    --button-app-bar-padding-each-vertical: $button-app-bar-padding-each-vertical;
+    --button-app-bar-padding-each-horizontal: $button-app-bar-padding-each-horizontal;
+    --button-app-bar-padding: var(--button-app-bar-padding-each-vertical) var(--button-app-bar-padding-each-horizontal);
+    --button-app-bar-margin: $button-app-bar-margin;
+    --button-app-bar-min-width: $button-app-bar-min-width;
 
-    --button-image-padding-each-vertical: $button-image-padding-each-vertical,
-    --button-image-padding-each-horizontal: $button-image-padding-each-horizontal,
-    --button-image-padding: var(--button-image-padding-each-vertical) var(--button-image-padding-each-horizontal),
-    --button-image-margin: $button-image-margin,
-    --button-image-min-width: $button-image-min-width,
+    --button-image-padding-each-vertical: $button-image-padding-each-vertical;
+    --button-image-padding-each-horizontal: $button-image-padding-each-horizontal;
+    --button-image-padding: var(--button-image-padding-each-vertical) var(--button-image-padding-each-horizontal);
+    --button-image-margin: $button-image-margin;
+    --button-image-min-width: $button-image-min-width;
 
-    --button-icon-padding-each-vertical: $button-icon-padding-each-vertical,
-    --button-icon-padding-each-horizontal: $button-icon-padding-each-horizontal,
-    --button-icon-padding: var(--button-icon-padding-each-vertical) var(--button-icon-padding-each-horizontal),
-    --button-icon-margin: $button-icon-margin,
-    --button-icon-min-width: $button-icon-min-width,
+    --button-icon-padding-each-vertical: $button-icon-padding-each-vertical;
+    --button-icon-padding-each-horizontal: $button-icon-padding-each-horizontal;
+    --button-icon-padding: var(--button-icon-padding-each-vertical) var(--button-icon-padding-each-horizontal);
+    --button-icon-margin: $button-icon-margin;
+    --button-icon-min-width: $button-icon-min-width;
 
-    --button-app-bar-image-padding-each-vertical: $button-app-bar-image-padding-each-vertical,
-    --button-app-bar-image-padding-each-horizontal: $button-app-bar-image-padding-each-horizontal,
-    --button-app-bar-image-padding: var(--button-app-bar-image-padding-each-vertical) var(--button-app-bar-image-padding-each-horizontal),
-    --button-app-bar-image-margin: $button-app-bar-image-margin,
-    --button-app-bar-image-min-width: $button-app-bar-image-min-width,
+    --button-app-bar-image-padding-each-vertical: $button-app-bar-image-padding-each-vertical;
+    --button-app-bar-image-padding-each-horizontal: $button-app-bar-image-padding-each-horizontal;
+    --button-app-bar-image-padding: var(--button-app-bar-image-padding-each-vertical) var(--button-app-bar-image-padding-each-horizontal);
+    --button-app-bar-image-margin: $button-app-bar-image-margin;
+    --button-app-bar-image-min-width: $button-app-bar-image-min-width;
 
-    --button-resting-shadow: $button-resting-shadow,
-    --button-hover-shadow: $button-hover-shadow,
-    --button-pressed-shadow: $button-pressed-shadow,
-
-
-    --fab-diameter: $fab-diameter,
+    --button-resting-shadow: $button-resting-shadow;
+    --button-hover-shadow: $button-hover-shadow;
+    --button-pressed-shadow: $button-pressed-shadow;
 
 
-    --ripple-end-diameter: $ripple-end-diameter,
-    --ripple-end-radius: $ripple-end-radius,
-    --ripple-grow-duration: $ripple-grow-duration,
-    --ripple-fade-duration: $ripple-fade-duration,
-    --ripple-fade-size-multiplier: $ripple-fade-size-multiplier,
-    --ripple-midpoint-opacity: $ripple-midpoint-opacity,
-));
+    --fab-diameter: $fab-diameter;
+
+
+    --ripple-end-diameter: $ripple-end-diameter;
+    --ripple-end-radius: $ripple-end-radius;
+    --ripple-grow-duration: $ripple-grow-duration;
+    --ripple-fade-duration: $ripple-fade-duration;
+    --ripple-fade-size-multiplier: $ripple-fade-size-multiplier;
+    --ripple-midpoint-opacity: $ripple-midpoint-opacity;
+}
