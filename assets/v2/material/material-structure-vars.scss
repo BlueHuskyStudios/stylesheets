@@ -3,6 +3,9 @@
 //
 // Variables defining the structure of a page that uses Material design
 
+// This is OK in this file since it uses the same selector in multiple places for semantic reasons:
+/* stylelint-disable no-duplicate-selectors */
+
 
 @import 'material-shadows-vars';
 
@@ -369,10 +372,10 @@ $content-margin-right-tablet-and-desktop: $content-margin-horiz-tablet-and-deskt
     --content-margin-right-phone-portrait: $content-margin-right-phone-portrait;
     --content-margin-right-phone-landscape: $content-margin-right-phone-landscape;
     --content-margin-right-tablet-and-desktop: $content-margin-right-tablet-and-desktop;
-}
 
 
-#{$apply-css-vars-everywhere-selector} {
+    // MARK: Auto App Bar Height
+
     --app-bar-height-auto: var(--app-bar-height-phone-portrait);
     --content-margin-horiz-auto: var(--content-margin-horiz-phone-portrait);
 
@@ -404,3 +407,5 @@ $sidebar-max-width: 80vw;
     --sidebar-default-width: $sidebar-default-width;
     --sidebar-max-width: $sidebar-max-width;
 }
+
+/* stylelint-enable no-duplicate-selectors */

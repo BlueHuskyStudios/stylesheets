@@ -3,6 +3,9 @@
 //
 // Variables for Neon CSS typography
 
+// This is OK in this file since it uses the same selector in multiple places for semantic reasons:
+/* stylelint-disable no-duplicate-selectors */
+
 
 
 @import 'css-vars';
@@ -140,3 +143,5 @@ $text-decoration-button: none !default;
 
     --text-transform-button: $text-transform-button;
 }
+
+/* stylelint-enable no-duplicate-selectors */
