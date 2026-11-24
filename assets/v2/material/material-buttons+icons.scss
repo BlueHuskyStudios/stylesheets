@@ -9,7 +9,7 @@
 #{$button-selector} {
     #{$icon-selector} {
 
-        margin: 0 1ex;
+        margin: 0 0.5em; // was 1ex, but apparently ex is inconsistent between fonts, and em is font-size
         text-align: center;
         line-height: 1.5ex;
 
