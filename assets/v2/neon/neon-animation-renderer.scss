@@ -5,6 +5,7 @@
 
 @import 'css-vars';
 @import 'material-structure-vars';
+@import 'pseudoelements-import';
 
 
 // MARK: - Marshall SCSS vars to CSS vars
@@ -13,12 +14,13 @@
     --animation-duration-default: $animation-duration-default,
 ));
 
-*,
-*::before,
-*::after {
-    transition-duration: var(--animation-duration-default);
-    transition-timing-function: ease-in-out;
-    transition-property: none;
+#{$pseudoelements-selector} {
+    *,
+    & {
+        transition-duration: var(--animation-duration-default);
+        transition-timing-function: ease-in-out;
+        transition-property: none;
+    }
 }
 
 
@@ -29,13 +31,13 @@ html {
 
 
 
-.reduce-motion {
-    &,
-    & *,
-    & *::before,
-    & *::after {
-        transition-property: none !important; // scss-lint:disable ImportantRule
-        animation-name: none !important;      // scss-lint:disable ImportantRule
+#{$pseudoelements-selector} {
+    @at-root *,
+    & {
+        .reduce-motion & {
+            transition-property: none !important; // scss-lint:disable ImportantRule
+            animation-name: none !important;      // scss-lint:disable ImportantRule
+        }
     }
 }
 

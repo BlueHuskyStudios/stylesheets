@@ -38,7 +38,8 @@ $css-vars-use-native: true !default;
 
 // MARK: - Basics
 
-html {
+html,
+dialog {
     background: var(--default-theme-background-color);
     color: var(--default-theme-foreground-color);
 
